@@ -1,4 +1,4 @@
-# **Game Name Here**
+# **The Quest For Percussion // Percussion Masters**
 
 ## _Game Design Document_
 
@@ -6,6 +6,11 @@
 
 ##### **Copyright notice / author information / boring legal stuff nobody likes**
 
+Particpants
+- Andrés Briseño Celada - A01352283
+- Salvador Salgado Normandia - A01422874
+- Ivan Rodriguez Cuevas - A01781284
+-
 ##
 ## _Index_
 
@@ -46,11 +51,15 @@
 
 ### **Summary**
 
-Sum up your game idea in 2 sentences. A kind of elevator pitch. Keep it simple!
+This game has the objective of teaching the players different subjects about percussion instruments with the help of various minigames (trivia, rhythm, memory games)
 
 ### **Gameplay**
+The gameplay is going to be divided into diferent kinds. The main one is going to be a Pokémon-like RPG exploration inside a tiled map, where the player explores diferent islands and interacts with NPC's and instruments. 
 
-What should the gameplay be like? What is the goal of the game, and what kind of obstacles are in the way? What tactics should the player use to overcome them?
+Then, each island is going to have different kinds of minigames, such a trivia relating to information regarding percussion. Another one would be a rhythm game where the player has to play the right notes at the right time, and is scored depending on the precision, like Taiko no Tatsujin. 
+
+If time allows it, we would to a sound recognition game, where the player would first learn about the sounds of different instruments, and then is asked to recognize the instruments in different clips.
+
 
 ### **Mindset**
 
@@ -64,20 +73,22 @@ What kind of mindset do you want to provoke in the player? Do you want them to f
 
 1. Title Screen
     1. Options
-2. Level Select
-3. Game
+2. Game
     1. Inventory
-    2. Assessment / Next Level
-4. End Credits
+    2. Trivia Game
+    3. Rhythm game
+3. End Credits
 
-_(example)_
 
 ### **Controls**
 
-How will the player interact with the game? Will they be able to choose the controls? What kind of in-game events are they going to be able to trigger, and how? (e.g. pressing buttons, opening doors, etc.)
+Movement is determined by 'W','A','S','D'. You can interact with NPC's by pressing the 'I' key. Also you can enter buildings by running into the doors.
 
 ### **Mechanics**
 
+When the player gets near a building it can enter the building.
+Also when the player is near an NPC you can talk to it.
+You can interact with obstacles so they can move out the way.
 Are there any interesting mechanics? If so, how are you going to accomplish them? Physics, algorithms, etc.
 
 ## _Level Design_
@@ -113,11 +124,10 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
             2. Giant rats
             3. Chests
 
-_(example)_
 
 ### **Game Flow**
 
-1. Player starts in forest
+1. Player starts in the island hub
 2. Pond to the left, must move right
 3. To the right is a hill, player jumps to traverse it (&quot;jump&quot; taught)
 4. Player encounters castle - door&#39;s shut and locked
