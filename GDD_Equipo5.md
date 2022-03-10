@@ -1,4 +1,4 @@
-# **The Quest For Percussion // Percussion Masters**
+# **Percussion Islands**
 
 ## _Game Design Document_
 
