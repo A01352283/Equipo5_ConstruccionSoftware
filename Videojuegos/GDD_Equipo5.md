@@ -67,16 +67,17 @@ If time allows it, we would to a sound recognition game, where the player would 
 
 ### **Minigames**
 
-Trivia
-
-Memory Games (Identify sounds and notes)
-
-Rythm
-
+- Trivia
+- Memory Games (Identify sounds and notes)
+- Rhythm
 
 ### **Mindset**
 
 What kind of mindset do you want to provoke in the player? Do you want them to feel powerful, or weak? Adventurous, or nervous? Hurried, or calm? How do you intend to provoke those emotions?
+
+When the player is navigating the map, we want to provoke a calming feeling, because of the island theme. We also want to make the player curious so they explore all the game has to offer.
+
+During the minigames, we want to pressure the player a little bit, because that's where they get tested on their knowledge.
 
 ## _Technical_
 
@@ -99,11 +100,15 @@ What kind of mindset do you want to provoke in the player? Do you want them to f
 
 Movement is determined by 'W','A','S','D'. You can interact with NPC's by pressing the 'I' key. Also you can enter buildings by running into the doors.
 
+The pause menu is opened with the escape key, it's navigated with 'W','A','S','D', things are selected with 'I' and you go back with 'O'. The trivia and memory games are played with those same controls.
+
+_(Controls for the rhythm game are TBD)_
+
 ### **Mechanics**
 
-When the player gets near a building it can enter the building.
-Also when the player is near an NPC you can talk to it.
-You can interact with obstacles so they can move out the way.
+- When the player gets near a building it can enter the building.
+- Also when the player is near an NPC you can talk to it.
+- You can interact with obstacles so they can move out the way.
 Are there any interesting mechanics? If so, how are you going to accomplish them? Physics, algorithms, etc.
 
 ## _Level Design_
@@ -227,32 +232,59 @@ Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), a
 
 1. Characters
     1. Human-like
-        1. Goblin (idle, walking, throwing)
-        2. Guard (idle, walking, stabbing)
-        3. Prisoner (walking, running)
+        1. Main character (idle, walking, item get)
+        2. NPC villagers (idle, walking)
     2. Other
-        1. Wolf (idle, walking, running)
-        2. Giant Rat (idle, scurrying)
-2. Blocks
+        1. Birds (toucans) (idle, flying)
+2. Ground layer 
     1. Dirt
     2. Dirt/Grass
     3. Stone Block
     4. Stone Bricks
-    5. Tiled Floor
-    6. Weathered Stone Block
-    7. Weathered Stone Bricks
+    5. Wooden Floor
+    6. Dirt Path
+    7. Rocky shores
+    8. Bridges
+    9. Brick floor
+    10. Water (with current, fishes, lily pads, rocks)
+    11. Flowers
 3. Ambient
     1. Tall Grass
-    2. Rodent (idle, scurrying)
-    3. Torch
-    4. Armored Suit
-    5. Chains (matching Weathered Stone Bricks)
-    6. Blood stains (matching Weathered Stone Bricks)
-4. Other
+    2. Tree stumps
+    3. Vines
+    4. Berries
+    5. Trees
+    6. Berry bushes
+    7. Campfires
+    8. Logs
+    9. Benches
+    10. Wooden signs
+    11. Barrels
+    12. Pots
+    13. Crops (carrots, watermelons)
+4. Structures
+    1. Houses
+    2. Market stands
+    3. Sign posts
+    4. Well
+5. Inside houses
+    1. Tables
+    2. Chairs
+    3. Counters
+    4. Drawers
+    5. Carpets
+    6. Kitchen sink
+    7. Paintings
+    8. Potted plants
+    9. Books
+6. Other
     1. Chest
-    2. Door (matching Stone Bricks)
-    3. Gate
-    4. Button (matching Weathered Stone Bricks)
+    2. Door (open and closed)
+    3. Windows
+    4. Chimneys (can have animated smoke)
+    5. Roofs
+    6. Market goods (food in crates, on the stands)
+    7. Instruments (Interactibles and pick-up-ables)
 
 
 ## _Sounds/Music_
@@ -270,26 +302,23 @@ Stylistically, what kind of sound effects are you looking for? Do you want to ex
 ### **Sounds Needed**
 
 1. Effects
-    1. Soft Footsteps (dirt floor)
-    2. Sharper Footsteps (stone floor)
-    3. Soft Landing (low vertical velocity)
-    4. Hard Landing (high vertical velocity)
-    5. Glass Breaking
-    6. Chest Opening
-    7. Door Opening
-    8. Hits 
+    1. Chest Opening
+    2. Door Opening
+    3. Menu navigation (move and confirm)
+    4. Dialogue interaction (confirmation sounds) 
+    5. Instrument samples (snare, xylophone, marimba, etc.)
+    6. Birds getting scared
+    7. Ambient water and air
 2. Feedback
-    1. Relieved &quot;Ahhhh!&quot; (health)
-    2. Shocked &quot;Ooomph!&quot; (attacked)
-    3. Happy chime (extra life)
-    4. Sad chime (died)
+    1. Happy chime (item get)
+    2. Progression success (ex. scaring birds)
 
 Possible Musical notes:
 1. playable instrumets:
     - Xilophone
     - Marimba
     - Bongo
-    - Tarola 
+    - Snare 
 2. Non-playable instruments:
     - Triangle
     - Gong
@@ -305,14 +334,14 @@ Possible Musical notes:
 4. Happy ending credits track
 5. Rick Astley&#39;s hit #1 single &quot;Never Gonna Give You Up&quot;
 
-Main inspiration: pokemon, animal crossing
+Main inspiration: pokemon, animal crossing, stardew valley
 
 - Title theme (adventurous)
 - Hub island theme (pokemon first town inspired)
 - First island theme (normal Pokémon/Animal Crossing inspired)
 - House theme (calm house RPG music)
 - Trivia game theme (upbeat)
-- Rhythm game theme (will use our own MIDI samples)
+- Rhythm game theme (we'll use our own MIDI samples)
 - Memory game theme (calm, helps focus)
 
 
