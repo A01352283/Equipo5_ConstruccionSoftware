@@ -9,7 +9,8 @@
 Particpants
 - Andrés Briseño Celada - A01352283
 - Salvador Salgado Normandia - A01422874
-- Ivan Rodriguez Cuevas - A01781284
+- Iván Rodríguez Cuevas - A01781284
+- Iwalani Amador Piaga - A01732251
 -
 ##
 ## _Index_
@@ -51,7 +52,11 @@ Particpants
 
 ### **Summary**
 
-This game has the objective of teaching the players different subjects about percussion instruments with the help of various minigames (trivia, rhythm, memory games)
+The primary concept of the game is to incentivize the players to learn about percussive instruments and their importance in music. Some of the ideas presented in the game are: identifying the different percussion instruments, notes, rhythms, and health practices. 
+
+By traveling through the islands and completing mini-games, the player will unlock various percussive instruments that open new paths to explore.
+
+The genre of the game is a pokemon-style RPG, divided into islands that represent sections to learn (health, note and sound recognition, instruments...) they will not be demanding in terms of the use of keys and agile movements with the mouse, addition to be friendly, interactive and intuitive for anyone who wants to learn about percussion. 
 
 ### **Gameplay**
 The gameplay is going to be divided into diferent kinds. The main one is going to be a Pokémon-like RPG exploration inside a tiled map, where the player explores diferent islands and interacts with NPC's and instruments. 
@@ -99,41 +104,65 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
 
 ### **Themes**
 
-1. Forest
+1. HUB Island
     1. Mood
-        1. Dark, calm, foreboding
+        1. Tropical, calm
   2. Objects
         1. _Ambient_
-            1. Fireflies
-            2. Beams of moonlight
-            3. Tall grass
+            1. Trees
+            2. Rocks
+            3. Sand
+            4. Buildings
+            5. Water
+            6. Grass
+            7. Fish
+            8.Lily pads
+            9. Birds
+            10. Bonfire
+            11. Dock
+            12. Waterfall
+            13. Jars
         2. _Interactive_
-            1. Wolves
-            2. Goblins
-            3. Rocks
-2. Castle
+            1. NPC's
+            2. Buildings
+            3. Obstacles (Birds)
+2. First Island
     1. Mood
-        1. Dangerous, tense, active
+        1. Calm, urban
     2. Objects
         1. _Ambient_
-            1. Rodents
-            2. Torches
-            3. Suits of armor
+            1. Roads
+            2. Buildings
+            3. Trees
+            4. Grass
+            5. Plants
+            6. Jars
+            7. Water
+            8. Birds
+            9. Books
+            10. Rocks
+            11. Crates
+            12. Pond
         2. _Interactive_
-            1. Guards
-            2. Giant rats
-            3. Chests
+            1. NPC's
+            2. Buildings
 
 
 ### **Game Flow**
 
-1. Player starts in the island hub
-2. Pond to the left, must move right
-3. To the right is a hill, player jumps to traverse it (&quot;jump&quot; taught)
-4. Player encounters castle - door&#39;s shut and locked
-5. There&#39;s a window within jump height, and a rock on the ground
-6. Player picks up rock and throws at glass (&quot;throw&quot; taught)
-7. … etc.
+1. Player starts in the island hub at the dock
+2. Must move foward to encounter the first NPC.
+3. Player talks to the NPC and the NPC tells him to go to the house to the left and enter it.
+4. Player walks foward, then to the left to encounter the house and enter it.
+5. Player talks to the NPC at the house, the NPC explains the percussion instruments and gives the player some drums ("Drums" acquired). Then the NPC tells him to go to the first percussion island located at the right.
+6. Player exits the house and walks to the right.
+7. Player encounters the first obstacle (birds at the dock) so the player must play the drums in order to clear the dock and keep moving foward.
+8. Player arrives to the first percussion island
+9. Player talks to the NPC that will explain him the basics of the island.
+10. Player moves to the right in order to get to the edge of the island.
+11. Player moves foward in order to encounter the music store.
+12. Player enters music store.
+13.
 
 _(example)_
 
@@ -245,6 +274,7 @@ Stylistically, what kind of sound effects are you looking for? Do you want to ex
     5. Glass Breaking
     6. Chest Opening
     7. Door Opening
+    8. Hits 
 2. Feedback
     1. Relieved &quot;Ahhhh!&quot; (health)
     2. Shocked &quot;Ooomph!&quot; (attacked)
