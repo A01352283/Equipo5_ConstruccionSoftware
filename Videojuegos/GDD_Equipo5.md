@@ -11,7 +11,7 @@ Particpants
 - Salvador Salgado Normandia - A01422874
 - Iván Rodríguez Cuevas - A01781284
 - Iwalani Amador Piaga - A01732251
--
+
 ##
 ## _Index_
 
@@ -56,7 +56,7 @@ The primary concept of the game is to incentivize the players to learn about per
 
 By traveling through the islands and completing mini-games, the player will unlock various percussive instruments that open new paths to explore.
 
-The genre of the game is a pokemon-style RPG, divided into islands that represent sections to learn (health, note and sound recognition, instruments...) they will not be demanding in terms of the use of keys and agile movements with the mouse, addition to be friendly, interactive and intuitive for anyone who wants to learn about percussion. 
+The genre of the game is a pokemon-style RPG, divided into islands that represent sections to learn (health, note and sound recognition, instruments...) they will not be demanding in terms of the use of keys and agile movements with the mouse, addition to be friendly, interactive and intuitive for anyone who wants to learn about percussion.
 
 ### **Gameplay**
 The gameplay is going to be divided into diferent kinds. The main one is going to be a Pokémon-like RPG exploration inside a tiled map, where the player explores diferent islands and interacts with NPC's and instruments. 
@@ -64,6 +64,14 @@ The gameplay is going to be divided into diferent kinds. The main one is going t
 Then, each island is going to have different kinds of minigames, such a trivia relating to information regarding percussion. Another one would be a rhythm game where the player has to play the right notes at the right time, and is scored depending on the precision, like Taiko no Tatsujin. 
 
 If time allows it, we would to a sound recognition game, where the player would first learn about the sounds of different instruments, and then is asked to recognize the instruments in different clips.
+
+### **Minigames**
+
+Trivia
+
+Memory Games (Identify sounds and notes)
+
+Rythm
 
 
 ### **Mindset**
@@ -82,6 +90,8 @@ What kind of mindset do you want to provoke in the player? Do you want them to f
     1. Inventory
     2. Trivia Game
     3. Rhythm game
+    4. Memory Game 
+    4. Main screen (map navigation)
 3. End Credits
 
 
@@ -116,7 +126,7 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
             5. Water
             6. Grass
             7. Fish
-            8.Lily pads
+            8. Lily pads
             9. Birds
             10. Bonfire
             11. Dock
@@ -162,9 +172,13 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
 10. Player moves to the right in order to get to the edge of the island.
 11. Player moves foward in order to encounter the music store.
 12. Player enters music store.
-13.
+13. Player talks to the NPC at the music store, the NPC explains the different sounds of percussion instruments.
+14. Player walks out of the music store, and explores the map in order to find a red house.
+15. Player moves foward in order to encounter the red house and enter it.
+16. Player talks to the NPC at the red house and plays the first mini game, where the player must recognize the different instruments sounds.
+17. Player is awarded a...
+18. Player walks out of the house 
 
-_(example)_
 
 ## _Development_
 
@@ -174,37 +188,28 @@ _(example)_
 
 1. BasePhysics
     1. BasePlayer
-    2. BaseEnemy
+    2. BaseNPC
     3. BaseObject
 2. BaseObstacle
 3. BaseInteractable
-
-_(example)_
 
 ### **Derived Classes / Component Compositions**
 
 1. BasePlayer
     1. PlayerMain
     2. PlayerUnlockable
-2. BaseEnemy
-    1. EnemyWolf
-    2. EnemyGoblin
-    3. EnemyGuard (may drop key)
-    4. EnemyGiantRat
-    5. EnemyPrisoner
+2. BaseNPC
+    1. KeyNPC
+    2. FillerNPC
 3. BaseObject
-    1. ObjectRock (pick-up-able, throwable)
-    2. ObjectChest (pick-up-able, throwable, spits gold coins with key)
-    3. ObjectGoldCoin (cha-ching!)
-    4. ObjectKey (pick-up-able, throwable)
+    1. ObjectInstrument (pick-up-able, playable, key item)
+    2. ObjectJournal (given by NPC, openable through inventory screen)
 4. BaseObstacle
-    1. ObstacleWindow (destroyed with rock)
-    2. ObstacleWall
-    3. ObstacleGate (watches to see if certain buttons are pressed)
+    1. ObstacleBirds (moved with first instrument)
+    2. ObstacleWall (includes houses, trees and other structures)
+    3. ObstacleWater (defines the bounds of the map)
 5. BaseInteractable
-    1. InteractableButton
-
-_(example)_
+    1. InteractableInstrument (non-pick-up-able, produces sound when interacted with)
 
 ## _Graphics_
 
@@ -249,12 +254,10 @@ Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), a
     3. Gate
     4. Button (matching Weathered Stone Bricks)
 
-_(example)_
-
 
 ## _Sounds/Music_
 
----
+--- 
 
 ### **Style Attributes**
 
@@ -281,7 +284,18 @@ Stylistically, what kind of sound effects are you looking for? Do you want to ex
     3. Happy chime (extra life)
     4. Sad chime (died)
 
-_(example)_
+Possible Musical notes:
+1. playable instrumets:
+    - Xilophone
+    - Marimba
+    - Bongo
+    - Tarola 
+2. Non-playable instruments:
+    - Triangle
+    - Gong
+    - Maracas or Castanets
+    - Tambourine
+    - Box 
 
 ### **Music Needed**
 
@@ -291,7 +305,15 @@ _(example)_
 4. Happy ending credits track
 5. Rick Astley&#39;s hit #1 single &quot;Never Gonna Give You Up&quot;
 
-_(example)_
+Main inspiration: pokemon, animal crossing
+
+- Title theme (adventurous)
+- Hub island theme (pokemon first town inspired)
+- First island theme (normal Pokémon/Animal Crossing inspired)
+- House theme (calm house RPG music)
+- Trivia game theme (upbeat)
+- Rhythm game theme (will use our own MIDI samples)
+- Memory game theme (calm, helps focus)
 
 
 ## _Schedule_
@@ -327,5 +349,3 @@ _(define the main activities and the expected dates when they should be finished
     3. mind the pacing, let the player play between lessons
 6. design sounds
 7. design music
-
-_(example)_
