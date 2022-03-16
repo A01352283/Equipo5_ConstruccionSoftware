@@ -341,34 +341,96 @@ Main inspiration: pokemon, animal crossing, stardew valley
 
 ## _Schedule_
 
----
+Estimated times 
 
-_(define the main activities and the expected dates when they should be finished. This is only a reference, and can change as the project is developed)_
+1. develop base classes   -  2 Days 
 
-1. develop base classes
-    1. base entity
-        1. base player
-        2. base enemy
-        3. base block
-  2. base app state
-        1. game world
-        2. menu world
-2. develop player and basic block classes
-    1. physics / collisions
-3. find some smooth controls/physics
-4. develop other derived classes
-    1. blocks
-        1. moving
-        2. falling
-        3. breaking
-        4. cloud
-    2. enemies
-        1. soldier
-        2. rat
-        3. etc.
-5. design levels
-    1. introduce motion/jumping
-    2. introduce throwing
-    3. mind the pacing, let the player play between lessons
-6. design sounds
-7. design music
+    1. Base Physics 
+    2. Base Player 
+    3. Base NPC 
+    4. Base Obstacle 
+    5. Base Interactable 
+       
+2. base app state  -- 2 Days 
+     1. Intoduction to the game (Explation) 
+     2. Hub (principal island) 
+     3. Secondary islands (activities) 
+           - Zone to learn, museum
+           - Memory and rhythm minigames
+      4.  Game state
+            - Start game 
+            - Game over 
+            - Game winner 
+3. develop player and basic block classes -- 5 Days 
+    1. BasePlayer
+       1. PlayerMain
+       2. PlayerUnlockable
+    2. BaseNPC
+       1. KeyNPC
+       2. FillerNPC
+    3. BaseObject
+       1. ObjectInstrument (pick-up-able, playable, key item)
+       2. ObjectJournal (given by NPC, openable through inventory screen)
+    4. BaseObstacle
+       1. ObstacleBirds (moved with first instrument)
+       2. ObstacleWall (includes houses, trees and other structures)
+       3. ObstacleWater (defines the bounds of the map)
+    5. BaseInteractable
+       1. InteractableInstrument (non-pick-up-able, produces sound when interacted with)
+4. find some smooth controls/physics  -- 5 Days 
+    1. Movement ("WASD")
+    2. Interaction with NPC´s 
+    3. Entering and leaving houese/rooms 
+    4. Return to the previus screen 
+   
+5. develop other derived classes  -- 5 Days 
+    1. Mini-games 
+        1.  memory 
+           - Select element 
+           - Generate sounds 
+           - Show notes 
+        2. Trivia
+          - Generate question 
+          - Select answer  
+          - Show qualification 
+        3. Rhythm
+          - Generate tone 
+          - Show notes 
+          - Determination of keys 
+          - Hits 
+     
+6. design levels -- 10 days 
+    1. Introduce movement in character 
+    2. Principal isaland (Hub) 
+    3. Introduction to game (Firts interaction with NPC´s) 
+    4. Interacting with structures (leaving and entering houses)
+    5. Interior designs of the first houses  
+    6. Interaction to the islands (effects and designs)
+    7. Crossing to other islands 
+    8. First obstacle 
+    9. Minigames in secondary island 
+    10. Others interactions with NPC´s 
+    11. Enemies blocking the way 
+    12. Instruments around the islands 
+    13. Generate inventary 
+    
+7. design sounds -- 3 Days 
+    1. Background sounds 
+        1. fire sounds
+        2. waves / water in motion 
+        3. bird sounds
+        4. air /tree movement 
+    2. Effects  
+       1. Collision (blocked structures) 
+       2. Winner game 
+       3. Game over 
+       4. Selection (in menu bar / instruments inventory)
+       5. Recolection of new item (sound of the new instrument) 
+
+8. design music  -- 3 Days 
+     1. Initial music
+     2. Island music (while the player is navigating the map)
+     3. Rooms music (inside the rooms) 
+     4. Mini-games musics
+        1. Memory (series of notes)
+        2. Rhythm (Percussion tones)
