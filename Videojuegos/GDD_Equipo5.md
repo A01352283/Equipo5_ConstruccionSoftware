@@ -181,14 +181,20 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
 14. Player walks out of the music store, and explores the map in order to find a red house (Player must move downward and to the left).
 15. Player moves upward in order to encounter the red house and enter it.
 16. Player talks to the NPC at the red house and plays the first mini game, where the player must recognize the different instruments sounds.
-17. Player is awarded a...
+17. Player is awarded a ...(still in development)... ("..." acquired).
 18. Player walks out of the house and moves down to the vegetable patch.
 19. Player talks to the NPC at the vegetable patch.
-20. Player plays the ... to help the vegetables grow.
+20. Player plays the ...(still in development)... to help the vegetables grow.
 21. Player talks again to the NPC and tells him to go to the blue house.
 22. Player moves upward and to the right, then downward, in order to encounter the blue house.
 23. Player enters the blue house.
 24. Player talks to the NPC and his final mini game at the island begins.
+25. Player plays the rythm game.
+26. Player talks to the NPC and gives him ...(still in development)... ("..." acquired).
+27. Player exits the house.
+28. Player moves upward and to the left.
+29. Player exits the island and comes back to the hub island.
+30. Player moves to the left and encounters the second obstacle.
 
 
 ## _Development_
