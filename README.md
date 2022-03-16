@@ -1,6 +1,10 @@
 # Equipo5_ConstruccionSoftware
 
 Repositorio para el proyecto del equipo 5 de Construcción de Software y Toma de Desiciones
+- Andrés Briseño Celada - A01352283
+- Salvador Salgado Normandia - A01422874
+- Iván Rodríguez Cuevas - A01781284
+- Iwalani Amador Piaga - A01732251
 
 ---
 
