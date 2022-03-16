@@ -217,11 +217,13 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
 
 ### **Style Attributes**
 
-What kinds of colors will you be using? Do you have a limited palette to work with? A post-processed HSV map/image? Consistency is key for immersion.
+For this game, we are using as primarly inspiration the classic Pokemon RPG games, which most of the time use vibrant and joyful colors. To truly make the esthetic of the game as consistent as possible, we are going to define specific colors on our sprites that must match in every section of the game.
 
-What kind of graphic style are you going for? Cartoony? Pixel-y? Cute? How, specifically? Solid, thick outlines with flat hues? Non-black outlines with limited tints/shades? Emphasize smooth curvatures over sharp angles? Describe a set of general rules depicting your style here.
+![](gametiles.jpeg)
 
-Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), are great for teaching the player how to play through trial and error, instead of scripting a lengthy tutorial. What kind of visual feedback are you going to use to let the player know they&#39;re interacting with something? That they \*can\* interact with something?
+Graphic-wise, we decided to create a 2D RPG pixel game. Not only this style will allow us to improve on other aspects of the game (minigames, soundtrack) but also provoke a relaxing gaming experience. 
+
+Most of the learning of percussion instruments will be in the various minigames. With that said, this section must be well developed to incentivize the players to keep learning and playing.
 
 ### **Graphics Needed**
 
@@ -261,11 +263,9 @@ Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), a
 
 ### **Style Attributes**
 
-Again, consistency is key. Define that consistency here. What kind of instruments do you want to use in your music? Any particular tempo, key? Influences, genre? Mood?
+The main objective of our game is to teach the players about the different types of percussion instruments and their importance in music. With this in mind, it is vital to include music that utilizes this type of instrument. The rhythm minigame will have various songs, in which percussion instruments are in the main spotlight. 
 
-Stylistically, what kind of sound effects are you looking for? Do you want to exaggerate actions with lengthy, cartoony sounds (e.g. mario&#39;s jump), or use just enough to let the player know something happened (e.g. mega man&#39;s landing)? Going for realism? You can use the music style as a bit of a reference too.
-
- Remember, auditory feedback should stand out from the music and other sound effects so the player hears it well. Volume, panning, and frequency/pitch are all important aspects to consider in both music _and_ sounds - so plan accordingly!
+For the background music played while the player explores the map, we are going to use songs that resemble the relaxing atmosphere of the famous game Animal Crossing.
 
 ### **Sounds Needed**
 
