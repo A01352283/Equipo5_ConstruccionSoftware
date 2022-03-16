@@ -182,7 +182,10 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
 15. Player moves foward in order to encounter the red house and enter it.
 16. Player talks to the NPC at the red house and plays the first mini game, where the player must recognize the different instruments sounds.
 17. Player is awarded a...
-18. Player walks out of the house 
+18. Player walks out of the house and moves down to the vegetable patch.
+19. Player talks to the NPC at the vegetable patch.
+20. Player plays the ... to help the vegetables grow.
+21. 
 
 
 ## _Development_
