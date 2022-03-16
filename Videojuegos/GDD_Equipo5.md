@@ -328,12 +328,6 @@ Possible Musical notes:
 
 ### **Music Needed**
 
-1. Slow-paced, nerve-racking &quot;forest&quot; track
-2. Exciting &quot;castle&quot; track
-3. Creepy, slow &quot;dungeon&quot; track
-4. Happy ending credits track
-5. Rick Astley&#39;s hit #1 single &quot;Never Gonna Give You Up&quot;
-
 Main inspiration: pokemon, animal crossing, stardew valley
 
 - Title theme (adventurous)
