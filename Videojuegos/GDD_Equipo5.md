@@ -263,11 +263,9 @@ Most of the learning of percussion instruments will be in the various minigames.
 
 ### **Style Attributes**
 
-Again, consistency is key. Define that consistency here. What kind of instruments do you want to use in your music? Any particular tempo, key? Influences, genre? Mood?
+The main objective of our game is to teach the players about the different types of percussion instruments and their importance in music. With this in mind, it is vital to include music that utilizes this type of instrument. The rhythm minigame will have various songs, in which percussion instruments are in the main spotlight. 
 
-Stylistically, what kind of sound effects are you looking for? Do you want to exaggerate actions with lengthy, cartoony sounds (e.g. mario&#39;s jump), or use just enough to let the player know something happened (e.g. mega man&#39;s landing)? Going for realism? You can use the music style as a bit of a reference too.
-
- Remember, auditory feedback should stand out from the music and other sound effects so the player hears it well. Volume, panning, and frequency/pitch are all important aspects to consider in both music _and_ sounds - so plan accordingly!
+For the background music played while the player explores the map, we are going to use songs that resemble the relaxing atmosphere of the famous game Animal Crossing.
 
 ### **Sounds Needed**
 
