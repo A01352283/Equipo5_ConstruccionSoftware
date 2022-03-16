@@ -102,7 +102,7 @@ Movement is determined by 'W','A','S','D'. You can interact with NPC's by pressi
 
 The pause menu is opened with the escape key, it's navigated with 'W','A','S','D', things are selected with 'I' and you go back with 'O'. The trivia and memory games are played with those same controls.
 
-_(Controls for the rhythm game are TBD)_
+_(Controls for the rhythm game are TBD) The idea is to use the A and D keys to hit the notes_
 
 ### **Mechanics**
 
