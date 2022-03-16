@@ -194,7 +194,7 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
 27. Player exits the house.
 28. Player moves upward and to the left.
 29. Player exits the island and comes back to the hub island.
-30. Player moves to the left and encounters the second obstacle.
+30. Player moves to the left and encounters the second obstacle (still in development).
 
 
 ## _Development_
