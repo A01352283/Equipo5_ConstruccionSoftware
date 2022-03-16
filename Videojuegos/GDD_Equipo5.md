@@ -166,26 +166,29 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
 ### **Game Flow**
 
 1. Player starts in the island hub at the dock
-2. Must move foward to encounter the first NPC.
+2. Must move upward to encounter the first NPC.
 3. Player talks to the NPC and the NPC tells him to go to the house to the left and enter it.
-4. Player walks foward, then to the left to encounter the house and enter it.
+4. Player moves upward, then to the left to encounter the house and enter it.
 5. Player talks to the NPC at the house, the NPC explains the percussion instruments and gives the player some drums ("Drums" acquired). Then the NPC tells him to go to the first percussion island located at the right.
 6. Player exits the house and walks to the right.
 7. Player encounters the first obstacle (birds at the dock) so the player must play the drums in order to clear the dock and keep moving foward.
 8. Player arrives to the first percussion island
 9. Player talks to the NPC that will explain him the basics of the island.
 10. Player moves to the right in order to get to the edge of the island.
-11. Player moves foward in order to encounter the music store.
+11. Player moves upward in order to encounter the music store.
 12. Player enters music store.
 13. Player talks to the NPC at the music store, the NPC explains the different sounds of percussion instruments.
-14. Player walks out of the music store, and explores the map in order to find a red house.
-15. Player moves foward in order to encounter the red house and enter it.
+14. Player walks out of the music store, and explores the map in order to find a red house (Player must move downward and to the left).
+15. Player moves upward in order to encounter the red house and enter it.
 16. Player talks to the NPC at the red house and plays the first mini game, where the player must recognize the different instruments sounds.
 17. Player is awarded a...
 18. Player walks out of the house and moves down to the vegetable patch.
 19. Player talks to the NPC at the vegetable patch.
 20. Player plays the ... to help the vegetables grow.
-21. 
+21. Player talks again to the NPC and tells him to go to the blue house.
+22. Player moves upward and to the right, then downward, in order to encounter the blue house.
+23. Player enters the blue house.
+24. Player talks to the NPC and his final mini game at the island begins.
 
 
 ## _Development_
