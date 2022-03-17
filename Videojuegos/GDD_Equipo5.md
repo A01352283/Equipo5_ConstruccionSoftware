@@ -168,15 +168,26 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
             1. NPC's
             2. Buildings
 
-3. Mini Games
+3. Rythm Mini Game
     1. Mood
         1. Tropical, calm
     2. Objects
         1. Ambient
-            1. music sheet
-            2. background image
+            1. Music sheet
+            2. Background image
         2. Interactive
             1. Rythm arrows
+     
+
+3. Memory Mini Game
+    1. Mood
+        1. Tropical, calm
+    2. Objects
+        1. Ambient
+            1. Background image
+        2. Interactive
+            1. Instrument image
+            2. Instrument sound
 
 ### **Game Flow**
 
