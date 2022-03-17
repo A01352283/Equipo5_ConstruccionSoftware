@@ -108,18 +108,16 @@ _(Controls for the rhythm game are TBD) The idea is to use the A and D keys to h
 
 ### **Mechanics**
 
-*DE TODO LOS MINIJUEGOS 
-A donde te puedes mover
-Interacciones (IWALANI)*
-
 - General mechanics:
     - The player can to move in the four cardinal points. 
     - When the player gets near a building it can enter the building.
     - Also when the player is near an NPC you can talk to it.
     - If an obstacle blocks the way but the challenge has not been solved, you cannot proceed to the next island.
     - You can interact with obstacles so they can move out the way.
-    - Can be interacted with randomly placed instruments within the island. 
+    - Can be interacted with randomly placed instruments within the island.
+    - If there are no obstacles on the bridges, the player can move to other islands. 
     - Instruments found on the island can be stored in the inventory.
+    - Can be interacted with randomly placed instruments within the island. 
     - You can select instruments from the inventory to see their information or listen to their sound.
     - There are non-interactive objects that block the way (structures, end of the island, trees, rocks...).
 
@@ -417,7 +415,7 @@ Estimated times
     5. Base Interactable 
        
 2. base app state  -- 2 Days 
-     1. Intoduction to the game (Explation) 
+     1. Intoduction to the game (Explation-title screen) 
      2. Hub (principal island) 
      3. Secondary islands (activities) 
            - Zone to learn, museum
@@ -426,6 +424,7 @@ Estimated times
             - Start game 
             - Game over 
             - Game winner 
+            - Credits game
 3. develop player and basic block classes -- 5 Days 
     1. BasePlayer
        1. PlayerMain
@@ -446,7 +445,12 @@ Estimated times
     1. Movement ("WASD")
     2. Interaction with NPC´s 
     3. Entering and leaving houese/rooms 
-    4. Return to the previus screen 
+    4. Return to the previus screen
+    5. Interaction with mini games 
+    6. Interaction with instruments 
+    7. Inventory instrument selection inventory 
+    9. Indentifiy keys inside the minigames  
+    10. Obstacles blocking the way to the islands 
    
 5. develop other derived classes  -- 5 Days 
     1. Mini-games 
@@ -485,17 +489,35 @@ Estimated times
         2. waves / water in motion 
         3. bird sounds
         4. air /tree movement 
+        5. Chest Opening
+        6. Door Opening
+        7. Menu navigation (move and confirm)
+        8. Dialogue interaction (confirmation sounds) 
     2. Effects  
        1. Collision (blocked structures) 
-       2. Winner game 
-       3. Game over 
-       4. Selection (in menu bar / instruments inventory)
-       5. Recolection of new item (sound of the new instrument) 
+       2. Selection (in menu bar / instruments inventory)
+       3. Recolection of new item (sound of the new instrument)
+    3. Feedback
+        1. Happy chime (item get)
+        2. Progression success (ex. scaring birds)
+    4. Instruments notes
+        1. playable instrumets:
+            - Xilophone
+            - Marimba
+            - Bongo
+            - Snare 
+        2. Non-playable instruments:
+            - Triangle
+            - Gong
+            - Maracas or Castanets
+            - Tambourine
+            - Box 
 
 8. design music  -- 3 Days 
-     1. Initial music
+     1. Initial music (title music)
      2. Island music (while the player is navigating the map)
      3. Rooms music (inside the rooms) 
-     4. Mini-games musics
+     4. Credits music 
+     5. Mini-games musics
         1. Memory (series of notes)
         2. Rhythm (Percussion tones)
