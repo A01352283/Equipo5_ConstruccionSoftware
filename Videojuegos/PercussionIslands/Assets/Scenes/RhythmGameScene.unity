@@ -890,8 +890,8 @@ MonoBehaviour:
   inputDelayInMilliseconds: 0
   fileLocation: 2DrumsTest.mid
   noteTime: 1
-  noteSpawnY: 7
-  noteTapY: 0
+  noteSpawnX: 7
+  noteTapX: 0
 --- !u!4 &1554748409
 Transform:
   m_ObjectHideFlags: 0
