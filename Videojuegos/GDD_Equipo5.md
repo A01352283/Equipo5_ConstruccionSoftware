@@ -309,6 +309,8 @@ Most of the learning of percussion instruments will be in the various minigames.
 
 ### **Graphics Needed**
 
+Top down RPG
+
 1. Characters
     1. Human-like
         1. Main character (idle, walking, item get)
@@ -364,8 +366,37 @@ Most of the learning of percussion instruments will be in the various minigames.
     5. Roofs
     6. Market goods (food in crates, on the stands)
     7. Instruments (Interactibles and pick-up-ables)
+ 
+ Trivia mini game
+ 1. Dialogue boxes
+    1. Selection arrow
+    2. Box border
+    3. Text font
 
-*Minigames (Andres) 
+Memory game
+1. Memory tiles
+    1. Flipped tiles
+    2. Sound tile (Speaker icon)
+    3. Instrument tile (Icons for every instrument: xylophone, marimba, snare, congas, etc.)
+    4. Highlight border
+
+Rhythm game
+1. UI
+    1. Note lane
+    2. Success zone indicator
+    3. Point counter
+    4. Success/Fail text
+    5. Background
+2. Gameplay elements
+    1. Right note icon
+    2. Left note icon
+
+Main menu
+1. Start button
+2. Quit button
+3. Background
+4. Title logo
+
 
 ## _Sounds/Music_
 
