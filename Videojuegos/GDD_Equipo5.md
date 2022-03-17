@@ -73,7 +73,7 @@ If time allows it, we would to a sound recognition game, where the player would 
 
 ### **Mindset**
 
-What kind of mindset do you want to provoke in the player? Do you want them to feel powerful, or weak? Adventurous, or nervous? Hurried, or calm? How do you intend to provoke those emotions?
+(Mor info Salvador)
 
 When the player is navigating the map, we want to provoke a calming feeling, because of the island theme. We also want to make the player curious so they explore all the game has to offer.
 
@@ -102,9 +102,15 @@ Movement is determined by 'W','A','S','D'. You can interact with NPC's by pressi
 
 The pause menu is opened with the escape key, it's navigated with 'W','A','S','D', things are selected with 'I' and you go back with 'O'. The trivia and memory games are played with those same controls.
 
+*Especificar cada minigame (Salvador)
+
 _(Controls for the rhythm game are TBD) The idea is to use the A and D keys to hit the notes_
 
 ### **Mechanics**
+
+*DE TODO LOS MINIJUEGOS 
+A donde te puedes mover
+Interacciones (IWALANI)*
 
 - When the player gets near a building it can enter the building.
 - Also when the player is near an NPC you can talk to it.
@@ -122,7 +128,7 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
 1. HUB Island
     1. Mood
         1. Tropical, calm
-  2. Objects
+    2. Objects
         1. _Ambient_
             1. Trees
             2. Rocks
@@ -162,6 +168,8 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
             1. NPC's
             2. Buildings
 
+*MINIGAMES
+(Iván)
 
 ### **Game Flow**
 
@@ -209,6 +217,7 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
     3. BaseObject
 2. BaseObstacle
 3. BaseInteractable
+4. BaseInvetory
 
 ### **Derived Classes / Component Compositions**
 
@@ -300,6 +309,7 @@ Most of the learning of percussion instruments will be in the various minigames.
     6. Market goods (food in crates, on the stands)
     7. Instruments (Interactibles and pick-up-ables)
 
+*Minigames (Andres) 
 
 ## _Sounds/Music_
 
