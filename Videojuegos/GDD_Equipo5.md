@@ -67,15 +67,15 @@ If time allows it, we would to a sound recognition game, where the player would 
 
 ### **Minigames**
 
-- Trivia
+- Trivia (Learn important topics about percussion instruments)
 - Memory Games (Identify sounds and notes)
-- Rhythm
+- Rhythm Game (percussion instruments)
 
 ### **Mindset**
 
-(Mor info Salvador)
+One of the main goals of Percussion Island is to generate genuine interest of the player in learning more about percussion instruments. This is why we intend a Mindset of awe and joy of the player during gameplay that will provoke more interest in the learning aspect.
 
-When the player is navigating the map, we want to provoke a calming feeling, because of the island theme. We also want to make the player curious so they explore all the game has to offer.
+When the player is navigating the map, we want to provoke a calming feeling, because of the island theme. We also want to make the player curious so they explore all the game has to offer, from finding the different instruments as well as interacting with the NPC's.
 
 During the minigames, we want to pressure the player a little bit, because that's where they get tested on their knowledge.
 
@@ -102,9 +102,24 @@ Movement is determined by 'W','A','S','D'. You can interact with NPC's by pressi
 
 The pause menu is opened with the escape key, it's navigated with 'W','A','S','D', things are selected with 'I' and you go back with 'O'. The trivia and memory games are played with those same controls.
 
-*Especificar cada minigame (Salvador)
+**Trivia Mini-Game**
 
-_(Controls for the rhythm game are TBD) The idea is to use the A and D keys to hit the notes_
+The different answer options can be chosen with the arrow-keys. Once the player wants to confirm the answer the key "I" must be clicked.
+
+**Rythm Mini-Game**
+
+The game will count with two keys that have to be clicked depending on the notes displayed on the screen. More precision on the click will allow for more points. The idea is to use the A and D keys to hit the notes.
+
+**Memory Mini-Game**
+
+This game has similar mechanics as Trivia, in which the player can select the different cards with the arrow keys. Once the player wants to flip a specific card, he must click the "I" key. Once this occurs it may occur two actions:
+
+1. The card is a type "Sound", in that it will produce a specific instrument sound
+2. The card is a type "Visual", in which it will show an image of an instrument
+
+Once the player identifies the card, he needs to choose a new one that is its type equivalent.
+
+
 
 ### **Mechanics**
 
