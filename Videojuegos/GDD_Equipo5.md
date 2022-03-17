@@ -168,8 +168,15 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
             1. NPC's
             2. Buildings
 
-*MINIGAMES
-(Iván)
+3. Mini Games
+    1. Mood
+        1. Tropical, calm
+    2. Objects
+        1. Ambient
+            1. music sheet
+            2. background image
+        2. Interactive
+            1. Rythm arrows
 
 ### **Game Flow**
 
