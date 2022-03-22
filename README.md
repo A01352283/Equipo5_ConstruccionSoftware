@@ -16,3 +16,4 @@ Repositorio para el proyecto del equipo 5 de Construcción de Software y Toma de
 - Top down Pokémon-like RPG tutorials: https://www.youtube.com/playlist?list=PLLf84Zj7U26kfPQ00JVI2nIoozuPkykDX
 - Top down tileset: https://jamiebrownhill.itch.io/solaria-rural-village
 - MIDI editor: https://lmms.io/download#windows
+- Percussion Library: https://philharmonia.co.uk/resources/sound-samples/
