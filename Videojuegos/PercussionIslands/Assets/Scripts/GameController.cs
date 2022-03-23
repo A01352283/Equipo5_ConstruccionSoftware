@@ -7,10 +7,22 @@ public class GameController : MonoBehaviour
 {
     [SerializeField]
     private Sprite bgImage;
+
+    public Sprite[] puzzles;
+    public AudioClip[] sounds;
+
+    public List<Sprite> gamePuzzles = new List<Sprite>();
+    public List<AudioClip> gameSounds= new List<AudioClip>();
     public List<Button> btns = new List<Button>(); 
+
+    void Awake(){
+        puzzles= Resources.LoadAll<Sprite>("Instrument_Sprites");
+        sounds=Resources.LoadAll<AudioClip>("Sounds/Game1");
+    }
     void Start(){
         GetButtons();
         AddListeners();
+        AddGamePuzzles();
     }
     void GetButtons(){
         GameObject[] objects = GameObject.FindGameObjectsWithTag("PuzzleButton");
@@ -20,6 +32,26 @@ public class GameController : MonoBehaviour
             btns[i].image.sprite =bgImage;
         }
     }
+
+    void AddGamePuzzles(){
+        int looper = btns.Count;
+        int ind = 0;
+        for(int i=0; i<looper; i++){
+            if(ind==looper/2){
+                ind=0;
+            }
+            gamePuzzles.Add(puzzles[ind]);
+            ind++;
+        }
+    }
+    void AddPuzzleTags(){
+        int j;
+        for(int i=0; i<(gamePuzzles.Count/2);i++){
+            j=gamePuzzles.Count/2 + i;
+
+        }
+    }
+
 
     void AddListeners(){
         foreach (Button btn in btns){
