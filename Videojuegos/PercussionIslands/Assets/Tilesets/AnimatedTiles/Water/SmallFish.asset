@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
-  m_Name: WallTorch
+  m_Name: SmallFish
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: -2986917887184768362, guid: e028654025d698b46b4cc4f185b1952a, type: 3}
-  - {fileID: 4260323979706752440, guid: e028654025d698b46b4cc4f185b1952a, type: 3}
-  - {fileID: -6834922884897436065, guid: e028654025d698b46b4cc4f185b1952a, type: 3}
-  - {fileID: 360076710239666019, guid: e028654025d698b46b4cc4f185b1952a, type: 3}
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  - {fileID: 5703000308533531959, guid: 8d73bff08cc597148b8a6f3dde765d59, type: 3}
+  - {fileID: 5831791613253142058, guid: 8d73bff08cc597148b8a6f3dde765d59, type: 3}
+  - {fileID: -7351914685430520785, guid: 8d73bff08cc597148b8a6f3dde765d59, type: 3}
+  - {fileID: -6743188076164475182, guid: 8d73bff08cc597148b8a6f3dde765d59, type: 3}
+  m_MinSpeed: 3
+  m_MaxSpeed: 4
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 0
