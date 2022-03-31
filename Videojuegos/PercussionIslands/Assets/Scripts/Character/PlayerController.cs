@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     //Movement variables
     public float moveSpeed;
     public LayerMask solidObjectsLayer;
+    public LayerMask interactableLayer;
 
     private bool isMoving;
     private Vector2 input;
@@ -45,6 +46,10 @@ public class PlayerController : MonoBehaviour
 
         animator.SetBool("isMoving", isMoving);
 
+        if (Input.GetKeyDown(KeyCode.I) | Input.GetKeyDown(KeyCode.Z)){
+            Interact();
+        }
+
     }
 
     //Move the player
@@ -63,10 +68,23 @@ public class PlayerController : MonoBehaviour
     //Checks if the objective is an obstacle to determine if the player can move there
     private bool IsWalkable(Vector3 targetPos){
 
-        if (Physics2D.OverlapCircle(targetPos, 0.3f, solidObjectsLayer) != null){ //Checks if the collider overlaps with a circular area and checks if it is in the solid object layer
+        if (Physics2D.OverlapCircle(targetPos, 0.3f, solidObjectsLayer | interactableLayer) != null){ //Checks if the collider overlaps with a circular area and checks if it is in the solid object layer
             return false;
         }
 
         return true;
     }
+
+    //Reusable interaction system
+    void Interact(){
+        var faceingDir = new Vector3(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
+        var interactPos = transform.position + faceingDir;
+
+        var collider = Physics2D.OverlapCircle(interactPos, 0.3f, interactableLayer);
+        if (collider != null){
+            collider.GetComponent<Interactable>()?.Interact();
+        }
+        
+    }
 }
+
