@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
     public bool firstGuess, secondGuess; 
 
     private int countGuesses;
+    int mult= 10;
+    int score= 0;
     private int countCorrectGuesses;
     private int gameGuesses;
     private int firstGuessIndex, secondGuessIndex;
@@ -98,16 +100,21 @@ public class GameController : MonoBehaviour
     IEnumerator CheckIfThePuzzleMatch(){
         yield return new WaitForSeconds(1f);
         if(firstGuessPuzzle==secondGuessPuzzle){
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(1f);
             btns[firstGuessIndex].interactable = false;
             btns[secondGuessIndex].interactable = false;
 
             btns[firstGuessIndex].image.color = new Color(0,0,0,0);
             btns[secondGuessIndex].image.color = new Color(0,0,0,0);
 
+            //SUM Score
+            score+=mult;
+            mult = mult+(mult*1);
+            count_guess.text=(score).ToString();
             CheckIfTheGameIsFinished();
         }else{
-            yield return new WaitForSeconds(.5f);
+            mult=10;
+            yield return new WaitForSeconds(1f);
             btns[firstGuessIndex].image.sprite = bgImage;
             btns[secondGuessIndex].image.sprite = bgImage;
         }
@@ -118,7 +125,6 @@ public class GameController : MonoBehaviour
 
     void CheckIfTheGameIsFinished(){
         countCorrectGuesses++;
-        count_guess.text=countCorrectGuesses.ToString();
         if(countCorrectGuesses == gameGuesses){
             Debug.Log("Game Finished");
             Debug.Log("It took you" + countGuesses + " many guesses to finish the game");
