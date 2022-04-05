@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
-  m_Name: Campfire
+  m_Name: RDWaterEdgeDarkGray
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: -4120509876593446050, guid: e028654025d698b46b4cc4f185b1952a, type: 3}
-  - {fileID: 5890557977254331148, guid: e028654025d698b46b4cc4f185b1952a, type: 3}
-  - {fileID: 6195764467763746390, guid: e028654025d698b46b4cc4f185b1952a, type: 3}
-  - {fileID: -2823752510470343332, guid: e028654025d698b46b4cc4f185b1952a, type: 3}
-  m_MinSpeed: 4
-  m_MaxSpeed: 4
+  - {fileID: -1126147245726486135, guid: 8d73bff08cc597148b8a6f3dde765d59, type: 3}
+  - {fileID: -1047812076358087982, guid: 8d73bff08cc597148b8a6f3dde765d59, type: 3}
+  - {fileID: 875012297066081242, guid: 8d73bff08cc597148b8a6f3dde765d59, type: 3}
+  - {fileID: -4352263829590583343, guid: 8d73bff08cc597148b8a6f3dde765d59, type: 3}
+  m_MinSpeed: 2
+  m_MaxSpeed: 2
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
-  m_TileColliderType: 0
+  m_TileColliderType: 2
