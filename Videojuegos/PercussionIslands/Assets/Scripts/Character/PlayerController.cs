@@ -4,25 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //Movement variables
-    public float moveSpeed;
-    public LayerMask solidObjectsLayer;
-    public LayerMask interactableLayer;
-
-    private bool isMoving;
     private Vector2 input;
 
-    private Animator animator;
+    private Character character;
 
     private void Awake() {
-        animator = GetComponent<Animator>();
+        character = GetComponent<Character>();
     }
 
     // Update is called once per frame
-    void Update()
+    public void HandleUpdate()
     {   
         //When the player is not moving, take movement input from the player
-        if (!isMoving){
+        if (!character.isMoving){
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
@@ -31,20 +25,11 @@ public class PlayerController : MonoBehaviour
         
             //If we got player input indicate where the player will move
             if (input != Vector2.zero){
-                animator.SetFloat("moveX", input.x);
-                animator.SetFloat("moveY", input.y);
-
-                var targetPos = transform.position;
-                targetPos.x += input.x;
-                targetPos.y += input.y;
-
-                if (IsWalkable(targetPos)){
-                    StartCoroutine(Move(targetPos));
-                }
+                StartCoroutine(character.Move(input));
             }
         }
 
-        animator.SetBool("isMoving", isMoving);
+        character.HandleUpdate();
 
         if (Input.GetKeyDown(KeyCode.I) | Input.GetKeyDown(KeyCode.Z)){
             Interact();
@@ -52,37 +37,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    //Move the player
-    IEnumerator Move(Vector3 targetPos){
-        isMoving = true;
-
-        while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon){ //Whle the current position and the target position are bigger than a really small value
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime); //Moves the player a small amount
-            yield return null; //Stops the current execution, to resume it in the next update
-        }
-        transform.position = targetPos; //Updates the current position
-
-        isMoving = false;
-    }
-
-    //Checks if the objective is an obstacle to determine if the player can move there
-    private bool IsWalkable(Vector3 targetPos){
-
-        if (Physics2D.OverlapCircle(targetPos, 0.3f, solidObjectsLayer | interactableLayer) != null){ //Checks if the collider overlaps with a circular area and checks if it is in the solid object layer
-            return false;
-        }
-
-        return true;
-    }
-
     //Reusable interaction system
     void Interact(){
-        var faceingDir = new Vector3(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
+        var faceingDir = new Vector3(character.Animator.MoveX, character.Animator.MoveY);
         var interactPos = transform.position + faceingDir;
 
-        var collider = Physics2D.OverlapCircle(interactPos, 0.3f, interactableLayer);
+        var collider = Physics2D.OverlapCircle(interactPos, 0.3f, GameLayers.i.InteractableLayer);
         if (collider != null){
-            collider.GetComponent<Interactable>()?.Interact();
+            collider.GetComponent<Interactable>()?.Interact(transform);
         }
         
     }
