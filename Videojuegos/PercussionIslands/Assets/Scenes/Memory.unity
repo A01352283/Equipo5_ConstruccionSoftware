@@ -318,7 +318,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 540a92a5d1c5bb14aaab09080ea716c1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.102
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -826,7 +826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgImage: {fileID: 21300000, guid: 83b107fc467ecf04e831096524260545, type: 3}
-  image_d: {fileID: 21300000, guid: ed2ead19bd69d084c8d54c57f3c62987, type: 3}
+  image_d: {fileID: 21300000, guid: fdf15e718f8852e449e04d4455858cf4, type: 3}
   puzzles: []
   sounds: []
   gamePuzzles: []
