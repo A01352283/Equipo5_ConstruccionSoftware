@@ -118,6 +118,7 @@ public class GameController : MonoBehaviour
 
     void CheckIfTheGameIsFinished(){
         countCorrectGuesses++;
+        count_guess.text=countCorrectGuesses.ToString();
         if(countCorrectGuesses == gameGuesses){
             Debug.Log("Game Finished");
             Debug.Log("It took you" + countGuesses + " many guesses to finish the game");
