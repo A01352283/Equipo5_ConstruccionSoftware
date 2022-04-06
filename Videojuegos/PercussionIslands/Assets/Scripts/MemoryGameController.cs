@@ -7,9 +7,8 @@ public class MemoryGameController : MonoBehaviour
 {
     [SerializeField]
     private Sprite bgImage;
+
     private AudioSource audio_s;
-    public AudioClip corr;
-    public AudioClip incorr;
     public Sprite image_d;
     public Sprite[] puzzles;
     public AudioClip[] sounds;
@@ -31,7 +30,6 @@ public class MemoryGameController : MonoBehaviour
     private int firstGuessIndex, secondGuessIndex;
     private int firstGuessPuzzle, secondGuessPuzzle;
     public Text count_guess;
-    public Text inst_name;
 
     public MemoryGameOverScreen MemoryGameOverScreen;
     public void GameOver(){
@@ -87,7 +85,6 @@ public class MemoryGameController : MonoBehaviour
             }
             else{
                 btns[firstGuessIndex].image.sprite= image_d;
-                inst_name.text="Sound Card";
                 audio_s.clip= cards[firstGuessIndex].snd;
                 audio_s.Play();
             }
@@ -123,6 +120,7 @@ public class MemoryGameController : MonoBehaviour
             yield return new WaitForSeconds(.8f);
             btns[firstGuessIndex].interactable = false;
             btns[secondGuessIndex].interactable = false;
+
             btns[firstGuessIndex].image.color = new Color(0,0,0,0);
             btns[secondGuessIndex].image.color = new Color(0,0,0,0);
 
