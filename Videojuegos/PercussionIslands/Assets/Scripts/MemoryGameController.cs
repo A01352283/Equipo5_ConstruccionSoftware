@@ -14,7 +14,7 @@ public class MemoryGameController : MonoBehaviour
     public Sprite[] puzzles;
     public AudioClip[] sounds;
 
-    private string[] instrumnent_name={"Agogo Bells","Banana Shaker", "Bass Drum", "Bell Tree", "Cabasa", "Castanets", "Chinese Cymbal", "Chines Hand Cymbals","Clash Cymbals"};
+    private string[] instrumnent_name={"Agogo Bells","Banana Shaker", "Bass Drum", "Bell Tree", "Cabasa", "Castanets", "Chinese Cymbal", "Chinese Hand Cymbals","Clash Cymbals","Agogo Bells","Banana Shaker", "Bass Drum", "Bell Tree", "Cabasa", "Castanets", "Chinese Cymbal", "Chinese Hand Cymbals","Clash Cymbals"};
 
     public List<Card> cards = new List<Card>();
     public List<Sprite> gamePuzzles = new List<Sprite>();
@@ -33,6 +33,11 @@ public class MemoryGameController : MonoBehaviour
     public Text count_guess;
     public Text inst_name;
 
+    public MemoryGameOverScreen MemoryGameOverScreen;
+    public void GameOver(){
+        MemoryGameOverScreen.Setup(score);
+    }
+
 
     void Awake(){
         puzzles= Resources.LoadAll<Sprite>("Instrument_Sprites");
@@ -45,6 +50,7 @@ public class MemoryGameController : MonoBehaviour
         Shuffle(cards);
         gameGuesses= cards.Count/2;
         audio_s=GetComponent<AudioSource>();
+        inst_name.text="Select Card";
     }
     void GetButtons(){
         GameObject[] objects = GameObject.FindGameObjectsWithTag("PuzzleButton");
@@ -77,7 +83,7 @@ public class MemoryGameController : MonoBehaviour
             firstGuessPuzzle= cards[firstGuessIndex].id;
             if (cards[firstGuessIndex].isImage){   
                 btns[firstGuessIndex].image.sprite= cards[firstGuessIndex].img;
-                inst_name.text=instrumnent_name[firstGuessIndex];
+                inst_name.text=instrumnent_name[firstGuessPuzzle];
             }
             else{
                 btns[firstGuessIndex].image.sprite= image_d;
@@ -85,6 +91,8 @@ public class MemoryGameController : MonoBehaviour
                 audio_s.clip= cards[firstGuessIndex].snd;
                 audio_s.Play();
             }
+            //ojo
+             btns[firstGuessIndex].enabled = false;
         } else if(!secondGuess){
             secondGuess = true;
             secondGuessIndex= int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
@@ -92,11 +100,15 @@ public class MemoryGameController : MonoBehaviour
             btns[secondGuessIndex].image.sprite= cards[secondGuessIndex].img;
             if (cards[secondGuessIndex].isImage){   
                 btns[secondGuessIndex].image.sprite= cards[secondGuessIndex].img;
+                inst_name.text=instrumnent_name[secondGuessPuzzle];
             }
             else{
                 btns[secondGuessIndex].image.sprite= image_d;
                 audio_s.clip= cards[secondGuessIndex].snd;
+                inst_name.text="Sound Card";
                 audio_s.Play();
+            //ojo
+             btns[secondGuessIndex].enabled = false;
             }
             countGuesses++;
             StartCoroutine(CheckIfThePuzzleMatch());
@@ -104,11 +116,11 @@ public class MemoryGameController : MonoBehaviour
     }
 
     IEnumerator CheckIfThePuzzleMatch(){
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.3f);
         if(firstGuessPuzzle==secondGuessPuzzle){
             audio_s.clip=corr;
             audio_s.Play();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.8f);
             btns[firstGuessIndex].interactable = false;
             btns[secondGuessIndex].interactable = false;
             btns[firstGuessIndex].image.color = new Color(0,0,0,0);
@@ -118,23 +130,28 @@ public class MemoryGameController : MonoBehaviour
             score+=mult;
             mult = mult+(mult*1);
             count_guess.text=(score).ToString();
+            inst_name.text="Select Card";
             CheckIfTheGameIsFinished();
         }else{
+            mult=10;
+            yield return new WaitForSeconds(.6f);
             audio_s.clip=incorr;
             audio_s.Play();
-            mult=10;
-            yield return new WaitForSeconds(1f);
+            btns[firstGuessIndex].enabled = true;
+            btns[secondGuessIndex].enabled = true;
             btns[firstGuessIndex].image.sprite = bgImage;
             btns[secondGuessIndex].image.sprite = bgImage;
+            inst_name.text="Select Card";
         }
         //Reset guesses
-         yield return new WaitForSeconds(.5f);
+         yield return new WaitForSeconds(.4f);
          firstGuess = secondGuess = false;
     }
 
     void CheckIfTheGameIsFinished(){
         countCorrectGuesses++;
         if(countCorrectGuesses == gameGuesses){
+            GameOver();
             Debug.Log("Game Finished");
             Debug.Log("It took you" + countGuesses + " many guesses to finish the game");
         }
