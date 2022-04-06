@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameController : MonoBehaviour
+public class MemoryGameController : MonoBehaviour
 {
     [SerializeField]
     private Sprite bgImage;
