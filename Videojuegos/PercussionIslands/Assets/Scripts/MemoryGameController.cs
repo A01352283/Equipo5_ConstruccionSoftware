@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameController : MonoBehaviour
+public class MemoryGameController : MonoBehaviour
 {
     [SerializeField]
     private Sprite bgImage;
-
     private AudioSource audio_s;
+    public AudioClip corr;
+    public AudioClip incorr;
     public Sprite image_d;
     public Sprite[] puzzles;
     public AudioClip[] sounds;
+
+    private string[] instrumnent_name={"Agogo Bells","Banana Shaker", "Bass Drum", "Bell Tree", "Cabasa", "Castanets", "Chinese Cymbal", "Chines Hand Cymbals","Clash Cymbals"};
 
     public List<Card> cards = new List<Card>();
     public List<Sprite> gamePuzzles = new List<Sprite>();
@@ -28,6 +31,7 @@ public class GameController : MonoBehaviour
     private int firstGuessIndex, secondGuessIndex;
     private int firstGuessPuzzle, secondGuessPuzzle;
     public Text count_guess;
+    public Text inst_name;
 
 
     void Awake(){
@@ -73,9 +77,11 @@ public class GameController : MonoBehaviour
             firstGuessPuzzle= cards[firstGuessIndex].id;
             if (cards[firstGuessIndex].isImage){   
                 btns[firstGuessIndex].image.sprite= cards[firstGuessIndex].img;
+                inst_name.text=instrumnent_name[firstGuessIndex];
             }
             else{
                 btns[firstGuessIndex].image.sprite= image_d;
+                inst_name.text="Sound Card";
                 audio_s.clip= cards[firstGuessIndex].snd;
                 audio_s.Play();
             }
@@ -100,10 +106,11 @@ public class GameController : MonoBehaviour
     IEnumerator CheckIfThePuzzleMatch(){
         yield return new WaitForSeconds(1f);
         if(firstGuessPuzzle==secondGuessPuzzle){
+            audio_s.clip=corr;
+            audio_s.Play();
             yield return new WaitForSeconds(1f);
             btns[firstGuessIndex].interactable = false;
             btns[secondGuessIndex].interactable = false;
-
             btns[firstGuessIndex].image.color = new Color(0,0,0,0);
             btns[secondGuessIndex].image.color = new Color(0,0,0,0);
 
@@ -113,6 +120,8 @@ public class GameController : MonoBehaviour
             count_guess.text=(score).ToString();
             CheckIfTheGameIsFinished();
         }else{
+            audio_s.clip=incorr;
+            audio_s.Play();
             mult=10;
             yield return new WaitForSeconds(1f);
             btns[firstGuessIndex].image.sprite = bgImage;
