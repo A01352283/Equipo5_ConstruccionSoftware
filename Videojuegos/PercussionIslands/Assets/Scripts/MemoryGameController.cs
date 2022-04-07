@@ -11,8 +11,8 @@ public class MemoryGameController : MonoBehaviour
     public AudioClip corr;
     public AudioClip incorr;
 
-    [SerializeField] Image correct;
-    [SerializeField] Image incorrect;
+    [SerializeField] GameObject correct;
+    [SerializeField] GameObject incorrect;
     public Sprite image_d;
     public Sprite[] puzzles;
     public AudioClip[] sounds;
@@ -119,11 +119,13 @@ public class MemoryGameController : MonoBehaviour
     }
 
     IEnumerator CheckIfThePuzzleMatch(){
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(1f);
         if(firstGuessPuzzle==secondGuessPuzzle){
             audio_s.clip=corr;
             audio_s.Play();
+            correct.SetActive(true);
             yield return new WaitForSeconds(.8f);
+            correct.SetActive(false);
             btns[firstGuessIndex].interactable = false;
             btns[secondGuessIndex].interactable = false;
             btns[firstGuessIndex].image.color = new Color(0,0,0,0);
@@ -137,9 +139,12 @@ public class MemoryGameController : MonoBehaviour
             CheckIfTheGameIsFinished();
         }else{
             mult=10;
-            yield return new WaitForSeconds(.6f);
+            yield return new WaitForSeconds(1f);
             audio_s.clip=incorr;
             audio_s.Play();
+            incorrect.SetActive(true);
+            yield return new WaitForSeconds(.8f);
+            incorrect.SetActive(false);
             btns[firstGuessIndex].enabled = true;
             btns[secondGuessIndex].enabled = true;
             btns[firstGuessIndex].image.sprite = bgImage;
