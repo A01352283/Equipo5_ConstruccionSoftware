@@ -10,6 +10,9 @@ public class MemoryGameController : MonoBehaviour
     private AudioSource audio_s;
     public AudioClip corr;
     public AudioClip incorr;
+
+    [SerializeField] Image correct;
+    [SerializeField] Image incorrect;
     public Sprite image_d;
     public Sprite[] puzzles;
     public AudioClip[] sounds;
