@@ -64,3 +64,27 @@ create table scores (
     CONSTRAINT `fk_scores_rhythm` FOREIGN KEY (rhythm_id) REFERENCES rhythm_game (rhythm_id) ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT `fk_scores_memorysounds` FOREIGN KEY (memorysounds_id) REFERENCES memorysounds_game (memorysounds_id) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table hub (
+	hub_id smallint unsigned not null auto_increment,
+    xilophone boolean,
+    marimba boolean,
+    bongo boolean,
+    primary key (hub_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table island1(
+	island1_id smallint unsigned not null auto_increment,
+    snare boolean,
+    triangle boolean,
+    gong boolean,
+    primary key (island1_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table island2(
+	island2_id smallint unsigned not null auto_increment,
+    maracas boolean,
+    tamborine boolean,
+    box boolean,
+    primary key (island2_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
