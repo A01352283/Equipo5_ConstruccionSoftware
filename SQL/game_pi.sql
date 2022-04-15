@@ -51,3 +51,16 @@ create table questions (
     answer_4 varchar(50) not null,
     primary key (question_id)
 )   ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table scores (
+	score_id smallint unsigned not null auto_increment,
+    memory_id smallint not null,
+    trivia_id smallint not null,
+    rhythm_id smallint not null,
+    memorysounds_id smallint not null,
+    primary key (score_id),
+    CONSTRAINT `fk_scores_memory` FOREIGN KEY (memory_id) REFERENCES memory_game (memory_id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT `fk_scores_trivia` FOREIGN KEY (trivia_id) REFERENCES trivia_game (trivia_id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT `fk_scores_rhythm` FOREIGN KEY (rhythm_id) REFERENCES rhythm_game (rhythm_id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT `fk_scores_memorysounds` FOREIGN KEY (memorysounds_id) REFERENCES memorysounds_game (memorysounds_id) ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
