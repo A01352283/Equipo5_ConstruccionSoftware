@@ -67,24 +67,42 @@ create table scores (
 
 create table hub (
 	hub_id smallint unsigned not null auto_increment,
-    xilophone boolean,
-    marimba boolean,
-    bongo boolean,
+    xilophone boolean not null,
+    marimba boolean not null,
+    bongo boolean not null,
     primary key (hub_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 create table island1(
 	island1_id smallint unsigned not null auto_increment,
-    snare boolean,
-    triangle boolean,
-    gong boolean,
+    snare boolean not null,
+    triangle boolean not null,
+    gong boolean not null,
     primary key (island1_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 create table island2(
 	island2_id smallint unsigned not null auto_increment,
-    maracas boolean,
-    tamborine boolean,
-    box boolean,
+    maracas boolean not null,
+    tamborine boolean not null,
+    box boolean not null,
     primary key (island2_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+create table memory_game (
+	memory_id smallint unsigned not null auto_increment,
+    best_score smallint not null,
+    time_played time not null,
+    last_score smallint not null,
+    primary key (memory_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table rhythm_game (
+	rhythm_id smallint unsigned not null auto_increment,
+    best_score smallint not null,
+    time_played time not null,
+    last_score smallint not null,
+    primary key (rhythm_id)
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
