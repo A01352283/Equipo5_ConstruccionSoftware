@@ -106,3 +106,26 @@ create table rhythm_game (
     primary key (rhythm_id)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+create table memorysounds_game (
+	memorysound_id smallint unsigned not null auto_increment,
+    best_score smallint not null,
+	time_played time,
+    last_score smallint,
+    primary key (memorysound_id)
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table trivia_game (
+	trivia_id smallint unsigned not null auto_increment,
+    best_score smallint not null,
+	time_played time,
+    last_score smallint,
+    primary key (trivia_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table rhythm_game (
+	rhythm_id smallint unsigned not null auto_increment,
+    best_score smallint not null,
+	time_played time,
+    last_score smallint,
+    primary key (rhythm_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
