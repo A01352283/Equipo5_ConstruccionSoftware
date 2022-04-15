@@ -64,3 +64,68 @@ create table scores (
     CONSTRAINT `fk_scores_rhythm` FOREIGN KEY (rhythm_id) REFERENCES rhythm_game (rhythm_id) ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT `fk_scores_memorysounds` FOREIGN KEY (memorysounds_id) REFERENCES memorysounds_game (memorysounds_id) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table hub (
+	hub_id smallint unsigned not null auto_increment,
+    xilophone boolean not null,
+    marimba boolean not null,
+    bongo boolean not null,
+    primary key (hub_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table island1(
+	island1_id smallint unsigned not null auto_increment,
+    snare boolean not null,
+    triangle boolean not null,
+    gong boolean not null,
+    primary key (island1_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table island2(
+	island2_id smallint unsigned not null auto_increment,
+    maracas boolean not null,
+    tamborine boolean not null,
+    box boolean not null,
+    primary key (island2_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+create table memory_game (
+	memory_id smallint unsigned not null auto_increment,
+    best_score smallint not null,
+    time_played time not null,
+    last_score smallint not null,
+    primary key (memory_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table rhythm_game (
+	rhythm_id smallint unsigned not null auto_increment,
+    best_score smallint not null,
+    time_played time not null,
+    last_score smallint not null,
+    primary key (rhythm_id)
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table memorysounds_game (
+	memorysound_id smallint unsigned not null auto_increment,
+    best_score smallint not null,
+	time_played time,
+    last_score smallint,
+    primary key (memorysound_id)
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table trivia_game (
+	trivia_id smallint unsigned not null auto_increment,
+    best_score smallint not null,
+	time_played time,
+    last_score smallint,
+    primary key (trivia_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table rhythm_game (
+	rhythm_id smallint unsigned not null auto_increment,
+    best_score smallint not null,
+	time_played time,
+    last_score smallint,
+    primary key (rhythm_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
