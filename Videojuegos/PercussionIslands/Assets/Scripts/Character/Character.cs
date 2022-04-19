@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,16 +8,26 @@ public class Character : MonoBehaviour
     //Movement variables
     public float moveSpeed;
 
+    //Properties
     public bool isMoving {get; private set;}
-
+    public float OffsetY {get ; private set;} = 0.3f; //This is the offset that gives perspective to the characters in relation to the environment
     CharacterAnimator animator;
 
     private void Awake() {
         animator = GetComponent<CharacterAnimator>();
+        SetPositionAndSnapToTile(transform.position);
+    }
+
+    //To automate the snapping of gameobjects to the middle of tiles
+    public void SetPositionAndSnapToTile(Vector2 pos){
+        pos.x = Mathf.Floor(pos.x) + 0.5f;
+        pos.y = Mathf.Floor(pos.y) + 0.5f + OffsetY;
+
+        transform.position = pos;
     }
 
     //Move the player
-    public IEnumerator Move(Vector2 moveVector){
+    public IEnumerator Move(Vector2 moveVector, Action OnMoveOver = null){
 
         animator.MoveX = Mathf.Clamp(moveVector.x, -1f, 1f);
         animator.MoveY = Mathf.Clamp(moveVector.y, -1f, 1f);
@@ -38,6 +49,8 @@ public class Character : MonoBehaviour
         transform.position = targetPos; //Updates the current position
 
         isMoving = false;
+
+        OnMoveOver?.Invoke(); //Uses null conditional operator so it won't get called when it0s null
     }
 
     public void HandleUpdate(){
