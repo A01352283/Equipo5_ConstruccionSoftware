@@ -2,15 +2,6 @@ DROP SCHEMA IF EXISTS percussion_island;
 CREATE SCHEMA percussion_island;
 USE percussion_island;
 
-CREATE TABLE game_user (
-  user_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  user_name VARCHAR(45) NOT NULL,
-  email VARCHAR(45) NOT NULL,
-  date_joined datetime NOT NULL,
-  PRIMARY KEY  (user_id),
-  KEY idx_user_email (email)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 
 create table inventory (
 	inventory_id smallint unsigned not null auto_increment,
@@ -116,13 +107,25 @@ create table scores (
     CONSTRAINT `fk_scores_memorysounds` FOREIGN KEY (memorysound_id) REFERENCES memorysounds_game (memorysound_id) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE game_user (
+  user_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  user_name VARCHAR(45) NOT NULL,
+  email VARCHAR(45) NOT NULL,
+  date_joined datetime NOT NULL,
+  PRIMARY KEY  (user_id),
+  KEY idx_user_email (email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 create table progress (
-	progress_id smallint unsigned not null auto_increment,
+	user_id smallint unsigned not null auto_increment,
     sections_id smallint unsigned not null,
     inventory_id smallint unsigned not null,
     score_id smallint unsigned not null,
-    primary key (progress_id),
+    primary key (user_id),
+    CONSTRAINT `fk_progress_user` FOREIGN KEY (user_id) REFERENCES game_user (user_id) ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT `fk_progress_sections` FOREIGN KEY (sections_id) REFERENCES sections (sections_id) ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT `fk_progress_inventory` FOREIGN KEY (inventory_id) REFERENCES inventory (inventory_id) ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT `fk_progress_score` FOREIGN KEY (score_id) REFERENCES scores (score_id) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
