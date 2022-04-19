@@ -6,7 +6,7 @@ CREATE TABLE game_user (
   user_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
   user_name VARCHAR(45) NOT NULL,
   email VARCHAR(45) NOT NULL,
-  date_joined TIMESTAMP NOT NULL,
+  date_joined datetime NOT NULL,
   PRIMARY KEY  (user_id),
   KEY idx_user_email (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
