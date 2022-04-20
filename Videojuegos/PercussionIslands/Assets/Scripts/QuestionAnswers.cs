@@ -10,6 +10,7 @@ public class QuestionAnswers
     public string correctanswer;
 
     public QuestionAnswers(string _question,string _ans1, string _ans2, string _ans3, string _ans4){
+            this.answers=new List<string>();
             this.question = _question;
             this.answers.Add(_ans1);
             this.answers.Add(_ans2);

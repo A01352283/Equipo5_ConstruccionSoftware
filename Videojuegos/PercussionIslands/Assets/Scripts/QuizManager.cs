@@ -14,6 +14,7 @@ public class QuizManager : MonoBehaviour
     public Text Answer4Text;
 
     private QuestionAnswers currentQuestion;
+    private int index =0;
 
     private void Start(){
         generateQuestions();
@@ -22,23 +23,25 @@ public class QuizManager : MonoBehaviour
     }
 
     public void showQuestions(){
-        for(int i=0;i<QnA.Count;i++){
-            currentQuestion=QnA[i];
-            QuestionText.text=currentQuestion.question;
-            Answer1Text.text=currentQuestion.answers[0];
-            Answer2Text.text=currentQuestion.answers[1];
-            Answer3Text.text=currentQuestion.answers[2];
-            Answer4Text.text=currentQuestion.answers[3];
-            Debug.Log("5");
-            Debug.Log("5");
-            Debug.Log("5");
-            Debug.Log("5");
-            Debug.Log("5");
-            
-        }
+        currentQuestion=QnA[index];
+        QuestionText.text=currentQuestion.question;
+        Answer1Text.text=currentQuestion.answers[0];
+        Answer2Text.text=currentQuestion.answers[1];
+        Answer3Text.text=currentQuestion.answers[2];
+        Answer4Text.text=currentQuestion.answers[3];
     }
 
-    //public void checkAns(int index){}
+    public void checkAns(int ans_index){
+        if (currentQuestion.answers[ans_index]== currentQuestion.correctanswer){
+            index++;
+            Debug.Log("CORRECT");
+            showQuestions();
+        }
+        else{
+            index++;
+            showQuestions();
+        }
+    }
 
 
     /*void SetAnswers(){
