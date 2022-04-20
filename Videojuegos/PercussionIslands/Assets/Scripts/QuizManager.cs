@@ -6,20 +6,42 @@ using UnityEngine.UI;
 public class QuizManager : MonoBehaviour
 {
     public List<QuestionAnswers> QnA;
-    public GameObject[] options;
-    public int currentQuestion;
+
     public Text QuestionText;
+    public Text Answer1Text;
+    public Text Answer2Text;
+    public Text Answer3Text;
+    public Text Answer4Text;
+
+    private QuestionAnswers currentQuestion;
 
     private void Start(){
+        generateQuestions();
+        showQuestions();
 
     }
 
-    public void correct(){
-        QnA.RemoveAt(currentQuestion);
-        generateQuestion();
+    public void showQuestions(){
+        for(int i=0;i<QnA.Count;i++){
+            currentQuestion=QnA[i];
+            QuestionText.text=currentQuestion.question;
+            Answer1Text.text=currentQuestion.answers[0];
+            Answer2Text.text=currentQuestion.answers[1];
+            Answer3Text.text=currentQuestion.answers[2];
+            Answer4Text.text=currentQuestion.answers[3];
+            Debug.Log("5");
+            Debug.Log("5");
+            Debug.Log("5");
+            Debug.Log("5");
+            Debug.Log("5");
+            
+        }
     }
 
-    void SetAnswers(){
+    //public void checkAns(int index){}
+
+
+    /*void SetAnswers(){
         for (int i = 0; i < options.Length; i++)
         {
             options[i].GetComponent<AnswerScript>().isCorrect = false;
@@ -30,10 +52,11 @@ public class QuizManager : MonoBehaviour
             }
         }
     }
-    void generateQuestion(){
-        currentQuestion = Random.Range(0, QnA.Count);
-        QuestionText.text = QnA[currentQuestion].question;
-        SetAnswers();
-        QnA.RemoveAt(currentQuestion);
+    */
+    void generateQuestions(){
+        QnA.Add(new QuestionAnswers("How old are you?","22","15","75","30"));
+        QnA.Add(new QuestionAnswers("Best game?","Percussion Island","Pokemon","Cuphead","TroyWars"));
+        QnA.Add(new QuestionAnswers("Day of the week?","Friday","Tuesday","Thursday","Sunday"));
+        QnA.Add(new QuestionAnswers("Best School?","Tec","UNAM","ANAHUAC","POLI"));
     }
 }

@@ -606,6 +606,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cfc7f665321e449aa93f00c55cbd61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QnA: []
+  QuestionText: {fileID: 1336891862}
+  Answer1Text: {fileID: 896683582}
+  Answer2Text: {fileID: 306582462}
+  Answer3Text: {fileID: 930647987}
+  Answer4Text: {fileID: 1459818386}
 --- !u!4 &817148102
 Transform:
   m_ObjectHideFlags: 0
