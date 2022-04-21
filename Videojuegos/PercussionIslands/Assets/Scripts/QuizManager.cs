@@ -25,7 +25,7 @@ public class QuizManager : MonoBehaviour
     }
 
     public void showQuestions(){
-        while(index<QnA.Count){
+        if(index<QnA.Count){
         currentQuestion=QnA[index];
         Shuffle(currentQuestion.answers);
         QuestionText.text=currentQuestion.question;
@@ -34,7 +34,9 @@ public class QuizManager : MonoBehaviour
         Answer3Text.text=currentQuestion.answers[2];
         Answer4Text.text=currentQuestion.answers[3];
         }
-        
+        else{
+            Debug.Log("Game Over");
+        }
     }
 
     public void checkAns(int ans_index){
