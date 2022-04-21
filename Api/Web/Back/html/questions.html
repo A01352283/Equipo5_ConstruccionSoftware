@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/mysqlUseCases.css">
-    <script type="module" defer src="../js/mysqlUseCases.js"></script>
+    <script type="module" defer src="../js/questions.js"></script>
     <title>Questions</title>
 </head>
 <body>
@@ -26,10 +26,12 @@
         <div class="formInput">
             <h1>Add Trivia Question</h1>
             <form id="formInsert" method="post" action="http://localhost:5000/api/questions">
-                <input type="text" name="user_name" placeholder="Type your first name">
-                <input type="text" name="email" placeholder="Type your email">
-                <input type="text" name="date_joined" placeholder="Type date date_joined"> 
-                <input type="submit" value="Add Game-User">
+                <input type="text" name="question" placeholder="Type Question">
+                <input type="text" name="cor_answer" placeholder="Type correct answer">
+                <input type="text" name="answer_2" placeholder="Type incorrect answer"> 
+                <input type="text" name="answer_3" placeholder="Type incorrect answer"> 
+                <input type="text" name="answer_4" placeholder="Type incorrect answer"> 
+                <input type="submit" value="Add Question">
             </form>
         </div>
         <div class="resultDisplay">
@@ -39,12 +41,14 @@
     </div>
     <div class="section">
         <div class="formInput">
-            <h1>Update Game-User</h1>
+            <h1>Update Question</h1>
             <form id="formUpdate" method="put">
-                <input type="text" name="user_id" placeholder="Type your userID">
-                <input type="text" name="user_name" placeholder="Type your first new name">
-                <input type="text" name="email" placeholder="Type your email">
-                <input type="text" name="date_joined" placeholder="Type date date_joined"> 
+                <input type="text" name="question_id" placeholder="Type questionID">
+                <input type="text" name="question" placeholder="Type question">
+                <input type="text" name="cor_answer" placeholder="Type correct answer">
+                <input type="text" name="answer_2" placeholder="Type incorrect answer"> 
+                <input type="text" name="answer_3" placeholder="Type incorrect answer">
+                <input type="text" name="answer_4" placeholder="Type incorrect answer"> 
                 <input type="submit" value="Update Game-User">
             </form>
         </div>
@@ -55,10 +59,10 @@
     </div>
     <div class="section">
         <div class="formInput">
-            <h1>Delete Game-User</h1>
+            <h1>Delete Question</h1>
             <form id="formDelete" method="delete">
-                <input type="text" name="userID" placeholder="Type your userID">
-                <input type="submit" value="Delete Game-User">
+                <input type="text" name="question_id" placeholder="Type question ID">
+                <input type="submit" value="Delete Question">
             </form>
         </div>
         <div class="resultDisplay">

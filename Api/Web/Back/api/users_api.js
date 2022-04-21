@@ -53,6 +53,30 @@ app.get('/questions', (request,respone)=>{
     })
 });
 
+app.get('/api/questions', (request, response)=>{
+    let connection = connectToDB();
+
+    try{
+
+        connection.connect();
+
+        connection.query('select * from questions', (error, results, fields)=>{
+            if(error) console.log(error);
+            console.log(JSON.stringify(results));
+            response.json(results);
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
+
+
 app.get('/api/game_user', (request, response)=>{
     let connection = connectToDB();
 
@@ -99,12 +123,57 @@ app.post('/api/game_user', (request, response)=>{
     }
 });
 
+app.post('/api/questions', (request, response)=>{
+
+    try{
+        console.log(request.headers);
+
+        let connection = connectToDB();
+        connection.connect();
+
+        const query = connection.query('insert into questions set ?', request.body ,(error, results, fields)=>{
+            if(error) 
+                console.log(error);
+            else
+                response.json({'message': "Data inserted correctly."})
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
 app.put('/api/game_user', (request, response)=>{
     try{
         let connection = connectToDB();
         connection.connect();
 
         const query = connection.query('update game_user set user_name = ?, pwd = ? where user_id= ?', [request.body['user_name'], request.body['pwd'], request.body['user_id']] ,(error, results, fields)=>{
+            if(error) 
+                console.log(error);
+            else
+                response.json({'message': "Data updated correctly."})
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
+app.put('/api/questions', (request, response)=>{
+    try{
+        let connection = connectToDB();
+        connection.connect();
+
+        const query = connection.query('update questions set question = ?, cor_answer = ?, answer_2 = ?, answer_3 = ?, answer_4 = ? where question_id= ?', [request.body['question'], request.body['cor_answer'], request.body['answer_2'], request.body['answer_3'], request.body['answer_4'], request.body['question_id']] ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -127,6 +196,28 @@ app.delete('/api/game_user', (request, response)=>{
         connection.connect();
 
         const query = connection.query('delete from game_user where user_id= ?', [request.body['userID']] ,(error, results, fields)=>{
+            if(error) 
+                console.log(error);
+            else
+                response.json({'message': "Data deleted correctly."})
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+})
+
+app.delete('/api/questions', (request, response)=>{
+    try
+    {
+        let connection = connectToDB();
+        connection.connect();
+
+        const query = connection.query('delete from questions where question_id= ?', [request.body['question_id']] ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
