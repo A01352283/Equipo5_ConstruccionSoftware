@@ -45,6 +45,36 @@ app.get('/game_user', (request,response)=>{
     })
 });
 
+app.get('/game_user/key_inventory', (request,respone)=>{
+    fs.readFile('./html/questions.html', 'utf8', (err, html)=>{
+        if(err) respone.status(500).send('There was an error: ' + err);
+        console.log("Loading page...");
+        respone.send(html)
+    })
+});
+
+app.get('/game_user/key_inventory', (request,respone)=>{
+    let connection = connectToDB();
+
+    try{
+
+        connection.connect();
+
+        connection.query('select * from questions', (error, results, fields)=>{
+            if(error) console.log(error);
+            console.log(JSON.stringify(results));
+            response.json(results);
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
 app.get('/questions', (request,respone)=>{
     fs.readFile('./html/questions.html', 'utf8', (err, html)=>{
         if(err) respone.status(500).send('There was an error: ' + err);
@@ -52,6 +82,7 @@ app.get('/questions', (request,respone)=>{
         respone.send(html)
     })
 });
+
 
 app.get('/api/questions', (request, response)=>{
     let connection = connectToDB();
