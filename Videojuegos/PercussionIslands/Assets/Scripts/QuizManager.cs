@@ -18,6 +18,13 @@ public class QuizManager : MonoBehaviour
     private int mult= 10;
     private int score= 0;
 
+    public GameObject corr_screen;
+    public GameObject incorr_screen;
+
+    public MemoryGameOverScreen TriviaGameOverScreen;
+    public void GameOver(){
+        TriviaGameOverScreen.Setup(score);
+    }
     private void Start(){
         generateQuestions();
         showQuestions();
@@ -35,7 +42,7 @@ public class QuizManager : MonoBehaviour
         Answer4Text.text=currentQuestion.answers[3];
         }
         else{
-            Debug.Log("Game Over");
+            GameOver();
         }
     }
 
@@ -43,11 +50,18 @@ public class QuizManager : MonoBehaviour
         if (currentQuestion.answers[ans_index]== currentQuestion.correctanswer){
             index++;
             Debug.Log("CORRECT");
+            //corr_screen.SetActive(true);
+            
+            //SUM Score
+            score+=mult;
+            mult = mult+(mult*1);
             showQuestions();
         }
         else{
             index++;
             Debug.Log("INCORRECT");
+            //Reset Mult
+            mult=10;
             showQuestions();
         }
     }

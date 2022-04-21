@@ -745,6 +745,9 @@ MonoBehaviour:
   Answer2Text: {fileID: 306582462}
   Answer3Text: {fileID: 930647987}
   Answer4Text: {fileID: 1459818386}
+  corr_screen: {fileID: 0}
+  incorr_screen: {fileID: 0}
+  TriviaGameOverScreen: {fileID: 1780905703}
 --- !u!4 &817148102
 Transform:
   m_ObjectHideFlags: 0
