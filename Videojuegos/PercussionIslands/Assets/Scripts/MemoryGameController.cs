@@ -37,6 +37,9 @@ public class MemoryGameController : MonoBehaviour
     public Text inst_name;
 
     public MemoryGameOverScreen MemoryGameOverScreen;
+
+    public GameObject corr_screen;
+    public GameObject incorr_screen;
     public void GameOver(){
         MemoryGameOverScreen.Setup(score);
     }
@@ -122,8 +125,10 @@ public class MemoryGameController : MonoBehaviour
         yield return new WaitForSeconds(1.3f);
         if(firstGuessPuzzle==secondGuessPuzzle){
             audio_s.clip=corr;
+            corr_screen.SetActive(true);
             audio_s.Play();
             yield return new WaitForSeconds(.8f);
+            corr_screen.SetActive(false);
             btns[firstGuessIndex].interactable = false;
             btns[secondGuessIndex].interactable = false;
             btns[firstGuessIndex].image.color = new Color(0,0,0,0);
@@ -138,8 +143,11 @@ public class MemoryGameController : MonoBehaviour
         }else{
             mult=10;
             yield return new WaitForSeconds(.6f);
+            incorr_screen.SetActive(true);
             audio_s.clip=incorr;
             audio_s.Play();
+            yield return new WaitForSeconds(.8f);
+            incorr_screen.SetActive(false);
             btns[firstGuessIndex].enabled = true;
             btns[secondGuessIndex].enabled = true;
             btns[firstGuessIndex].image.sprite = bgImage;
