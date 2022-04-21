@@ -25,6 +25,8 @@ public class QuizManager : MonoBehaviour
     public GameObject corr_screen;
     public GameObject incorr_screen;
 
+    public bool match;
+
     public MemoryGameOverScreen TriviaGameOverScreen;
     public void GameOver(){
         TriviaGameOverScreen.Setup(score);
@@ -50,28 +52,41 @@ public class QuizManager : MonoBehaviour
             GameOver();
         }
     }
-
+    IEnumerator CheckMatch(bool _match){
+        if(match){
+            audio_s.clip=corr;
+            corr_screen.SetActive(true);
+            audio_s.Play();
+            yield return new WaitForSeconds(.8f);
+            corr_screen.SetActive(false);
+            yield return new WaitForSeconds(.8f);
+        }
+        else{
+            audio_s.clip=incorr;
+            incorr_screen.SetActive(true);
+            audio_s.Play();
+            yield return new WaitForSeconds(.8f);
+            incorr_screen.SetActive(false);
+            yield return new WaitForSeconds(.8f);
+        }
+    }
     public void checkAns(int ans_index){
         if (currentQuestion.answers[ans_index]== currentQuestion.correctanswer){
+            match=true;
             index++;
             Debug.Log("CORRECT");
-            audio_s.clip=corr;
-            //corr_screen.SetActive(true);
-            audio_s.Play();
-            //yield return new WaitForSeconds(.8f);
-            //corr_screen.SetActive(false);
-            //SUM Score
+            StartCoroutine(CheckMatch(match));
             score+=mult;
             mult = mult+(mult*1);
             showQuestions();
         }
         else{
+            match=false;
             index++;
             audio_s.clip=incorr;
-            //corr_screen.SetActive(true);
             audio_s.Play();
             Debug.Log("INCORRECT");
-            //Reset Mult
+            StartCoroutine(CheckMatch(match));
             mult=10;
             showQuestions();
         }
