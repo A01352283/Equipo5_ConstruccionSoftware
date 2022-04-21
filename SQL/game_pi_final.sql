@@ -22,4 +22,38 @@ create table questions (
     primary key (question_id)
 )   ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-create table questions
+
+create table game_user_scores(
+	user_id smallint unsigned not null,
+	rhythm_best_score smallint unsigned not null default 0,
+    rhythm_last_score smallint unsigned not null default 0,
+    rhythm_play_time time not null default ("00:00:00"),
+    trivia_best_score smallint unsigned not null default 0,
+    trivia_last_score smallint unsigned not null default 0,
+    trivia_play_time time not null default ("00:00:00"),
+    memory_best_score smallint unsigned not null default 0,
+    memory_last_score smallint unsigned not null default 0,
+    memory_play_time time not null default ("00:00:00"),
+    memorysounds_best_score smallint unsigned not null default 0,
+    memorysounds_last_score smallint unsigned not null default 0,
+    memorysounds_play_time time not null default ("00:00:00"),
+    primary key (user_id),
+    CONSTRAINT `fk_user_scores` FOREIGN KEY (user_id) REFERENCES game_user (user_id) ON DELETE RESTRICT ON UPDATE CASCADE
+
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table game_user_key_inventory(
+	user_id smallint unsigned not null,
+    key_item_name varchar(45) not null,
+    primary key (user_id),
+    CONSTRAINT `fk_user_inventory` FOREIGN KEY (user_id) REFERENCES game_user (user_id) ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+create table game_user_save_file(
+	user_id smallint unsigned not null,
+    key_instruments_unlocked tinyint unsigned not null default 0,
+    player_position_x float not null,
+    player_position_y float not null,
+    primary key(user_id),
+    CONSTRAINT `fk_user_savefile` FOREIGN KEY (user_id) REFERENCES game_user (user_id) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
