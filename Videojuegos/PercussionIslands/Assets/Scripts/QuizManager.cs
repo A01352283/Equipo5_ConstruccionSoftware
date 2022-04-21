@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class QuizManager : MonoBehaviour
 {
     public List<QuestionAnswers> QnA;
-
+    
+    [SerializeField]
+    private AudioSource audio_s;
+    public AudioClip corr;
+    public AudioClip incorr;
     public Text QuestionText;
     public Text Answer1Text;
     public Text Answer2Text;
@@ -28,18 +32,19 @@ public class QuizManager : MonoBehaviour
     private void Start(){
         generateQuestions();
         showQuestions();
+        
 
     }
 
     public void showQuestions(){
         if(index<QnA.Count){
-        currentQuestion=QnA[index];
-        Shuffle(currentQuestion.answers);
-        QuestionText.text=currentQuestion.question;
-        Answer1Text.text=currentQuestion.answers[0];
-        Answer2Text.text=currentQuestion.answers[1];
-        Answer3Text.text=currentQuestion.answers[2];
-        Answer4Text.text=currentQuestion.answers[3];
+            currentQuestion=QnA[index];
+            Shuffle(currentQuestion.answers);
+            QuestionText.text=currentQuestion.question;
+            Answer1Text.text=currentQuestion.answers[0];
+            Answer2Text.text=currentQuestion.answers[1];
+            Answer3Text.text=currentQuestion.answers[2];
+            Answer4Text.text=currentQuestion.answers[3];
         }
         else{
             GameOver();
@@ -50,8 +55,11 @@ public class QuizManager : MonoBehaviour
         if (currentQuestion.answers[ans_index]== currentQuestion.correctanswer){
             index++;
             Debug.Log("CORRECT");
+            audio_s.clip=corr;
             //corr_screen.SetActive(true);
-            
+            audio_s.Play();
+            //yield return new WaitForSeconds(.8f);
+            //corr_screen.SetActive(false);
             //SUM Score
             score+=mult;
             mult = mult+(mult*1);
@@ -59,6 +67,9 @@ public class QuizManager : MonoBehaviour
         }
         else{
             index++;
+            audio_s.clip=incorr;
+            //corr_screen.SetActive(true);
+            audio_s.Play();
             Debug.Log("INCORRECT");
             //Reset Mult
             mult=10;

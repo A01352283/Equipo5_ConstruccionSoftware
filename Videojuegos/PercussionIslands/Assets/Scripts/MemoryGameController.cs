@@ -1,3 +1,5 @@
+//This script works as the main memory mini game controller, detecting whenever the pair of cards the user select are mathc or not, as well as keeping the score of the user. 
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,29 +8,40 @@ using UnityEngine.UI;
 public class MemoryGameController : MonoBehaviour
 {
     [SerializeField]
+
+    //This Sprite works as the back of the cards
     private Sprite bgImage;
+    //AudioSource that reproduces a correct or incorrect clip depending on the pair of card selected
     private AudioSource audio_s;
+    //Correct guess Ausdio
     public AudioClip corr;
+    //Incorrect guess Audio
     public AudioClip incorr;
-
-    [SerializeField] Image correct;
-    [SerializeField] Image incorrect;
+    //This sprite works as the image of the cards that dont have the instrument image but its sound
     public Sprite image_d;
+    //This Sprite array contains the images of the instruments in the game
     public Sprite[] puzzles;
+    //This AudioClip array contains the sounds of the instruments
     public AudioClip[] sounds;
-
-    private string[] instrumnent_name={"Agogo Bells","Banana Shaker", "Bass Drum", "Bell Tree", "Cabasa", "Castanets", "Chinese Cymbal", "Chinese Hand Cymbals","Clash Cymbals","Agogo Bells","Banana Shaker", "Bass Drum", "Bell Tree", "Cabasa", "Castanets", "Chinese Cymbal", "Chinese Hand Cymbals","Clash Cymbals"};
-
+    //String that contains the name of the instruments depending on the index
+    private string[] instrumnent_name={"Agogo Bells","Banana Shaker", "Bass Drum", "Bell Tree", "Cabasa", "Castanets", "Chinese Cymbal", "Chinese Hand Cymbals","Clash Cymbals"};
+    //List of Cards used in the game
     public List<Card> cards = new List<Card>();
+    //List of the gamePuzzle imgages
     public List<Sprite> gamePuzzles = new List<Sprite>();
+    //List of insturment sounds used in the game
     public List<AudioClip> gameSounds= new List<AudioClip>();
+    //List of Buttons that will have each card
     public List<Button> btns = new List<Button>();
-
+    //Booleans that will be used when selecting the card pairs
     public bool firstGuess, secondGuess; 
-
+    //Value that will keep count of the number of guesses (both correct and incorrect)
     private int countGuesses;
+    //Mult is the score multiplyer that will grow if the user keeps guessing correct continuously
     int mult= 10;
+    //This value will keep store the score of the player during the game, being affected by mult
     int score= 0;
+    //Value that will keep count of the number of correct guesses
     private int countCorrectGuesses;
     private int gameGuesses;
     private int firstGuessIndex, secondGuessIndex;
