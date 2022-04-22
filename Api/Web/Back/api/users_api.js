@@ -45,22 +45,14 @@ app.get('/game_user', (request,response)=>{
     })
 });
 
-app.get('/game_user/key_inventory', (request,respone)=>{
-    fs.readFile('./html/questions.html', 'utf8', (err, html)=>{
-        if(err) respone.status(500).send('There was an error: ' + err);
-        console.log("Loading page...");
-        respone.send(html)
-    })
-});
-
-app.get('/game_user/key_inventory', (request,respone)=>{
+app.get('/api/game_user', (request, response)=>{
     let connection = connectToDB();
 
     try{
 
         connection.connect();
 
-        connection.query('select * from questions', (error, results, fields)=>{
+        connection.query('select * from game_user', (error, results, fields)=>{
             if(error) console.log(error);
             console.log(JSON.stringify(results));
             response.json(results);
@@ -75,11 +67,40 @@ app.get('/game_user/key_inventory', (request,respone)=>{
     }
 });
 
-app.get('/questions', (request,respone)=>{
-    fs.readFile('./html/questions.html', 'utf8', (err, html)=>{
-        if(err) respone.status(500).send('There was an error: ' + err);
+app.get('/game_user/key_inventory', (request,response)=>{
+    fs.readFile('./html/gameUsersKI.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err);
         console.log("Loading page...");
-        respone.send(html)
+        response.send(html)
+    })
+});
+
+app.get('/api/game_user/key_inventory', (request,response)=>{
+    let connection = connectToDB();
+    try{
+
+        connection.connect();
+
+        connection.query('select * from game_user_key_inventory', (error, results, fields)=>{
+            if(error) console.log(error);
+            console.log(JSON.stringify(results));
+            response.json(results);
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
+app.get('/api/questions', (request,response)=>{
+    fs.readFile('./html/questions.html', 'utf8', (err, html)=>{
+        if(err) resposne.status(500).send('There was an error: ' + err);
+        console.log("Loading page...");
+        response.send(html)
     })
 });
 
@@ -108,28 +129,6 @@ app.get('/api/questions', (request, response)=>{
 
 
 
-app.get('/api/game_user', (request, response)=>{
-    let connection = connectToDB();
-
-    try{
-
-        connection.connect();
-
-        connection.query('select * from game_user', (error, results, fields)=>{
-            if(error) console.log(error);
-            console.log(JSON.stringify(results));
-            response.json(results);
-        });
-
-        connection.end();
-    }
-    catch(error)
-    {
-        response.json(error);
-        console.log(error);
-    }
-});
-
 app.post('/api/game_user', (request, response)=>{
 
     try{
@@ -153,6 +152,31 @@ app.post('/api/game_user', (request, response)=>{
         console.log(error);
     }
 });
+
+app.post('/api/game_user/key_inventory', (request, response)=>{
+
+    try{
+        console.log(request.headers);
+
+        let connection = connectToDB();
+        connection.connect();
+
+        const query = connection.query('insert into game_user_key_inventory set ?', request.body ,(error, results, fields)=>{
+            if(error) 
+                console.log(error);
+            else
+                response.json({'message': "Data inserted correctly."})
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
 
 app.post('/api/questions', (request, response)=>{
 
@@ -240,7 +264,29 @@ app.delete('/api/game_user', (request, response)=>{
         response.json(error);
         console.log(error);
     }
-})
+});
+
+app.delete('/api/game_user/key_inventory', (request, response)=>{
+    try
+    {
+        let connection = connectToDB();
+        connection.connect();
+
+        const query = connection.query('delete from game_user_key_inventory where user_id= ?', [request.body['userID']] ,(error, results, fields)=>{
+            if(error) 
+                console.log(error);
+            else
+                response.json({'message': "Data deleted correctly."})
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
 
 app.delete('/api/questions', (request, response)=>{
     try
