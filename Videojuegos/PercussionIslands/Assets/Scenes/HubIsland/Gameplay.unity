@@ -123,6 +123,94 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &381840177
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4987438233757647012, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647012, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647012, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647012, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647012, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647012, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647012, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647012, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647012, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647012, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647012, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647013, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_Size.x
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647013, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647013, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_Offset.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647014, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: m_Name
+      value: House2HubIsland
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: connectedScenes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: connectedScenes.Array.data[0]
+      value: 
+      objectReference: {fileID: 4987438234929300780}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+--- !u!114 &381840178 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+  m_PrefabInstance: {fileID: 381840177}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016ca627ef4d5c840a32bc828db774a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &941005635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -413,7 +501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
       propertyPath: connectedScenes.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
       propertyPath: connectedScenes.Array.data[0]
@@ -423,6 +511,10 @@ PrefabInstance:
       propertyPath: connectedScenes.Array.data[1]
       value: 
       objectReference: {fileID: 1726917318}
+    - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: connectedScenes.Array.data[2]
+      value: 
+      objectReference: {fileID: 381840178}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
 --- !u!114 &4987438234929300780 stripped
