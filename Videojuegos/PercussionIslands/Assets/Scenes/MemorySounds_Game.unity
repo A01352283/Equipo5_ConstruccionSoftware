@@ -238,7 +238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000083447, y: 127}
+  m_AnchoredPosition: {x: 0, y: 127}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &124934452
@@ -361,7 +361,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 178238303}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 742678670}
+        m_TargetAssemblyTypeName: MemoryS_Manager, Assembly-CSharp
+        m_MethodName: Nochmal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &178238303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,7 +589,7 @@ GameObject:
   - component: {fileID: 440694672}
   - component: {fileID: 440694671}
   m_Layer: 5
-  m_Name: HigthScore_Text (1)
+  m_Name: HigthScore_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -661,7 +673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &510712940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1035,7 +1047,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 682683526}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 742678670}
+        m_TargetAssemblyTypeName: MemoryS_Manager, Assembly-CSharp
+        m_MethodName: FarbenButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &682683526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,6 +1098,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682683523}
   m_CullTransparentMesh: 1
+--- !u!1 &742678669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 742678671}
+  - component: {fileID: 742678670}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &742678670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742678669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7577f633c21104ba7dbe0b43086577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreviewImage: {fileID: 644266578}
+  DontTouch: {fileID: 577373368}
+  InstrumentColor:
+  - {r: 0.105882354, g: 0.27058825, b: 0.5176471, a: 1}
+  - {r: 0.81960785, g: 0.49411765, b: 0.24313726, a: 1}
+  - {r: 0.7372549, g: 0.18431373, b: 0.18431373, a: 1}
+  - {r: 0.23921569, g: 0.5176471, b: 0.15686275, a: 1}
+  AllColors: 0
+  ColorMix: 0
+  Nochfehlend: 0
+  NochfelendText: {fileID: 1059950184}
+  Reihenfolge: 
+  ScoreText: {fileID: 1116977231}
+  Game_over: {fileID: 510712939}
+  HigthScore: 0
+  HigthScore_text: {fileID: 440694671}
+--- !u!4 &742678671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742678669}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 224.1856, y: 131.79797, z: -10.093885}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &994138523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,7 +1501,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1074323610}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 742678670}
+        m_TargetAssemblyTypeName: MemoryS_Manager, Assembly-CSharp
+        m_MethodName: FarbenButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1074323610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1958,7 +2053,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1758513179}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 742678670}
+        m_TargetAssemblyTypeName: MemoryS_Manager, Assembly-CSharp
+        m_MethodName: FarbenButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1758513179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2157,7 +2264,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2027773767}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 742678670}
+        m_TargetAssemblyTypeName: MemoryS_Manager, Assembly-CSharp
+        m_MethodName: FarbenButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2027773767
 MonoBehaviour:
   m_ObjectHideFlags: 0
