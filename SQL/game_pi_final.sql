@@ -2,6 +2,7 @@ DROP SCHEMA IF EXISTS percussion_island3;
 CREATE SCHEMA percussion_island3;
 USE percussion_island3;
 
+
 CREATE TABLE game_user (
   user_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
   user_name VARCHAR(45) NOT NULL,
@@ -42,9 +43,12 @@ create table game_user_scores(
 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+drop table game_user_key_inventory;
+
 create table game_user_key_inventory(
 	user_id smallint unsigned not null,
-    key_item_name varchar(45) not null,
+    has_bongo bool not null,
     primary key (user_id),
     CONSTRAINT `fk_user_inventory` FOREIGN KEY (user_id) REFERENCES game_user (user_id) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -52,8 +56,8 @@ create table game_user_key_inventory(
 create table game_user_save_file(
 	user_id smallint unsigned not null,
     key_instruments_unlocked tinyint unsigned not null default 0,
-    player_position_x float not null,
-    player_position_y float not null,
+    player_position_x float not null default 0.0,
+    player_position_y float not null default 0.0,
     primary key(user_id),
     CONSTRAINT `fk_user_savefile` FOREIGN KEY (user_id) REFERENCES game_user (user_id) ON DELETE RESTRICT ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

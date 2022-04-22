@@ -70,6 +70,14 @@ app.get('/game_user/key_inventory', (request,response)=>{
     })
 });
 
+app.get('/game_user/sf', (request,response)=>{
+    fs.readFile('./html/gameUserSF.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err);
+        console.log("Loading page...");
+        response.send(html)
+    })
+});
+
 app.get('/api/game_user', (request, response)=>{
     let connection = connectToDB();
 
@@ -137,6 +145,26 @@ app.get('/api/game_user/key_inventory', (request,response)=>{
     }
 });
 
+app.get('/api/game_user/sf', (request,response)=>{
+    let connection = connectToDB();
+    try{
+
+        connection.connect();
+
+        connection.query('select * from game_user_save_file', (error, results, fields)=>{
+            if(error) console.log(error);
+            console.log(JSON.stringify(results));
+            response.json(results);
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
 
 app.get('/api/questions', (request, response)=>{
     let connection = connectToDB();
@@ -159,6 +187,8 @@ app.get('/api/questions', (request, response)=>{
         console.log(error);
     }
 });
+
+
 
 
 
@@ -234,6 +264,30 @@ app.post('/api/game_user/key_inventory', (request, response)=>{
     }
 });
 
+app.post('/api/game_user/sf', (request, response)=>{
+
+    try{
+        console.log(request.headers);
+
+        let connection = connectToDB();
+        connection.connect();
+
+        const query = connection.query('insert into game_user_save_file set ?', request.body ,(error, results, fields)=>{
+            if(error) 
+                console.log(error);
+            else
+                response.json({'message': "Data inserted correctly."})
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
 
 app.post('/api/questions', (request, response)=>{
 
@@ -291,6 +345,29 @@ app.put('/api/game_user/scores', (request, response)=>{
             else
                 response.json({'message': "Data updated correctly."})
         });
+        //se puede hacer solo un update en lugar de todos?
+        //como agregar query para comparar con best score? y sumar al tiempo
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
+app.put('/api/game_user/sf', (request, response)=>{
+    try{
+        let connection = connectToDB();
+        connection.connect();
+        //Modificar solo un minijuego a la vez
+        const query = connection.query('update game_user_save_file set key_instruments_unlocked = ?, player_position_x = ?, player_position_y = ? where user_id= ?', [request.body['key_instruments_unlocked'], request.body['player_position_x'], request.body['player_position_y'], request.body['user_id']] ,(error, results, fields)=>{
+            if(error) 
+                console.log(error);
+            else
+                response.json({'message': "Data updated correctly."})
+        });
+        //se puede hacer solo un update en lugar de todos?
         //como agregar query para comparar con best score? y sumar al tiempo
         connection.end();
     }
@@ -373,6 +450,28 @@ app.delete('/api/game_user/key_inventory', (request, response)=>{
         connection.connect();
 
         const query = connection.query('delete from game_user_key_inventory where user_id= ?', [request.body['userID']] ,(error, results, fields)=>{
+            if(error) 
+                console.log(error);
+            else
+                response.json({'message': "Data deleted correctly."})
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
+app.delete('/api/game_user/sf', (request, response)=>{
+    try
+    {
+        let connection = connectToDB();
+        connection.connect();
+
+        const query = connection.query('delete from game_user_save_file where user_id= ?', [request.body['userID']] ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
