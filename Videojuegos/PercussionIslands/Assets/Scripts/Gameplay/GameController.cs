@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState {FreeRoam, Dialogue, Paused, Menu, KeyInventory}
+public enum GameState {FreeRoam, Dialogue, Paused, Menu, KeyInventory, NonKeyInventory}
 
 public class GameController : MonoBehaviour
 {
@@ -24,6 +24,10 @@ public class GameController : MonoBehaviour
         Instance = this;
 
         menuController = GetComponent<MenuController>();
+
+        //Locks and hides the mouse cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Start() {
@@ -68,7 +72,7 @@ public class GameController : MonoBehaviour
             playerController.HandleUpdate();
 
             //Opens the menu UI on Enter key press
-            if (Input.GetKeyDown(KeyCode.Return)){
+            if (Input.GetKeyDown(KeyCode.Return) | Input.GetKeyDown(KeyCode.Escape)){
                 menuController.OpenMenu();
                 state = GameState.Menu;
             }
@@ -81,7 +85,6 @@ public class GameController : MonoBehaviour
             menuController.HandleUpdate();
         }
         else if (state == GameState.KeyInventory){
-            
             Action onBack = () =>
             {
                 inventoryUI.gameObject.SetActive(false);
@@ -101,19 +104,23 @@ public class GameController : MonoBehaviour
     void OnMenuSelected (int selectedItem){
         if (selectedItem == 0){
             //Inventory
-            inventoryUI.gameObject.SetActive(true);
             state = GameState.KeyInventory;
+            inventoryUI.gameObject.SetActive(true);
         }
         else if (selectedItem == 1){
-            //Save
+            //Percudex
             state = GameState.FreeRoam;
         }
         else if (selectedItem == 2){
+            //Save
+            state = GameState.FreeRoam;
+        }
+        else if (selectedItem == 3){
             //Load
             state = GameState.FreeRoam;
         }
 
         //Sets the state back to free roam
-        state = GameState.FreeRoam;
+        //state = GameState.FreeRoam;
     }
 }

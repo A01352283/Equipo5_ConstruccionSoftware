@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9493dc47d636ad44a56342c8095bbd1, type: 3}
+  m_Name: Triangle
+  m_EditorClassIdentifier: 
+  itemName: Triangle
+  description: The triangle is rarely viewed as a musical instrument that requires
+    serious practice and study. Nothing could be farther from the truth. The tonal
+    texture of a triangle is that of a special nature which cannot be imitated. The
+    instrument was used as early as the Turks with their Janissary music and eventually
+    found its way into the classical orchestra repertoire of the eighteenth, nineteenth
+    and twentieth centuries.
+  icon: {fileID: 5749393321387579118, guid: 7e1f79ed4c5d70b4b86cd37f38d33265, type: 3}
+  instrumentSound: {fileID: 8300000, guid: bc9405d2cc856184dadffeaa2ae8969e, type: 3}

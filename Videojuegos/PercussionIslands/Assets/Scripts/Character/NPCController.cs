@@ -19,15 +19,16 @@ public class NPCController : MonoBehaviour, Interactable
         character = GetComponent<Character>();
     }
 
-    public void Interact(Transform initiator){ //Initiator is the transform of the player that started the interaction
+    public IEnumerator Interact(Transform initiator){ //Initiator is the transform of the player that started the interaction
         //To have and instance of the dialogue manager and be able to call all the functions inside it
         if (state == NPCState.Idle){
             state = NPCState.Dialogue;
             character.LookToward(initiator.position);
-            StartCoroutine(DialogueManager.Instance.ShowDialogue(dialogue, () => {
-                IdleTimer = 0f;
-                state = NPCState.Idle; //Lambda to change the state to idle, this prevents other NPC's to stop moving when talking to one of them
-            }));
+            
+            yield return DialogueManager.Instance.ShowDialogue(dialogue);
+
+            IdleTimer = 0f;
+            state = NPCState.Idle; //Lambda to change the state to idle, this prevents other NPC's to stop moving when talking to one of them
         }
     } 
 
