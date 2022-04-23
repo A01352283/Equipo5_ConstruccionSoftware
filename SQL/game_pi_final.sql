@@ -2,6 +2,53 @@ DROP SCHEMA IF EXISTS percussion_island3;
 CREATE SCHEMA percussion_island3;
 USE percussion_island3;
 
+DELIMITER $$
+CREATE TRIGGER update_rhythm_best_score
+AFTER UPDATE ON game_user_scores
+FOR EACH ROW
+BEGIN
+    IF rhythm_best_score < rhythm_last_score
+    THEN
+        UPDATE game_user_scores SET rhythm_best_score = rhythm_last_score;
+    END IF ;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER update_trivia_best_score
+AFTER UPDATE ON game_user_scores
+FOR EACH ROW
+BEGIN
+    IF trivia_best_score < trivia_last_score
+    THEN
+        UPDATE game_user_scores SET trivia_best_score = trivia_last_score;
+    END IF ;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER update_memory_best_score
+AFTER UPDATE ON game_user_scores
+FOR EACH ROW
+BEGIN
+    IF memory_best_score < memory_last_score
+    THEN
+        UPDATE game_user_scores SET memory_best_score = memory_last_score;
+    END IF ;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER update_memorysounds_best_score
+AFTER UPDATE ON game_user_scores
+FOR EACH ROW
+BEGIN
+    IF memorysounds_best_score < memorysounds_last_score
+    THEN
+        UPDATE game_user_scores SET memorysounds_best_score = memorysounds_last_score;
+    END IF ;
+END$$
+DELIMITER ;
 
 CREATE TABLE game_user (
   user_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
