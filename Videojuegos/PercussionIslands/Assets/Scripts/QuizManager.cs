@@ -107,10 +107,10 @@ public class QuizManager : MonoBehaviour
     */
     //We will latter generate the questions by json files
     void generateQuestions(){
-        QnA.Add(new QuestionAnswers("How old are you?","22","15","75","30"));
-        QnA.Add(new QuestionAnswers("Best game?","Percussion Island","Pokemon","Cuphead","TroyWars"));
-        QnA.Add(new QuestionAnswers("Day of the week?","Friday","Tuesday","Thursday","Sunday"));
-        QnA.Add(new QuestionAnswers("Best School?","Tec","UNAM","ANAHUAC","POLI"));
+        QnA.Add(new QuestionAnswers(0,"How old are you?","22","15","75","30"));
+        QnA.Add(new QuestionAnswers(0,"Best game?","Percussion Island","Pokemon","Cuphead","TroyWars"));
+        QnA.Add(new QuestionAnswers(0,"Day of the week?","Friday","Tuesday","Thursday","Sunday"));
+        QnA.Add(new QuestionAnswers(0,"Best School?","Tec","UNAM","ANAHUAC","POLI"));
     }
 
     //Function that allows to shuffle the order of the answers

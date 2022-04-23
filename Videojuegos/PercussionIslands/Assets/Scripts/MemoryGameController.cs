@@ -57,11 +57,13 @@ public class MemoryGameController : MonoBehaviour
         MemoryGameOverScreen.Setup(score);
     }
 
-
+    //Load Sprites and Sound for the memory cards
     void Awake(){
         puzzles= Resources.LoadAll<Sprite>("Instrument_Sprites");
         sounds=Resources.LoadAll<AudioClip>("Sounds/Game1");
     }
+
+    //Begin script
     void Start(){
         GetButtons();
         AddListeners();
@@ -71,6 +73,7 @@ public class MemoryGameController : MonoBehaviour
         audio_s=GetComponent<AudioSource>();
         inst_name.text="Select Card";
     }
+    //Activate buttons for memory cards
     void GetButtons(){
         GameObject[] objects = GameObject.FindGameObjectsWithTag("PuzzleButton");
 
@@ -79,7 +82,7 @@ public class MemoryGameController : MonoBehaviour
             btns[i].image.sprite =bgImage;
         }
     }
-
+    // Generate Cards with the sprites and sounds
     void AddGamePuzzles(){
         int looper = btns.Count;
         for(int i=0; i<looper/2; i++){
@@ -88,13 +91,13 @@ public class MemoryGameController : MonoBehaviour
             cards.Add(new Card(i,sounds[i]));
         }
     }
-
+    //Allows to listen sound of a clicked Memory Card
     void AddListeners(){
         foreach (Button btn in btns){
             btn.onClick.AddListener(() => PickAPuzzle());
         }
     }
-
+    //Select specific memory card, once clicked it checks the type of Card class and displays the content
     public void PickAPuzzle(){
         if(!firstGuess){
             firstGuess = true;
@@ -133,7 +136,6 @@ public class MemoryGameController : MonoBehaviour
             StartCoroutine(CheckIfThePuzzleMatch());
         }
     }
-
     IEnumerator CheckIfThePuzzleMatch(){
         yield return new WaitForSeconds(1.3f);
         if(firstGuessPuzzle==secondGuessPuzzle){
@@ -144,6 +146,7 @@ public class MemoryGameController : MonoBehaviour
             corr_screen.SetActive(false);
             btns[firstGuessIndex].interactable = false;
             btns[secondGuessIndex].interactable = false;
+            //Erase btn (Card) from the game
             btns[firstGuessIndex].image.color = new Color(0,0,0,0);
             btns[secondGuessIndex].image.color = new Color(0,0,0,0);
 
@@ -154,6 +157,7 @@ public class MemoryGameController : MonoBehaviour
             inst_name.text="Select Card";
             CheckIfTheGameIsFinished();
         }else{
+            //RESET MULTIPLYER
             mult=10;
             yield return new WaitForSeconds(.6f);
             incorr_screen.SetActive(true);
@@ -180,7 +184,7 @@ public class MemoryGameController : MonoBehaviour
             Debug.Log("It took you" + countGuesses + " many guesses to finish the game");
         }
     }
-
+    //Shuffle order of memory cards depepnding on the list
     void Shuffle(List<Card> list){
         for (int i = 0; i < list.Count; i++){
             Card temp = list[i];
