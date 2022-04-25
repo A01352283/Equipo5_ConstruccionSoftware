@@ -2,11 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 [System.Serializable]
-
 public class QuestionAnswers
 {
     public int question_id;
     public string question;
+
+    public string ans1;
+    public string ans2;
+    public string ans3;
+    public string ans4;
     public List<string> answers;
     public string correctanswer;
 
@@ -20,6 +24,13 @@ public class QuestionAnswers
             this.answers.Add(_ans4);
             this.correctanswer = _ans1;
         }
+    public void AddList(){
+        this.answers=new List<string>();
+        this.answers.Add(ans1);
+        this.answers.Add(ans2);
+        this.answers.Add(ans3);
+        this.answers.Add(ans4);
+    }
 }
 
 
