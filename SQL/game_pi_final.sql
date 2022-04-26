@@ -9,11 +9,10 @@ CREATE TRIGGER update_rhythm_best_score
 AFTER UPDATE ON game_user_scores
 FOR EACH ROW
 BEGIN
-    IF NEW.rhythm_best_score < NEW.rhythm_last_score
-    THEN
+    IF NEW.rhythm_best_score < NEW.rhythm_last_score THEN
 		SET NEW.rhythm_best_score = NEW.rhythm_last_score;
     END IF ;
-END$$
+END;$$
 DELIMITER ;
 
 drop trigger update_trivia_best_score;
