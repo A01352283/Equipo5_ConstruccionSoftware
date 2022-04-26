@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     [SerializeField] InventoryUI inventoryUI;
     
     GameState state;
-    GameState stateBeforePause;
+    GameState prevState;
 
     public SceneDetails CurrentScene {get; private set;}
     public SceneDetails PrevScene {get; private set;}
@@ -34,6 +34,7 @@ public class GameController : MonoBehaviour
         
         DialogueManager.Instance.OnShowDialogue += () =>//Lambda function to change the state
         {
+            prevState = state;
             state = GameState.Dialogue; //Start dialogue state
 
         };    
@@ -41,7 +42,7 @@ public class GameController : MonoBehaviour
         DialogueManager.Instance.OnCloseDialogue += () =>//Lambda function to change the state
         {   
             if (state == GameState.Dialogue){ //Turn back the state into free roam
-                state = GameState.FreeRoam;
+                state = prevState;
             }
             
         };  
@@ -59,11 +60,11 @@ public class GameController : MonoBehaviour
     //This is used to prevent the game from carrying on the targetpos from the previous scene
     public void PauseGame(bool pause){
         if (pause){   
-            stateBeforePause = state;
+            prevState = state;
             state = GameState.Paused;
         }
         else{
-            state = stateBeforePause;
+            state = prevState;
         }
     }
 

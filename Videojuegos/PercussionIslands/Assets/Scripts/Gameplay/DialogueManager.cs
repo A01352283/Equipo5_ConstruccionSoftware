@@ -22,6 +22,27 @@ public class DialogueManager : MonoBehaviour
 
     public bool IsShowing{ get; private set;} //Property to allow or prevent NPC from moving during dialogue
 
+    public IEnumerator ShowDialogueText(string text, bool waitForInput=true){
+        OnShowDialogue?.Invoke();
+        IsShowing = true;
+        dialogueBox.SetActive(true);
+
+        yield return TypeDialogue(text);
+
+        if (waitForInput){
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Z) | Input.GetKeyDown(KeyCode.I));
+        }
+
+        CloseDialogue();
+        
+    }
+
+    public void CloseDialogue(){
+        dialogueBox.SetActive(false);
+        IsShowing = false;
+        OnCloseDialogue?.Invoke();
+    }
+
     //This is called when near the NPC and the interact button is pressed
     public IEnumerator ShowDialogue(Dialogue dialogue){
         yield return new WaitForEndOfFrame(); //Waits in order to not have the interact button pressed during the same frame and advance when not needed

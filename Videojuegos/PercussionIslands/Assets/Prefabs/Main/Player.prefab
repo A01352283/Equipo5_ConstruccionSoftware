@@ -309,6 +309,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbc0179eb236f474a952b727b9206ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots:
-  - item: {fileID: 11400000, guid: e171c996e5e85eb49b49aa9ff70cc275, type: 2}
-    count: 1
+  slots: []
+  keySlots: []

@@ -19,5 +19,5 @@ MonoBehaviour:
     instrument was used as early as the Turks with their Janissary music and eventually
     found its way into the classical orchestra repertoire of the eighteenth, nineteenth
     and twentieth centuries.
-  icon: {fileID: 5749393321387579118, guid: 7e1f79ed4c5d70b4b86cd37f38d33265, type: 3}
+  icon: {fileID: 21300000, guid: 56a4b8f7aef892f4bba769b9baabcef9, type: 3}
   instrumentSound: {fileID: 8300000, guid: bc9405d2cc856184dadffeaa2ae8969e, type: 3}
