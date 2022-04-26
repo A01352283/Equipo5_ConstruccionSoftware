@@ -153,6 +153,9 @@ public class MemoryGameController : MonoBehaviour
             //SUM Score
             score+=mult;
             mult = mult+(mult*1);
+            if(mult>100){
+                mult=100;
+            }
             count_guess.text=(score).ToString();
             inst_name.text="Select Card";
             CheckIfTheGameIsFinished();

@@ -19,7 +19,7 @@ public class QuizManager : MonoBehaviour
 
     private QuestionAnswers currentQuestion;
     private int index =0;
-    private int mult= 10;
+    private int mult= 1;
     private int score= 0;
 
     public GameObject corr_screen;
@@ -83,6 +83,9 @@ public class QuizManager : MonoBehaviour
             StartCoroutine(CheckMatch(match));
             score+=mult;
             mult = mult+(mult*1);
+            if (mult>100){
+                mult=100;
+            }
             showQuestions();
         }
         else{
@@ -92,7 +95,7 @@ public class QuizManager : MonoBehaviour
             audio_s.Play();
             Debug.Log("INCORRECT");
             StartCoroutine(CheckMatch(match));
-            mult=10;
+            mult=1;
             showQuestions();
         }
     }
