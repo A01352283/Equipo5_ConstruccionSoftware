@@ -1,0 +1,60 @@
+
+@font-face {
+    src: url('../fonts/orange\ kid.ttf');
+    font-family: orange-kid;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    max-height: 10vh;
+    font-family: orange-kid;
+    background-color:rgb(92, 39, 249);
+}
+
+.logo{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: antiquewhite;
+    letter-spacing: 3px;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a{
+    color: antiquewhite;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.menu{
+    display: none;
+}
+.menu div{
+    width: 25px;
+    height: 3px;
+    background-color: antiquewhite;
+    margin: 3px;
+}
+
+@media screen and (max-width:1024px) {
+    .nav-links{
+        width: 65%;
+    }
+}
