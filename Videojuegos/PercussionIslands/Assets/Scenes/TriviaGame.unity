@@ -529,7 +529,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: .......
 --- !u!222 &306582463
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -840,6 +840,7 @@ GameObject:
   - component: {fileID: 817148102}
   - component: {fileID: 817148101}
   - component: {fileID: 817148103}
+  - component: {fileID: 817148104}
   m_Layer: 0
   m_Name: QuizManager
   m_TagString: Untagged
@@ -859,7 +860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cfc7f665321e449aa93f00c55cbd61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  QnA: []
+  QnA:
+    questions: []
   audio_s: {fileID: 817148103}
   corr: {fileID: 8300000, guid: c348394dec2a3274fab5a8bfdaf59870, type: 3}
   incorr: {fileID: 8300000, guid: 63135c0a50ef7f54796f05e4bfe7cc7b, type: 3}
@@ -982,6 +984,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &817148104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817148100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ff82e430644d846bab1410f28fb8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: localhost:5000
+  getEP: /api/questions
+  allUsers:
+    users: []
+  allQuestions:
+    questions: []
 --- !u!1 &896683580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,7 +1072,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: .......
 --- !u!222 &896683583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1141,7 +1161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: .......
 --- !u!222 &930647988
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1403,7 +1423,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: ..........
 --- !u!222 &1336891863
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1561,7 +1581,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: .......
 --- !u!222 &1459818387
 CanvasRenderer:
   m_ObjectHideFlags: 0
