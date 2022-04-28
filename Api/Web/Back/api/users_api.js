@@ -1,6 +1,6 @@
 "use strict"
 
-import express from 'express'
+import express, { response } from 'express'
 import mysql from 'mysql'
 import fs from 'fs'
 import { request } from 'http';
@@ -78,6 +78,53 @@ app.get('/game_user/sf', (request,response)=>{
     })
 });
 
+
+app.post('/api/game_user/verify', (request,response)=>{
+    let connection = connectToDB();
+
+    try{
+
+        connection.connect();
+
+        connection.query('SELECT COUNT(1) from game_user where user_name=?', request.body['user_name'], (error, results, fields)=>{
+            if(error) console.log(error);
+            console.log(JSON.stringify(results[0]["COUNT(1)"]));
+            response.json(results[0]["COUNT(1)"]);
+        });
+
+        connection.end();
+
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
+app.get('/api/game_user/password', (request,response)=>{
+    let connection = connectToDB();
+
+    try{
+
+        connection.connect();
+
+        connection.query('SELECT COUNT 1 (user_name) from game_user where user_name=? and pwd=?', request.body, (error, results, fields)=>{
+            if(error) console.log(error);
+            console.log(JSON.stringify(results));
+            response.json(results);
+        });
+
+        connection.end();
+
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
 app.get('/api/game_user', (request, response)=>{
     let connection = connectToDB();
 
@@ -99,6 +146,7 @@ app.get('/api/game_user', (request, response)=>{
         console.log(error);
     }
 });
+
 
 app.get('/api/game_user/scores', (request, response)=>{
     let connection = connectToDB();
@@ -188,6 +236,98 @@ app.get('/api/questions', (request, response)=>{
     }
 });
 
+
+app.get('/api/top-scores/rhythm', (request, response)=>{
+    let connection = connectToDB();
+
+    try{
+
+        connection.connect();
+
+        connection.query('select * from top_rhythm_scores', (error, results, fields)=>{
+            if(error) console.log(error);
+            console.log(JSON.stringify(results));
+            response.json(results);
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+
+});
+
+app.get('/api/top-scores/trivia', (request, response)=>{
+    let connection = connectToDB();
+
+    try{
+
+        connection.connect();
+
+        connection.query('select * from top_trivia_scores', (error, results, fields)=>{
+            if(error) console.log(error);
+            console.log(JSON.stringify(results));
+            response.json(results);
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+
+});
+
+app.get('/api/top-scores/memory', (request, response)=>{
+    let connection = connectToDB();
+
+    try{
+
+        connection.connect();
+
+        connection.query('select * from top_memory_scores', (error, results, fields)=>{
+            if(error) console.log(error);
+            console.log(JSON.stringify(results));
+            response.json(results);
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+
+});
+
+app.get('/api/top-scores/memorysounds', (request, response)=>{
+    let connection = connectToDB();
+
+    try{
+
+        connection.connect();
+
+        connection.query('select * from top_memory_scores', (error, results, fields)=>{
+            if(error) console.log(error);
+            console.log(JSON.stringify(results));
+            response.json(results);
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+
+});
 
 
 
@@ -317,12 +457,12 @@ app.put('/api/game_user', (request, response)=>{
     try{
         let connection = connectToDB();
         connection.connect();
-
-        const query = connection.query('update game_user set user_name = ?, pwd = ? where user_id= ?', [request.body['user_name'], request.body['pwd'], request.body['user_id']] ,(error, results, fields)=>{
+        //Como logro que aun cuando no se inserten todos los valores se pueda hacer el update (solo user_name)
+        const query = connection.query('update game_user set ?', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
-                response.json({'message': "Data updated correctly."})
+                response.json({'message': "User info updated correctly."})
         });
 
         connection.end();
@@ -339,11 +479,11 @@ app.put('/api/game_user/scores', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
         //Modificar solo un minijuego a la vez
-        const query = connection.query('update game_user_scores set rhythm_last_score = ?, rhythm_play_time = ?, trivia_last_score = ?, trivia_play_time = ?, memory_last_score = ?, memory_play_time = ?,memorysounds_last_score = ?, memorysounds_play_time = ? where user_id= ?', [request.body['rhythm_last_score'], request.body['rhythm_play_time'], request.body['trivia_last_score'], request.body['trivia_play_time'], request.body['memory_last_score'], request.body['memory_play_time'], request.body['memorysounds_last_score'], request.body['memorysounds_play_time'], request.body['user_id']] ,(error, results, fields)=>{
+        const query = connection.query('update game_user_scores set ? where user_name=?', [request.body,user], (error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
-                response.json({'message': "Data updated correctly."})
+                response.json({'message': "User scores updated correctly."})
         });
         //se puede hacer solo un update en lugar de todos?
         //como agregar query para comparar con best score? y sumar al tiempo
@@ -361,7 +501,7 @@ app.put('/api/game_user/sf', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
         //Modificar solo un minijuego a la vez
-        const query = connection.query('update game_user_save_file set key_instruments_unlocked = ?, player_position_x = ?, player_position_y = ? where user_id= ?', [request.body['key_instruments_unlocked'], request.body['player_position_x'], request.body['player_position_y'], request.body['user_id']] ,(error, results, fields)=>{
+        const query = connection.query('update game_user_save_file set ? where user_name=?', [request.body,user] ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -405,7 +545,7 @@ app.delete('/api/game_user', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from game_user where user_id= ?', [request.body['userID']] ,(error, results, fields)=>{
+        const query = connection.query('delete from game_user where user_name= ?', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -427,7 +567,7 @@ app.delete('/api/game_user/scores', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from game_user_scores where user_id= ?', [request.body['user_id']] ,(error, results, fields)=>{
+        const query = connection.query('delete from game_user_scores where user_name= ?', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -449,7 +589,7 @@ app.delete('/api/game_user/key_inventory', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from game_user_key_inventory where user_id= ?', [request.body['userID']] ,(error, results, fields)=>{
+        const query = connection.query('delete from game_user_key_inventory where user_name= ?', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -471,7 +611,7 @@ app.delete('/api/game_user/sf', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from game_user_save_file where user_id= ?', [request.body['userID']] ,(error, results, fields)=>{
+        const query = connection.query('delete from game_user_save_file where user_name= ?', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -513,3 +653,4 @@ app.listen(port, ()=>
 {
     console.log(`App listening at http://localhost:${port}`);
 });
+

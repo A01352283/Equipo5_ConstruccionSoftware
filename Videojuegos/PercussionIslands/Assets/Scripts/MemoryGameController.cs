@@ -40,7 +40,7 @@ public class MemoryGameController : MonoBehaviour
     //Mult is the score multiplyer that will grow if the user keeps guessing correct continuously
     int mult= 10;
     //This value will keep store the score of the player during the game, being affected by mult
-    int score= 0;
+    public int score= 0;
     //Value that will keep count of the number of correct guesses
     private int countCorrectGuesses;
     private int gameGuesses;

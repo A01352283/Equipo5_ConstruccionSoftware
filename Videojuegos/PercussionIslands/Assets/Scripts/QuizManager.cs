@@ -37,7 +37,7 @@ public class QuizManager : MonoBehaviour
 
     IEnumerator fillQuestion(){
         yield return new WaitForSeconds(2f);
-        QnA=GetComponent<Api>().allQuestions;
+        QnA=GetComponent<Api_Questions>().allQuestions;
         showQuestions();
     }
     public void showQuestions(){
