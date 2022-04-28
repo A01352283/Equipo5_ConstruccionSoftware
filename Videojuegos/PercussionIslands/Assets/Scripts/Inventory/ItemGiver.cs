@@ -16,6 +16,7 @@ public class ItemGiver : MonoBehaviour
         player.GetComponent<NonKeyInventory>().AddItem(item);
 
         used = true;
+
         yield return DialogueManager.Instance.ShowDialogueText($"You received {item.name}!");
     }
 

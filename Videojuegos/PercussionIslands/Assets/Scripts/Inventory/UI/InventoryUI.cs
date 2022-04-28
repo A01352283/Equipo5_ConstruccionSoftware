@@ -65,15 +65,19 @@ public class InventoryUI : MonoBehaviour
             //Move within the menu
             if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)){ //Move down on the menu
                 ++selectedItem;
+                AudioManager.i.PlaySFX(AudioID.UISelect);
             }
             else if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)){ //Move up on the menu
                 --selectedItem;
+                AudioManager.i.PlaySFX(AudioID.UISelect);
             }
             else if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)){ //Move to left category
                 --selectedCategory;
+                AudioManager.i.PlaySFX(AudioID.UISelect);
             }
             else if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)){ //Move to right category
                 ++selectedCategory;
+                AudioManager.i.PlaySFX(AudioID.UISelect);
             }
 
             //Wraps the selection to the first/last item
@@ -106,6 +110,7 @@ public class InventoryUI : MonoBehaviour
             }            
             //Cancel action
             else if (Input.GetKeyDown(KeyCode.X) | Input.GetKeyDown(KeyCode.O)){
+                AudioManager.i.PlaySFX(AudioID.UICloseMenu);
                 onBack?.Invoke();
             }
         }

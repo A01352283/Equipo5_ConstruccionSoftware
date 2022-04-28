@@ -6,6 +6,12 @@ public class NPCController : MonoBehaviour, Interactable
 {
 
     [SerializeField] Dialogue dialogue; //Stores all the lines of dialogue for the NPC
+
+    [Header("Quests")]
+    [SerializeField] QuestBase questToStart; //The quest that the NPC will give (optional)
+    [SerializeField] QuestBase questToComplete; //Used to deactivate story items
+
+    [Header("Movement")]
     [SerializeField] List<Vector2> movementPattern; //Stores the pattern in which the NPC will move
     [SerializeField] float timeBetweenPattern; //Delay of pattern repetitions
 
@@ -15,6 +21,7 @@ public class NPCController : MonoBehaviour, Interactable
     NPCState state;
     float IdleTimer = 0f; //Time where NPC will stay idle between pattern movements
     int currentMovementPattern = 0; //Current step of the movement pattern
+    Quest activeQuest; //Reference to the active quest of the NPC (if it has one)
 
     private void Awake() {
         character = GetComponent<Character>();
@@ -27,8 +34,37 @@ public class NPCController : MonoBehaviour, Interactable
             state = NPCState.Dialogue;
             character.LookToward(initiator.position);
 
+            if (questToComplete != null){
+                var quest = new Quest(questToComplete);
+
+                yield return quest.CompleteQuest();
+                questToComplete = null;
+
+                Debug.Log($"{quest.Base.Name} completed");
+            }
+
             if (itemGiver != null && itemGiver.CanBeGiven()){
                 yield return itemGiver.GiveItem(initiator.GetComponent<PlayerController>());
+            }
+            else if (questToStart != null){
+                activeQuest = new Quest(questToStart);
+                yield return activeQuest.StartQuest();
+                
+                questToStart = null; //Since we don't want to restart the quest
+
+                if (activeQuest.CanBeCompleted()){ //Complete the quest
+                    yield return activeQuest.CompleteQuest();
+                    activeQuest = null;
+                }
+            }
+            else if (activeQuest != null){ //If there is an active quest
+                if (activeQuest.CanBeCompleted()){ //Complete the quest
+                    yield return activeQuest.CompleteQuest();
+                    activeQuest = null;
+                }
+                else{   //If the quest can't be completed yet
+                    yield return DialogueManager.Instance.ShowDialogue(activeQuest.Base.InProgressDialogue);
+                }
             }
             else{
                 yield return DialogueManager.Instance.ShowDialogue(dialogue);

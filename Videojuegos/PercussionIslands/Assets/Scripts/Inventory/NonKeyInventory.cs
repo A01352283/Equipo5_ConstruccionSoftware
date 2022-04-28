@@ -35,7 +35,7 @@ public class NonKeyInventory : MonoBehaviour
         bool itemUsed = item.Use();
 
         if (itemUsed){
-            //RemoveItem(item, selectedCategory); //Decreases the item count
+            //RemoveItem(item); //Decreases the item count
             return item;
         }
 
@@ -58,21 +58,32 @@ public class NonKeyInventory : MonoBehaviour
             });
         }
 
+        AudioManager.i.PlaySFX(AudioID.UIShop);
+
         OnUpdated?.Invoke(); //Calls OnUpdated so the changes are reflected in the UI
     }
 
     //Decreased count of the item in the inventory
-    public void RemoveItem(ItemBase item, int category){
+    public void RemoveItem(ItemBase item){
+        int category = (int)GetCategoryFromItem(item); //Finds the item's category
         var currentSlots = GetSlotsByCategory(category);
 
-        var itemSlot = slots.First(slot => slot.Item == item);
+        var itemSlot = currentSlots.First(slot => slot.Item == item);
         itemSlot.Count--;
 
         //Removes the item slot if there are no more items of this type left
         if (itemSlot.Count == 0)
             currentSlots.Remove(itemSlot);
 
-        OnUpdated.Invoke();
+        OnUpdated?.Invoke();
+    }
+
+    //Checks if a certain item is in the player's inventory
+    public bool HasItem(ItemBase item){
+        int category = (int)GetCategoryFromItem(item); //Finds the item's category
+        var currentSlots = GetSlotsByCategory(category);
+
+        return currentSlots.Exists(slot => slot.Item == item); //Checks if the player has a slot for the item
     }
 
     public static NonKeyInventory GetNonKeyInventory(){

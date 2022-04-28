@@ -27,6 +27,8 @@ public class DialogueManager : MonoBehaviour
         IsShowing = true;
         dialogueBox.SetActive(true);
 
+        AudioManager.i.PlaySFX(AudioID.UIConfirm);
+
         yield return TypeDialogue(text);
 
         if (waitForInput){
@@ -52,6 +54,7 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(true);
 
         foreach (var line in dialogue.Lines){
+            AudioManager.i.PlaySFX(AudioID.UIConfirm);
             yield return(TypeDialogue(line));
             yield return new WaitUntil( () => Input.GetKeyDown(KeyCode.Z) | Input.GetKeyDown(KeyCode.I));
         }

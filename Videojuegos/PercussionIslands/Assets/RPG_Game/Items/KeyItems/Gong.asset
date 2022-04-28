@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Gong
   m_EditorClassIdentifier: 
   itemName: Gong
-  description: Very loud :0
+  description: Very loud.
   icon: {fileID: 21300000, guid: 0e24a62085ab2f14aabd8ce5da96072b, type: 3}
+  audioSource: {fileID: 0}

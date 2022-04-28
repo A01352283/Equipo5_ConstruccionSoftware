@@ -18,6 +18,7 @@ public class LocationPortal : MonoBehaviour, IPlayerTriggerable
         StartCoroutine(Teleport());
     }
     
+    public bool TriggerRepeatedly => false;
 
     Fader fader;
     private void Start() {
@@ -39,4 +40,5 @@ public class LocationPortal : MonoBehaviour, IPlayerTriggerable
 
     //Property to expose the spawn point
     public Transform SpawnPoint => spawnPoint;
+
 }

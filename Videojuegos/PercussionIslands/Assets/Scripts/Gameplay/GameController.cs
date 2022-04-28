@@ -74,6 +74,7 @@ public class GameController : MonoBehaviour
 
             //Opens the menu UI on Enter key press
             if (Input.GetKeyDown(KeyCode.Return) | Input.GetKeyDown(KeyCode.Escape)){
+                playerController.Character.Animator.isMoving = false; //Stops the walking animation when opening the menu
                 menuController.OpenMenu();
                 state = GameState.Menu;
             }

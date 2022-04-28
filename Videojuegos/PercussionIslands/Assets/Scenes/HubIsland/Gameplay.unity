@@ -191,6 +191,10 @@ PrefabInstance:
       value: House2HubIsland
       objectReference: {fileID: 0}
     - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ff955fdc4a1b3a498c2694cfbdcb3d4, type: 3}
+    - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
       propertyPath: connectedScenes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -279,6 +283,10 @@ PrefabInstance:
       value: House1HubIsland
       objectReference: {fileID: 0}
     - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ff955fdc4a1b3a498c2694cfbdcb3d4, type: 3}
+    - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
       propertyPath: connectedScenes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -355,6 +363,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstIsland
       objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 54d5a64c0b397694cbca7e366b9e3f22, type: 3}
     - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
       propertyPath: connectedScenes.Array.size
       value: 1
@@ -499,6 +511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HubIsland
       objectReference: {fileID: 0}
+    - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 62b0ca2f1d91d2d4f97505f74f600a57, type: 3}
     - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
       propertyPath: connectedScenes.Array.size
       value: 3
