@@ -17,3 +17,6 @@ Repositorio para el proyecto del equipo 5 de Construcción de Software y Toma de
 - Top down tileset: https://jamiebrownhill.itch.io/solaria-rural-village
 - MIDI editor (LMMS): https://lmms.io/download#windows
 - Percussion Library: https://philharmonia.co.uk/resources/sound-samples/
+
+#Asset credits
+- Menu SFX: https://souptonic.itch.io/souptonic-sfx-pack-1-ui-sounds
