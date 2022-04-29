@@ -43,6 +43,10 @@ public class Api_Login : MonoBehaviour
        StartCoroutine(Verify_User());
     }
 
+    public void RegsiterPage(){
+        SceneManager.LoadScene(5);
+    }
+
     IEnumerator Verify_User()
     {   
         user= new UserInfo();
@@ -72,7 +76,7 @@ public class Api_Login : MonoBehaviour
             //allQuestions = JsonUtility.FromJson<QuestionsList>(jsonString);
 
         } else {
-            Debug.Log("Error: " + www.error);
+            status.text="Error: " + www.error;
         }
     }
     

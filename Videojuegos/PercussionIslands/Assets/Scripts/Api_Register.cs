@@ -34,6 +34,16 @@ public class Api_Register : MonoBehaviour
        StartCoroutine(New_User());
     }
 
+    public void BackLogin(){
+        SceneManager.LoadScene(0);
+    }
+
+    public class Message{
+        public string message;
+    }
+
+    Message msg;
+
     IEnumerator New_User()
     {   
         user= new UserInfo();
@@ -49,14 +59,23 @@ public class Api_Register : MonoBehaviour
             yield return www.SendWebRequest();
 
             if (www.result == UnityWebRequest.Result.Success) {
-            Debug.Log(www.downloadHandler.text);
+                msg= new Message();
+                msg= JsonUtility.FromJson<Message>(www.downloadHandler.text);
+                if (msg.message=="User Created Succesfully!"){
+                    status.text=msg.message + " Returning to Login Screen";
+                    yield return new WaitForSeconds(1.5f);
+                    BackLogin();
+                }
+                else{
+                    status.text=msg.message;
+                }
             // Compose the response to look like the object we want to extract
             // https://answers.unity.com/questions/1503047/json-must-represent-an-object-type.html
             //string jsonString = "{\"questions\":" + www.downloadHandler.text + "}";
             //allQuestions = JsonUtility.FromJson<QuestionsList>(jsonString);
             } 
             else {
-            Debug.Log("Error: " + www.error);
+                status.text="Error: " + www.error;
             }
         }
     }

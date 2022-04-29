@@ -393,7 +393,7 @@ app.post('/api/game_user/sf', (request, response)=>{
             if(error) 
                 console.log(error);
             else
-                response.json({'message': "Data inserted correctly."})
+                response.json({'message': "New user created correctly! Returning to Login Screen...."})
         });
 
         connection.end();
@@ -418,7 +418,7 @@ app.post('/api/questions', (request, response)=>{
             if(error) 
                 console.log(error);
             else
-                response.json({'message': "Data inserted correctly."})
+                response.json({'message': "Question inserted correctly."})
         });
 
         connection.end();
@@ -434,8 +434,10 @@ app.put('/api/game_user', (request, response)=>{
     try{
         let connection = connectToDB();
         connection.connect();
+        const data = Object.entries(request.body).filter(([k,v])=> k!='user_name');
+        const queryData = Object.fromEntries(data);
         //Como logro que aun cuando no se inserten todos los valores se pueda hacer el update (solo user_name)
-        const query = connection.query('update game_user set ?', request.body ,(error, results, fields)=>{
+        const query = connection.query('update game_user set ? where user_name=?', [queryData, request.body['user_name']] ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -455,8 +457,11 @@ app.put('/api/game_user/scores', (request, response)=>{
     try{
         let connection = connectToDB();
         connection.connect();
+
+        const data = Object.entries(request.body).filter(([k,v])=> k!='user_name');
+        const queryData = Object.fromEntries(data);
         //Modificar solo un minijuego a la vez
-        const query = connection.query('update game_user_scores set ? where user_name=?', [request.body,user], (error, results, fields)=>{
+        const query = connection.query('update game_user_scores set ? where user_name=?', [queryData, request.body['user_name']], (error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -477,12 +482,15 @@ app.put('/api/game_user/sf', (request, response)=>{
     try{
         let connection = connectToDB();
         connection.connect();
+
+        const data = Object.entries(request.body).filter(([k,v])=> k!='user_name');
+        const queryData = Object.fromEntries(data);
         //Modificar solo un minijuego a la vez
-        const query = connection.query('update game_user_save_file set ? where user_name=?', [request.body,user] ,(error, results, fields)=>{
+        const query = connection.query('update game_user_save_file set ? where user_name=?', [queryData, request.body['user_name']] ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
-                response.json({'message': "Data updated correctly."})
+                response.json({'message': "User updated correctly."})
         });
         //se puede hacer solo un update en lugar de todos?
         //como agregar query para comparar con best score? y sumar al tiempo
