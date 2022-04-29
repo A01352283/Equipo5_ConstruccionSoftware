@@ -10,11 +10,17 @@ EditorBuildSettings:
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/HubIsland/House1HubIsland.unity
-    guid: 9c09a6ebdae13c34696f1e64ba3862f3
+    guid: 02eb73cb86eff0f4ebf4153f8812c1c2
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/HubIsland/House2HubIsland.unity
     guid: 55d4292af3ae4894b88b80c7e8c2123e
   - enabled: 1
     path: Assets/Scenes/FirstIsland/FirstIsland.unity
     guid: ae671e464122c024d8bf8a3ff96517d2
+  - enabled: 1
+    path: Assets/Scenes/Memory.unity
+    guid: 5e8456c1417d93845ad69855dfba0e49
   m_configObjects: {}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, ISavable
 {
     private Vector2 input;
 
@@ -76,6 +76,22 @@ public class PlayerController : MonoBehaviour
             currentlyInTrigger = null;
         }
 
+    }
+
+
+    //Save system interface implementataions
+    //Saving
+    public object CaptureState()
+    {
+        float[] position = new float[] { transform.position.x,  transform.position.y }; //Gets the x and y positions like this, since tranform.position is not serializable
+        return position;
+    }
+
+    //Loading
+    public void RestoreState(object state)
+    {
+        var position = (float[])state;
+        transform.position = new Vector3(position[0], position[1]); //Converts the array back into a vector3
     }
 
     //Properties

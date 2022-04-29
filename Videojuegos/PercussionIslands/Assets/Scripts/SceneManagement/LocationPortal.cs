@@ -27,7 +27,7 @@ public class LocationPortal : MonoBehaviour, IPlayerTriggerable
 
     IEnumerator Teleport(){
 
-        GameController.Instance.PauseGame(true); //This prevents the game from carrying on  the target position from the previous scene
+        GameController.Instance.PauseGame(true); //This prevents the game from carrying on the target position from the previous scene
         yield return fader.FadeIn(0.5f); //Fades the screen to black 
 
         var destPortal = FindObjectsOfType<LocationPortal>().First(x => x != this && x.destinationPortal == this.destinationPortal); //This function will return the first portal in the scene which is not the one we used to transfer
