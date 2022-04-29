@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
     public AudioSource hitSFX;
     public AudioSource missSFX;
     public TMPro.TextMeshPro scoreText;
+    public TMPro.TextMeshPro totalScoreText;
     static int comboScore;
     static int TotalScore;
     // Start is called before the first frame update
@@ -31,5 +32,6 @@ public class ScoreManager : MonoBehaviour
     private void Update()
     {
         scoreText.text = comboScore.ToString();
+        totalScoreText.text = TotalScore.ToString();
     }
 }

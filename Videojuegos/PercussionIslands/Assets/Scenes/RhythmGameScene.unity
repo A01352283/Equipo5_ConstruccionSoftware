@@ -579,7 +579,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -636,6 +636,7 @@ MonoBehaviour:
   hitSFX: {fileID: 934529416}
   missSFX: {fileID: 226846959}
   scoreText: {fileID: 1016730712}
+  totalScoreText: {fileID: 0}
 --- !u!4 &762607376
 Transform:
   m_ObjectHideFlags: 0
