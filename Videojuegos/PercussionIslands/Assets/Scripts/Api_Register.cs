@@ -15,16 +15,7 @@ using UnityEngine.SceneManagement;
 // https://stackoverflow.com/questions/40633388/show-members-of-a-class-in-unity3d-inspector
 
 
-// Allow the class to be extracted from Unity
-
-[System.Serializable]
-public class UserInfo
-{
-    public string user_name;
-    public string pwd;
-}
-
-public class Api_Login : MonoBehaviour
+public class Api_Register : MonoBehaviour
 {
     [SerializeField] string url;
     [SerializeField] string getEP;
@@ -37,42 +28,36 @@ public class Api_Login : MonoBehaviour
     public UserInfo user;
 
     // Update is called once per frame
-    public void CheckUser()
+    public void Register_User()
     {
     //when cliked button login loop hasta que haga match
-       StartCoroutine(Verify_User());
+       StartCoroutine(New_User());
     }
 
-    IEnumerator Verify_User()
+    IEnumerator New_User()
     {   
         user= new UserInfo();
         user.user_name=user_text.text;
         user.pwd=pwd_text.text;
         string data=JsonUtility.ToJson(user);
-        UnityWebRequest www= UnityWebRequest.Put(url + getEP,data);
+        using(UnityWebRequest www= UnityWebRequest.Put(url + getEP,data))
+        //UnityWebRequest www= UnityWebRequest.Post(url + getEP,data);
         //using
-        www.method="POST";
-        www.SetRequestHeader("Content-Type", "Application/json");
-        yield return www.SendWebRequest();
+        {
+            www.method="POST";
+            www.SetRequestHeader("Content-Type", "Application/json");
+            yield return www.SendWebRequest();
 
-        if (www.result == UnityWebRequest.Result.Success) {
-            if(www.downloadHandler.text=="1"){
-                //Couroutine????
-                status.text="Correct Credentials!";
-                PlayerPrefs.SetString("user_name",user.user_name);
-                yield return new WaitForSeconds(.8f);
-                SceneManager.LoadScene(4);
-            }
-            else{
-                status.text="Incorrect Credentials...Either the username or password are wrong";
-            }
+            if (www.result == UnityWebRequest.Result.Success) {
+            Debug.Log(www.downloadHandler.text);
             // Compose the response to look like the object we want to extract
             // https://answers.unity.com/questions/1503047/json-must-represent-an-object-type.html
             //string jsonString = "{\"questions\":" + www.downloadHandler.text + "}";
             //allQuestions = JsonUtility.FromJson<QuestionsList>(jsonString);
-
-        } else {
+            } 
+            else {
             Debug.Log("Error: " + www.error);
+            }
         }
     }
     

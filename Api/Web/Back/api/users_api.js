@@ -86,33 +86,10 @@ app.post('/api/game_user/verify', (request,response)=>{
 
         connection.connect();
 
-        connection.query('SELECT COUNT(1) from game_user where user_name=?', request.body['user_name'], (error, results, fields)=>{
+        connection.query('SELECT COUNT(1) from game_user where user_name=? and pwd=?', [request.body['user_name'], request.body['pwd']], (error, results, fields)=>{
             if(error) console.log(error);
             console.log(JSON.stringify(results[0]["COUNT(1)"]));
             response.json(results[0]["COUNT(1)"]);
-        });
-
-        connection.end();
-
-    }
-    catch(error)
-    {
-        response.json(error);
-        console.log(error);
-    }
-});
-
-app.get('/api/game_user/password', (request,response)=>{
-    let connection = connectToDB();
-
-    try{
-
-        connection.connect();
-
-        connection.query('SELECT COUNT 1 (user_name) from game_user where user_name=? and pwd=?', request.body, (error, results, fields)=>{
-            if(error) console.log(error);
-            console.log(JSON.stringify(results));
-            response.json(results);
         });
 
         connection.end();
@@ -344,7 +321,7 @@ app.post('/api/game_user', (request, response)=>{
             if(error) 
                 console.log(error);
             else
-                response.json({'message': "Data inserted correctly."})
+                response.json({'message': "User Created Succesfully!"})
         });
 
         connection.end();
