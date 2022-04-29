@@ -10,6 +10,7 @@ public class NPCController : MonoBehaviour, Interactable
     [SerializeField] float timeBetweenPattern; //Delay of pattern repetitions
 
     Character character;
+    ItemGiver itemGiver;
     
     NPCState state;
     float IdleTimer = 0f; //Time where NPC will stay idle between pattern movements
@@ -17,17 +18,25 @@ public class NPCController : MonoBehaviour, Interactable
 
     private void Awake() {
         character = GetComponent<Character>();
+        itemGiver = GetComponent<ItemGiver>();
     }
 
-    public void Interact(Transform initiator){ //Initiator is the transform of the player that started the interaction
+    public IEnumerator Interact(Transform initiator){ //Initiator is the transform of the player that started the interaction
         //To have and instance of the dialogue manager and be able to call all the functions inside it
         if (state == NPCState.Idle){
             state = NPCState.Dialogue;
             character.LookToward(initiator.position);
-            StartCoroutine(DialogueManager.Instance.ShowDialogue(dialogue, () => {
-                IdleTimer = 0f;
-                state = NPCState.Idle; //Lambda to change the state to idle, this prevents other NPC's to stop moving when talking to one of them
-            }));
+
+            if (itemGiver != null && itemGiver.CanBeGiven()){
+                yield return itemGiver.GiveItem(initiator.GetComponent<PlayerController>());
+            }
+            else{
+                yield return DialogueManager.Instance.ShowDialogue(dialogue);
+            }
+            
+
+            IdleTimer = 0f;
+            state = NPCState.Idle; //Lambda to change the state to idle, this prevents other NPC's to stop moving when talking to one of them
         }
     } 
 

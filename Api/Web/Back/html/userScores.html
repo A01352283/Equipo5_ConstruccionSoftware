@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mysqlUseCases.css">
+    <script type="module" defer src="../js/userScores.js"></script>
+    <title>Game_Users</title>
+</head>
+<body>
+    <div class="section">
+        <div class="formInput">
+            <h1>Show Users Scores</h1>
+            <form id="formSelect">
+                <input type="submit" value="Show users-scores">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p>When the request ends, the result will be displayed here.</p>
+            <div id="getResults"></div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="formInput">
+            <h1>Add User Scores</h1>
+            <form id="formInsert" method="post" action="http://localhost:5000/api/game_user/scores">
+                <input type="text" name="user_id" placeholder="Type user_id">
+                <input type="submit" value="Add User-Score">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p id="postResults">When the request ends, the result will be displayed here.</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="formInput">
+            <h1>Update User-Scores</h1>
+            <form id="formUpdate" method="put">
+                <input type="text" name="user_id" placeholder="Type userID">
+                <input type="text" name="rhythm_last_score" placeholder="Type last rhythm game score">
+                <input type="text" name="rhythm_play_time" placeholder="Type rythm game time">
+                <input type="text" name="trivia_last_score" placeholder="Type last trivia game score">
+                <input type="text" name="trivia_play_time" placeholder="Type trivia game time">
+                <input type="text" name="memory_last_score" placeholder="Type last memory game score">
+                <input type="text" name="memory_play_time" placeholder="Type memory game time">
+                <input type="text" name="memorysounds_last_score" placeholder="Type last memorysounds game score">
+                <input type="text" name="memorysounds_play_time" placeholder="Type memorysounds game time">
+                <input type="submit" value="Update User-Score">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p id="putResults">When the request ends, the result will be displayed here.</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="formInput">
+            <h1>Delete User-Scores</h1>
+            <form id="formDelete" method="delete">
+                <input type="text" name="user_id" placeholder="Type userID">
+                <input type="submit" value="Delete User-Scores">
+            </form>
+        </div>
+        <div class="resultDisplay">
+            <h1>Result</h1>
+            <p id="deleteResults">When the request ends, the result will be displayed here.</p>
+        </div>
+    </div>
+</body>
+</html>
