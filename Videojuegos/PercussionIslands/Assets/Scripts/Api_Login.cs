@@ -53,7 +53,7 @@ public class Api_Login : MonoBehaviour
         user.user_name=user_text.text;
         user.pwd=pwd_text.text;
         string data=JsonUtility.ToJson(user);
-        UnityWebRequest www= UnityWebRequest.Put(url + getEP,data);
+        using(UnityWebRequest www= UnityWebRequest.Put(url + getEP,data)){
         //using
         www.method="POST";
         www.SetRequestHeader("Content-Type", "Application/json");
@@ -77,6 +77,7 @@ public class Api_Login : MonoBehaviour
 
         } else {
             status.text="Error: " + www.error;
+        }
         }
     }
     

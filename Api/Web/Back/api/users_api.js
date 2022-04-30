@@ -430,6 +430,48 @@ app.post('/api/questions', (request, response)=>{
     }
 });
 
+app.post('/api/game_user/id', (request, response)=>{
+    try{
+        let connection = connectToDB();
+        connection.connect();
+        const query = connection.query('CALL get_user_id(?)', [request.body['user_name']] ,(error, results, fields)=>{
+            if(error) 
+                console.log(error);
+            else
+                console.log(JSON.stringify(results[0][0]));
+                response.json(results[0][0]["user_id"]);
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
+app.post('/api/game_user/reset', (request, response)=>{
+    try{
+        let connection = connectToDB();
+        connection.connect();
+        const query = connection.query('SELECT @id',(error, results, fields)=>{
+            if(error) 
+                console.log(error);
+            else
+                console.log(JSON.stringify(results));
+                response.json(results);
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+});
+
 app.put('/api/game_user', (request, response)=>{
     try{
         let connection = connectToDB();
@@ -437,7 +479,7 @@ app.put('/api/game_user', (request, response)=>{
         const data = Object.entries(request.body).filter(([k,v])=> k!='user_name');
         const queryData = Object.fromEntries(data);
         //Como logro que aun cuando no se inserten todos los valores se pueda hacer el update (solo user_name)
-        const query = connection.query('update game_user set ? where user_name=?', [queryData, request.body['user_name']] ,(error, results, fields)=>{
+        const query = connection.query('update game_user set ?', queryData.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -458,13 +500,14 @@ app.put('/api/game_user/scores', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const data = Object.entries(request.body).filter(([k,v])=> k!='user_name');
+        const data = Object.entries(request.body).filter(([k,v])=> k!='user_name' & k!= 'user_id');
         const queryData = Object.fromEntries(data);
         //Modificar solo un minijuego a la vez
-        const query = connection.query('update game_user_scores set ? where user_name=?', [queryData, request.body['user_name']], (error, results, fields)=>{
+        const query = connection.query('update game_user_scores set ? where user_id=?', [queryData,request.body['user_id']], (error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
+                console.log(JSON.stringify(results));
                 response.json({'message': "User scores updated correctly."})
         });
         //se puede hacer solo un update en lugar de todos?
@@ -486,7 +529,7 @@ app.put('/api/game_user/sf', (request, response)=>{
         const data = Object.entries(request.body).filter(([k,v])=> k!='user_name');
         const queryData = Object.fromEntries(data);
         //Modificar solo un minijuego a la vez
-        const query = connection.query('update game_user_save_file set ? where user_name=?', [queryData, request.body['user_name']] ,(error, results, fields)=>{
+        const query = connection.query('update game_user_save_file set ? where user_id = @id', queryData.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -530,7 +573,7 @@ app.delete('/api/game_user', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from game_user where user_name= ?', request.body ,(error, results, fields)=>{
+        const query = connection.query('delete from game_user where user_id= @id', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -552,7 +595,7 @@ app.delete('/api/game_user/scores', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from game_user_scores where user_name= ?', request.body ,(error, results, fields)=>{
+        const query = connection.query('delete from game_user_scores where user_id= @id', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -574,7 +617,7 @@ app.delete('/api/game_user/key_inventory', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from game_user_key_inventory where user_name= ?', request.body ,(error, results, fields)=>{
+        const query = connection.query('delete from game_user_key_inventory where user_id=@id', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -596,7 +639,7 @@ app.delete('/api/game_user/sf', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from game_user_save_file where user_name= ?', request.body ,(error, results, fields)=>{
+        const query = connection.query('delete from game_user_save_file where user_id= @id', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else

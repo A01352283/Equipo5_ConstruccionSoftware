@@ -138,3 +138,19 @@ BEGIN
 END$$
 DELIMITER ;
 
+DROP PROCEDURE get_user_id;
+
+DELIMITER //
+CREATE PROCEDURE get_user_id (in user_n VARCHAR(45), OUT user_i SMALLINT)
+BEGIN
+SELECT user_id INTO user_i
+FROM game_user where user_name = user_n;
+END//
+DELIMITER ;
+
+
+CALL get_user_id('Pacman27',@id); 
+update game_user_scores set `trivia_last_score` = 150 where user_id = @id; 
+SET @id = NULL;
+
+select @id;

@@ -30,7 +30,6 @@ public class QuizManager : MonoBehaviour
     public MemoryGameOverScreen TriviaGameOverScreen;
     public void GameOver(){
         GetComponent<Api_Scores>().UpdateScore(score);
-        Debug.Log("Score Upated");
         TriviaGameOverScreen.Setup(score);
     }
     private void Start(){
