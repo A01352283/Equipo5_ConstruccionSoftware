@@ -892,6 +892,7 @@ GameObject:
   - component: {fileID: 2115336748}
   - component: {fileID: 2115336750}
   - component: {fileID: 2115336749}
+  - component: {fileID: 2115336751}
   m_Layer: 0
   m_Name: MemoryGame Controller
   m_TagString: Untagged
@@ -947,8 +948,6 @@ MonoBehaviour:
   bgImage: {fileID: 21300000, guid: 83b107fc467ecf04e831096524260545, type: 3}
   corr: {fileID: 8300000, guid: 58369e8ec6435ae4e8ace7435fe47a22, type: 3}
   incorr: {fileID: 8300000, guid: fcae49d7738e37c43882b53dae1eec6b, type: 3}
-  correct: {fileID: 0}
-  incorrect: {fileID: 0}
   image_d: {fileID: 21300000, guid: fdf15e718f8852e449e04d4455858cf4, type: 3}
   puzzles: []
   sounds: []
@@ -957,6 +956,7 @@ MonoBehaviour:
   btns: []
   firstGuess: 0
   secondGuess: 0
+  m_score: 0
   count_guess: {fileID: 1025670524}
   inst_name: {fileID: 1394735012}
   MemoryGameOverScreen: {fileID: 786279105}
@@ -1066,6 +1066,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2115336751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115336745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf37843329e9e4d8a1556a9af5141a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: localhost:5000
+  getEP: /api/game_user/scores
+  mg_type: memory
+  trivia_score:
+    user_name: 
+    user_id: 0
+    trivia_last_score: 0
+  memory_score:
+    user_name: 
+    user_id: 0
+    memory_last_score: 0
+  memorysounds_score:
+    user_name: 
+    user_id: 0
+    memorysounds_last_score: 0
+  rhythm_score:
+    user_name: 
+    user_id: 0
+    rhythm_last_score: 0
 --- !u!1001 &723751298270382847
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1016,9 +1016,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   url: localhost:5000
   getEP: /api/game_user/scores
+  mg_type: trivia
+  trivia_score:
+    user_name: 
+    user_id: 0
+    trivia_last_score: 0
   memory_score:
     user_name: 
+    user_id: 0
     memory_last_score: 0
+  memorysounds_score:
+    user_name: 
+    user_id: 0
+    memorysounds_last_score: 0
+  rhythm_score:
+    user_name: 
+    user_id: 0
+    rhythm_last_score: 0
 --- !u!1 &896683580
 GameObject:
   m_ObjectHideFlags: 0

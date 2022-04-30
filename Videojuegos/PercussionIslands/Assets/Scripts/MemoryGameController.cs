@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class MemoryGameController : MonoBehaviour
 {
     [SerializeField]
-
     //This Sprite works as the back of the cards
     private Sprite bgImage;
     //AudioSource that reproduces a correct or incorrect clip depending on the pair of card selected
@@ -40,7 +39,7 @@ public class MemoryGameController : MonoBehaviour
     //Mult is the score multiplyer that will grow if the user keeps guessing correct continuously
     int mult= 10;
     //This value will keep store the score of the player during the game, being affected by mult
-    public int m_score= 0;
+    private int m_score= 0;
     //Value that will keep count of the number of correct guesses
     private int countCorrectGuesses;
     private int gameGuesses;
