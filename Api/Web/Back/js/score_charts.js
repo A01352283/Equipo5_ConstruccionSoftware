@@ -1,4 +1,4 @@
-import {Chart, registerables} from '/scripts/charts/chart.esm.js'
+import {Chart, registerables} from 'chart.js/auto'
 Chart.register(...registerables);
 
 /**
