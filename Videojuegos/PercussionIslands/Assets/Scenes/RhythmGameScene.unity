@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -252.08, y: 227.25}
+  m_AnchoredPosition: {x: -240, y: 172}
   m_SizeDelta: {x: 295.8366, y: 63.9592}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &139215745
@@ -403,7 +403,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b7fec4aae63c99941ba51a064b2b4bb8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a19c9f9a77c8bb34dba98074e4e79f52, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1031,7 +1031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.87, y: 1.6}
+  m_AnchoredPosition: {x: 1.2, y: 1.2}
   m_SizeDelta: {x: 14.2114, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1016730711
@@ -1201,7 +1201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.87, y: 2.5}
+  m_AnchoredPosition: {x: 1.4, y: 2.45}
   m_SizeDelta: {x: 14.2114, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1148921263
@@ -1280,8 +1280,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148921263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
-  m_LocalScale: {x: 6.2634287, y: 4.551159, z: 1}
+  m_LocalPosition: {x: 0.2306, y: 0, z: -2}
+  m_LocalScale: {x: 7.0889044, y: 4.551159, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -1320,7 +1320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -240, y: 180}
+  m_AnchoredPosition: {x: -240, y: 123}
   m_SizeDelta: {x: 295.8366, y: 63.9592}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1468556510
@@ -1401,7 +1401,7 @@ MonoBehaviour:
   songDelayInSeconds: 0
   marginOfError: 0.2
   inputDelayInMilliseconds: 0
-  fileLocation: SevenNationArmy.mid
+  fileLocation: SNA1min.mid
   noteTime: 1
   noteSpawnX: 10
   noteTapX: 0
