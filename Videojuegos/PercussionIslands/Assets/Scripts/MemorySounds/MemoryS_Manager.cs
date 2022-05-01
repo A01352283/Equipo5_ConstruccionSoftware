@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//[RequireComponent(typeof(AudioSource))]
 
 public class MemoryS_Manager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class MemoryS_Manager : MonoBehaviour
     public int HighScore; // Stores the highest score in the game
     public Text HighScore_text; // Show the highest score
     public Text LastScore_text; //The same of ScoreText
+   // public AudioSource sound; // change to instrumentsound   sound.Play();    sound = GetComponent<AudioSource>();
     
 
     //When you start a game, the color list is reset and the color count begins
@@ -25,6 +27,7 @@ public class MemoryS_Manager : MonoBehaviour
     {
        ColorOrdenInPreview = new List<int>();
        StartCoroutine(Starten()); 
+       Debug.Log(PlayerPrefs.GetString("user_name"));
     }
 
 
@@ -57,6 +60,7 @@ public class MemoryS_Manager : MonoBehaviour
     }
 
 
+
     public void FarbenButton(int ID)
     {
         if(ID == ColorOrdenInPreview[ColorMix]) 
@@ -67,6 +71,7 @@ public class MemoryS_Manager : MonoBehaviour
 
             if(ColorMix == ColorOrdenInPreview.Count) //As long as the game is not lost, the counters will increase
             {
+                
                 DontTouch.SetActive(true);
                 InstrumentCount_Text.text = " ";
                 InstrumentCount = 0;
@@ -79,6 +84,8 @@ public class MemoryS_Manager : MonoBehaviour
             Game_over.SetActive(true);
             DontTouch.SetActive(true); // Screen lock 
             HighScore = PlayerPrefs.GetInt("High Score");  //shows the stored score
+            GetComponent<Api_Scores>().UpdateScore(HighScore); 
+            Debug.Log("Score Upated"); 
 
             if(AllColors > HighScore)
             {
