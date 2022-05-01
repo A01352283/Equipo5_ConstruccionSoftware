@@ -74,15 +74,15 @@ Inner join game_user as gu on gs.user_id = gu.user_id order by rhythm_best_score
 
 create view top_trivia_scores as
 select user_name, trivia_best_score from game_user_scores as gs
-Inner join game_user as gu on gs.user_id = gu.user_id;
+Inner join game_user as gu on gs.user_id = gu.user_id order by trivia_best_score desc limit 10;
 
 create view top_memory_scores as
 select user_name, memory_best_score from game_user_scores as gs
-Inner join game_user as gu on gs.user_id = gu.user_id;
+Inner join game_user as gu on gs.user_id = gu.user_id order by memory_best_score desc limit 10;
 
 create view top_memorysounds_scores as
 select user_name, memorysounds_best_score from game_user_scores as gs
-Inner join game_user as gu on gs.user_id = gu.user_id;
+Inner join game_user as gu on gs.user_id = gu.user_id order by memorysounds_best_score desc limit 10;
 
 DELIMITER $$
 CREATE TRIGGER create_user_tables
@@ -138,19 +138,12 @@ BEGIN
 END$$
 DELIMITER ;
 
-DROP PROCEDURE get_user_id;
-
 DELIMITER //
-CREATE PROCEDURE get_user_id (in user_n VARCHAR(45), OUT user_i SMALLINT)
+CREATE PROCEDURE get_user_id (in user_n VARCHAR(45))
 BEGIN
-SELECT user_id INTO user_i
+SELECT user_id 
 FROM game_user where user_name = user_n;
 END//
 DELIMITER ;
 
 
-CALL get_user_id('Pacman27',@id); 
-update game_user_scores set `trivia_last_score` = 150 where user_id = @id; 
-SET @id = NULL;
-
-select @id;

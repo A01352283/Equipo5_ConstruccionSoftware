@@ -7,6 +7,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: orange-kid;
 }
 
 nav{
@@ -24,6 +25,7 @@ nav{
     text-transform: uppercase;
     color: antiquewhite;
     letter-spacing: 3px;
+    border: none;
 }
 
 .nav-links{
@@ -57,4 +59,16 @@ nav{
     .nav-links{
         width: 65%;
     }
+}
+
+div, canvas{
+    padding: 1%;
+    border: 1px solid black;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
