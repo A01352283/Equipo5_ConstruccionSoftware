@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +9,7 @@ public class GameOver : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
-        Invoke(FinishGame, 72f);
+        Invoke("FinishGame", 70f);
     }
 
     void FinishGame()
@@ -23,4 +23,3 @@ public class GameOver : MonoBehaviour
         
     }
 }
-*/
