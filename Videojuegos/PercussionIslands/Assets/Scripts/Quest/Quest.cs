@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[System.Serializable] //So we can see this in our quest list
 public class Quest
 {   
     //Properties
@@ -15,10 +13,25 @@ public class Quest
         Base = _base;
     }
 
+    //Constructor to restore the quest from the questSaveData
+    public Quest(QuestSaveData saveData){
+        Base = QuestDB.GetObjectByName(saveData.name);
+        Status = saveData.status;
+    }
+
+    //Converts the quest class into a savedata class
+    public QuestSaveData GetSaveData(){
+        var saveData = new QuestSaveData(){
+            name = Base.name, 
+            status = Status
+        };
+
+        return saveData;
+    }
+
     //Starts the quest
     public IEnumerator StartQuest(){
         Status = QuestStatus.Started;
-
         yield return DialogueManager.Instance.ShowDialogue(Base.StartDialogue);
 
         //Adds the quest to the quest tracking
@@ -66,6 +79,13 @@ public class Quest
         return true;
     }
 
+}
+
+[System.Serializable]
+public class QuestSaveData
+{
+    public string name;
+    public QuestStatus status;
 }
 
 public enum QuestStatus { None, Started, Completed }

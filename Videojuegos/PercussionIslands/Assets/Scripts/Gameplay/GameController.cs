@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
         menuController = GetComponent<MenuController>();
 
         ItemDB.Init();
+        QuestDB.Init();
     
         //Locks and hides the mouse cursor
         Cursor.lockState = CursorLockMode.Locked;
@@ -108,12 +109,11 @@ public class GameController : MonoBehaviour
     void OnMenuSelected (int selectedItem){
         if (selectedItem == 0){
             //Inventory
-            state = GameState.KeyInventory;
             inventoryUI.gameObject.SetActive(true);
+            state = GameState.KeyInventory;
         }
         else if (selectedItem == 1){
             //Save
-            Debug.Log("File saved");
             SavingSystem.i.Save("saveSlot1");
             //Sets the state back to free roam
             state = GameState.FreeRoam;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCController : MonoBehaviour, Interactable
+public class NPCController : MonoBehaviour, Interactable, ISavable
 {
 
     [SerializeField] Dialogue dialogue; //Stores all the lines of dialogue for the NPC
@@ -108,6 +108,38 @@ public class NPCController : MonoBehaviour, Interactable
 
         state = NPCState.Idle;
     }
+
+    public object CaptureState()
+    {
+        var saveData = new NPCQuestSaveData();
+        saveData.activeQuest = activeQuest?.GetSaveData(); //Converts it to save data
+
+        if (questToStart != null)
+            saveData.questToStart = (new Quest(questToStart)).GetSaveData(); //Turns questbase to questsavedata
+        
+        if (questToComplete != null)
+            saveData.questToComplete = (new Quest(questToComplete)).GetSaveData(); //Turns questbase to questsavedata
+        
+        return saveData;
+    }
+
+    public void RestoreState(object state)
+    {
+        var saveData = state as NPCQuestSaveData;
+        if (saveData != null){
+            activeQuest = (saveData.activeQuest != null)? new Quest(saveData.activeQuest) : null; //Restores the active quest
+            
+            questToStart = (saveData.questToStart != null)? new Quest(saveData.questToStart).Base : null; //Restores the active quest
+            questToComplete = (saveData.questToComplete != null)? new Quest(saveData.questToComplete).Base : null; //Restores the active quest
+        }
+    }
+}
+
+[System.Serializable]
+public class NPCQuestSaveData{
+    public QuestSaveData activeQuest;
+    public QuestSaveData questToStart;
+    public QuestSaveData questToComplete;
 }
 
 

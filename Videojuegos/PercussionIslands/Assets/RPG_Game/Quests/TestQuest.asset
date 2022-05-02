@@ -10,20 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ddc2aaf511f3a504ab88fabebad2573e, type: 3}
-  m_Name: ClearBird
+  m_Name: TestQuest
   m_EditorClassIdentifier: 
-  name: ClearBird
-  description: A bird is blocking the bridge and you need it to move
+  name: testQuest
+  description: ThisTest
   startDialogue:
     lines:
-    - '*SQUAWK* I LIKE THIS BRIDGE *SQUAWK*'
-    - IMMA STAY HERE!
+    - First
   inProgressDialogue:
     lines:
-    - '*SQUAWK* I LOVE IT HERE'
+    - InP
   completeDialogue:
     lines:
-    - (You play the gong very loudly)
-    - OH MY, IF YOU WANT ME TO MOVE JUST ASK NICELY
-  requiredItem: {fileID: 11400000, guid: e54bb6af3e9045a42b6a659b3d3e68aa, type: 2}
-  rewardItem: {fileID: 11400000, guid: e54bb6af3e9045a42b6a659b3d3e68aa, type: 2}
+    - Thanks
+  requiredItem: {fileID: 11400000, guid: e171c996e5e85eb49b49aa9ff70cc275, type: 2}
+  rewardItem: {fileID: 0}

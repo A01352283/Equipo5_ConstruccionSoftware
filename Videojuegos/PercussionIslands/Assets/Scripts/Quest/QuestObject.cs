@@ -37,6 +37,11 @@ public class QuestObject : MonoBehaviour
             foreach (Transform child in transform){
                 if (onComplete == ObjectActions.Enable){ //Activates the quest items
                     child.gameObject.SetActive(true);
+
+                    var savable = child.GetComponent<SavableEntity>();
+                    
+                    if (savable != null)
+                        SavingSystem.i.RestoreEntity(savable);
                 }
                 else if (onComplete == ObjectActions.Disable){ //Deactivates the quest items
                     child.gameObject.SetActive(false);

@@ -6,6 +6,5 @@ using UnityEngine;
 
 public class KeyInstruments : ItemBase
 {
-    [Header("KeyInstrument")]
-    [SerializeField] AudioSource audioSource;
+    //[Header("KeyInstrument")]
 }

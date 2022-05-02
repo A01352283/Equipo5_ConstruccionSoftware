@@ -136,7 +136,7 @@ public class ItemSlot{
 
     //So we can restore the item
     public ItemSlot(ItemSaveData saveData){
-        item = ItemDB.GetItemByName(saveData.name);
+        item = ItemDB.GetObjectByName(saveData.name);
         count = saveData.count;
     }
 
