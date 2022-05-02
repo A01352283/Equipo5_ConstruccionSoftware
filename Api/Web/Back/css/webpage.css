@@ -61,7 +61,7 @@ nav{
     }
 }
 
-div, canvas{
+canvas{
     padding: 1%;
     border: 1px solid black;
 }
