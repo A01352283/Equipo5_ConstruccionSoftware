@@ -6,7 +6,7 @@ using UnityEngine;
 
 public enum ItemCategory {NormalInstruments, KeyInstruments}
 
-public class NonKeyInventory : MonoBehaviour
+public class NonKeyInventory : MonoBehaviour, ISavable
 {
     [SerializeField] List<ItemSlot> slots;
     [SerializeField] List<ItemSlot> keySlots;
@@ -16,7 +16,7 @@ public class NonKeyInventory : MonoBehaviour
     public event Action OnUpdated;
 
     private void Awake() {
-        allSlots = new List<List<ItemSlot>>() { slots, keySlots};
+        allSlots = new List<List<ItemSlot>>() { slots, keySlots };
     }
 
     public static List<string> ItemCategories { get; set;} = new List<string>(){
@@ -35,7 +35,7 @@ public class NonKeyInventory : MonoBehaviour
         bool itemUsed = item.Use();
 
         if (itemUsed){
-            //RemoveItem(item, selectedCategory); //Decreases the item count
+            //RemoveItem(item); //Decreases the item count
             return item;
         }
 
@@ -58,21 +58,32 @@ public class NonKeyInventory : MonoBehaviour
             });
         }
 
+        AudioManager.i.PlaySFX(AudioID.UIShop);
+
         OnUpdated?.Invoke(); //Calls OnUpdated so the changes are reflected in the UI
     }
 
     //Decreased count of the item in the inventory
-    public void RemoveItem(ItemBase item, int category){
+    public void RemoveItem(ItemBase item){
+        int category = (int)GetCategoryFromItem(item); //Finds the item's category
         var currentSlots = GetSlotsByCategory(category);
 
-        var itemSlot = slots.First(slot => slot.Item == item);
+        var itemSlot = currentSlots.First(slot => slot.Item == item);
         itemSlot.Count--;
 
         //Removes the item slot if there are no more items of this type left
         if (itemSlot.Count == 0)
             currentSlots.Remove(itemSlot);
 
-        OnUpdated.Invoke();
+        OnUpdated?.Invoke();
+    }
+
+    //Checks if a certain item is in the player's inventory
+    public bool HasItem(ItemBase item){
+        int category = (int)GetCategoryFromItem(item); //Finds the item's category
+        var currentSlots = GetSlotsByCategory(category);
+
+        return currentSlots.Exists(slot => slot.Item == item); //Checks if the player has a slot for the item
     }
 
     public static NonKeyInventory GetNonKeyInventory(){
@@ -89,12 +100,55 @@ public class NonKeyInventory : MonoBehaviour
         }
     }
 
+    public object CaptureState()
+    {
+        //Gets all the names and counts of the items in all the categories
+        var saveData = new InventorySaveData(){
+            items = slots.Select(i => i.GetSaveData()).ToList(),
+            keyItems = keySlots.Select(i => i.GetSaveData()).ToList()
+        };
+
+        return saveData;
+    }
+
+    public void RestoreState(object state)
+    {
+        var saveData = state as InventorySaveData;
+
+        slots = saveData.items.Select(i => new ItemSlot(i)).ToList(); //Converts back to item slots objects
+        keySlots = saveData.keyItems.Select(i => new ItemSlot(i)).ToList(); //Converts back to item slots objects
+
+        allSlots = new List<List<ItemSlot>>() { slots, keySlots };
+
+        OnUpdated?.Invoke();
+    }
 }
 
 [Serializable]
 public class ItemSlot{
     [SerializeField] ItemBase item;
     [SerializeField] int count;
+
+    //Default constructor
+    public ItemSlot() {
+
+    }
+
+    //So we can restore the item
+    public ItemSlot(ItemSaveData saveData){
+        item = ItemDB.GetObjectByName(saveData.name);
+        count = saveData.count;
+    }
+
+    //To get the relevant info for saving the item in the ItemSaveData object
+    public ItemSaveData GetSaveData(){
+        var saveData = new ItemSaveData(){
+            name = item.name,
+            count = count
+        };
+
+        return saveData;
+    }
 
     public ItemBase Item {
         get => item;
@@ -104,4 +158,16 @@ public class ItemSlot{
         get => count;
         set => count = value;
     }
+}
+
+[Serializable]
+public class ItemSaveData{
+    public string name;
+    public int count;
+}
+
+[Serializable]
+public class InventorySaveData{
+    public List<ItemSaveData> items;
+    public List<ItemSaveData> keyItems;
 }

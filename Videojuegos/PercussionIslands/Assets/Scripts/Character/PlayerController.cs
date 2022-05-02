@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, ISavable
 {
     private Vector2 input;
 
@@ -48,18 +49,49 @@ public class PlayerController : MonoBehaviour
         }   
     }
 
+    IPlayerTriggerable currentlyInTrigger;
+
     private void OnMoveOver(){
         //Overlap circle only returns the first object which collides with it, so we use OverlapCircleAll, which returns an array
         var colliders = Physics2D.OverlapCircleAll(transform.position - new Vector3(0, character.OffsetY), 0.2f, GameLayers.i.TriggerableLayers);
 
+        IPlayerTriggerable triggerable = null;
+
         foreach (var collider in colliders){
-            var triggerable = collider.GetComponent<IPlayerTriggerable>();
+            triggerable = collider.GetComponent<IPlayerTriggerable>();
 
             if (triggerable != null){
+
+                if (triggerable == currentlyInTrigger && triggerable.TriggerRepeatedly == false){
+                    break;
+                }
+
                 triggerable.OnPlayerTriggered(this);
+                currentlyInTrigger = triggerable;
                 break;
             }
         }
+        
+        if (colliders.Count() == 0 || triggerable != currentlyInTrigger){
+            currentlyInTrigger = null;
+        }
+
+    }
+
+
+    //Save system interface implementataions
+    //Saving
+    public object CaptureState()
+    {
+        float[] position = new float[] { transform.position.x,  transform.position.y }; //Gets the x and y positions like this, since tranform.position is not serializable
+        return position;
+    }
+
+    //Loading
+    public void RestoreState(object state)
+    {
+        var position = (float[])state;
+        transform.position = new Vector3(position[0], position[1]); //Converts the array back into a vector3
     }
 
     //Properties

@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCController : MonoBehaviour, Interactable
+public class NPCController : MonoBehaviour, Interactable, ISavable
 {
 
     [SerializeField] Dialogue dialogue; //Stores all the lines of dialogue for the NPC
+
+    [Header("Quests")]
+    [SerializeField] QuestBase questToStart; //The quest that the NPC will give (optional)
+    [SerializeField] QuestBase questToComplete; //Used to deactivate story items
+
+    [Header("Movement")]
     [SerializeField] List<Vector2> movementPattern; //Stores the pattern in which the NPC will move
     [SerializeField] float timeBetweenPattern; //Delay of pattern repetitions
 
@@ -15,6 +21,7 @@ public class NPCController : MonoBehaviour, Interactable
     NPCState state;
     float IdleTimer = 0f; //Time where NPC will stay idle between pattern movements
     int currentMovementPattern = 0; //Current step of the movement pattern
+    Quest activeQuest; //Reference to the active quest of the NPC (if it has one)
 
     private void Awake() {
         character = GetComponent<Character>();
@@ -27,8 +34,37 @@ public class NPCController : MonoBehaviour, Interactable
             state = NPCState.Dialogue;
             character.LookToward(initiator.position);
 
+            if (questToComplete != null){
+                var quest = new Quest(questToComplete);
+
+                yield return quest.CompleteQuest();
+                questToComplete = null;
+
+                Debug.Log($"{quest.Base.Name} completed");
+            }
+
             if (itemGiver != null && itemGiver.CanBeGiven()){
                 yield return itemGiver.GiveItem(initiator.GetComponent<PlayerController>());
+            }
+            else if (questToStart != null){
+                activeQuest = new Quest(questToStart);
+                yield return activeQuest.StartQuest();
+                
+                questToStart = null; //Since we don't want to restart the quest
+
+                if (activeQuest.CanBeCompleted()){ //Complete the quest
+                    yield return activeQuest.CompleteQuest();
+                    activeQuest = null;
+                }
+            }
+            else if (activeQuest != null){ //If there is an active quest
+                if (activeQuest.CanBeCompleted()){ //Complete the quest
+                    yield return activeQuest.CompleteQuest();
+                    activeQuest = null;
+                }
+                else{   //If the quest can't be completed yet
+                    yield return DialogueManager.Instance.ShowDialogue(activeQuest.Base.InProgressDialogue);
+                }
             }
             else{
                 yield return DialogueManager.Instance.ShowDialogue(dialogue);
@@ -72,6 +108,38 @@ public class NPCController : MonoBehaviour, Interactable
 
         state = NPCState.Idle;
     }
+
+    public object CaptureState()
+    {
+        var saveData = new NPCQuestSaveData();
+        saveData.activeQuest = activeQuest?.GetSaveData(); //Converts it to save data
+
+        if (questToStart != null)
+            saveData.questToStart = (new Quest(questToStart)).GetSaveData(); //Turns questbase to questsavedata
+        
+        if (questToComplete != null)
+            saveData.questToComplete = (new Quest(questToComplete)).GetSaveData(); //Turns questbase to questsavedata
+        
+        return saveData;
+    }
+
+    public void RestoreState(object state)
+    {
+        var saveData = state as NPCQuestSaveData;
+        if (saveData != null){
+            activeQuest = (saveData.activeQuest != null)? new Quest(saveData.activeQuest) : null; //Restores the active quest
+            
+            questToStart = (saveData.questToStart != null)? new Quest(saveData.questToStart).Base : null; //Restores the active quest
+            questToComplete = (saveData.questToComplete != null)? new Quest(saveData.questToComplete).Base : null; //Restores the active quest
+        }
+    }
+}
+
+[System.Serializable]
+public class NPCQuestSaveData{
+    public QuestSaveData activeQuest;
+    public QuestSaveData questToStart;
+    public QuestSaveData questToComplete;
 }
 
 

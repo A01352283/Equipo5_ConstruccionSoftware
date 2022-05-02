@@ -8,6 +8,7 @@ public class GameLayers : MonoBehaviour
     [SerializeField] LayerMask interactableLayer;
     [SerializeField] LayerMask playerLayer;
     [SerializeField] LayerMask portalLayer;
+    [SerializeField] LayerMask triggersLayer;
 
     //Using the singleton pattern to make the script easily accessed from any script
     public static GameLayers i {get; set;} //Named i to make this line of code smaller and neater
@@ -35,6 +36,6 @@ public class GameLayers : MonoBehaviour
 
     //Returns all the triggerable layers (the tutorial has grassLayer and fovLayer with the | operator)
     public LayerMask TriggerableLayers{
-        get => portalLayer;
+        get => portalLayer | triggersLayer;
     }
 }

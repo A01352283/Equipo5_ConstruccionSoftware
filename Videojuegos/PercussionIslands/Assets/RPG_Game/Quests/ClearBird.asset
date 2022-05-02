@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc2aaf511f3a504ab88fabebad2573e, type: 3}
+  m_Name: ClearBird
+  m_EditorClassIdentifier: 
+  name: ClearBird
+  description: A bird is blocking the bridge and you need it to move
+  startDialogue:
+    lines:
+    - '*SQUAWK* I LIKE THIS BRIDGE *SQUAWK*'
+    - IMMA STAY HERE!
+  inProgressDialogue:
+    lines:
+    - '*SQUAWK* I LOVE IT HERE'
+  completeDialogue:
+    lines:
+    - (You play the gong very loudly)
+    - OH MY, IF YOU WANT ME TO MOVE JUST ASK NICELY
+  requiredItem: {fileID: 11400000, guid: e54bb6af3e9045a42b6a659b3d3e68aa, type: 2}
+  rewardItem: {fileID: 11400000, guid: e54bb6af3e9045a42b6a659b3d3e68aa, type: 2}

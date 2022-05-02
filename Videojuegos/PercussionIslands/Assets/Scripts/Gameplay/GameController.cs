@@ -25,6 +25,9 @@ public class GameController : MonoBehaviour
 
         menuController = GetComponent<MenuController>();
 
+        ItemDB.Init();
+        QuestDB.Init();
+    
         //Locks and hides the mouse cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -74,6 +77,7 @@ public class GameController : MonoBehaviour
 
             //Opens the menu UI on Enter key press
             if (Input.GetKeyDown(KeyCode.Return) | Input.GetKeyDown(KeyCode.Escape)){
+                playerController.Character.Animator.isMoving = false; //Stops the walking animation when opening the menu
                 menuController.OpenMenu();
                 state = GameState.Menu;
             }
@@ -105,23 +109,21 @@ public class GameController : MonoBehaviour
     void OnMenuSelected (int selectedItem){
         if (selectedItem == 0){
             //Inventory
-            state = GameState.KeyInventory;
             inventoryUI.gameObject.SetActive(true);
+            state = GameState.KeyInventory;
         }
         else if (selectedItem == 1){
-            //Percudex
+            //Save
+            SavingSystem.i.Save("saveSlot1");
+            //Sets the state back to free roam
             state = GameState.FreeRoam;
         }
         else if (selectedItem == 2){
-            //Save
-            state = GameState.FreeRoam;
-        }
-        else if (selectedItem == 3){
             //Load
+            SavingSystem.i.Load("saveSlot1");
+            //Sets the state back to free roam
             state = GameState.FreeRoam;
         }
 
-        //Sets the state back to free roam
-        //state = GameState.FreeRoam;
     }
 }

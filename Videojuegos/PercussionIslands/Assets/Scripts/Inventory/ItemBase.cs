@@ -9,7 +9,7 @@ public class ItemBase : ScriptableObject
     [SerializeField] Sprite icon;
 
     //Properties
-    public string Name => name;
+    public virtual string Name => name;
     public string Description => description;
     public Sprite Icon => icon;
 

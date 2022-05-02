@@ -22,12 +22,14 @@ public class MenuController : MonoBehaviour
 
     //Shows the menu UI
     public void OpenMenu(){
+        AudioManager.i.PlaySFX(AudioID.UIOpenMenu);
         menu.SetActive(true);
         UpdateItemSelection();
     }
 
     //Closes the menu UI
     public void CloseMenu(){
+        AudioManager.i.PlaySFX(AudioID.UICloseMenu);
         menu.SetActive(false);
     }
 
@@ -38,9 +40,11 @@ public class MenuController : MonoBehaviour
         //Move within the menu
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)){ //Move down on the menu
             ++selectedItem;
+            AudioManager.i.PlaySFX(AudioID.UISelect);
         }
         else if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)){ //Move up on the menu
             --selectedItem;
+            AudioManager.i.PlaySFX(AudioID.UISelect);
         }
 
         //To prevent from going further than the existing menu options
