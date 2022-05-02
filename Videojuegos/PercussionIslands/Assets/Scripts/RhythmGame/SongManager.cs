@@ -14,6 +14,9 @@ public class SongManager : MonoBehaviour
     public float songDelayInSeconds;
     public double marginOfError; //In seconds
     public int inputDelayInMilliseconds;
+    public float timeRemaining = 64;
+    public bool timerIsRunning = false;
+    //public bool ToggleChange;
 
 
     public string fileLocation;
@@ -34,6 +37,7 @@ public class SongManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timerIsRunning = true;
         Instance = this;
         if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))
         {
@@ -82,6 +86,7 @@ public class SongManager : MonoBehaviour
     }
 
     public void StartSong(){
+        //ToggleChange = true;
         audioSource.Play();
     }
 
@@ -89,9 +94,41 @@ public class SongManager : MonoBehaviour
         return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
     }
 
+    /*public void Timer{
+        float timer = 61.5f
+        
+        StartCoroutine(FadeOut(audioSource, 10f));
+    }*/
+
+    public static IEnumerator FadeOut (AudioSource audioSource, float FadeTime) {
+        float startVolume = audioSource.volume;
+ 
+        while (audioSource.volume > 0) {
+            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+ 
+            yield return null;
+        }
+ 
+        audioSource.Stop ();
+        audioSource.volume = startVolume;
+        //GameOver.setActive(true);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        if (timerIsRunning)
+        {
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+            }
+            else
+            {
+                timeRemaining = 0;
+                timerIsRunning = false;
+                StartCoroutine(FadeOut(audioSource, 8f));
+            }
+        }
     }
 }

@@ -7,29 +7,28 @@ public class QuestionAnswers
     public int question_id;
     public string question;
 
-    public string ans1;
-    public string ans2;
-    public string ans3;
-    public string ans4;
+    public string cor_answer;
+    public string answer_2;
+    public string answer_3;
+    public string answer_4;
     public List<string> answers;
     public string correctanswer;
 
     public QuestionAnswers(int _questionid, string _question,string _ans1, string _ans2, string _ans3, string _ans4){
             this.question_id=_questionid;
-            this.answers=new List<string>();
             this.question = _question;
-            this.answers.Add(_ans1);
-            this.answers.Add(_ans2);
-            this.answers.Add(_ans3);
-            this.answers.Add(_ans4);
-            this.correctanswer = _ans1;
+            this.cor_answer =_ans1;
+            this.answer_2 = _ans2;
+            this.answer_3 =_ans3;
+            this.answer_4 =_ans4;
         }
+    
     public void AddList(){
-        this.answers=new List<string>();
-        this.answers.Add(ans1);
-        this.answers.Add(ans2);
-        this.answers.Add(ans3);
-        this.answers.Add(ans4);
+        this.correctanswer=this.cor_answer;
+        this.answers.Add(this.cor_answer);
+        this.answers.Add(this.answer_2);
+        this.answers.Add(this.answer_3);
+        this.answers.Add(this.answer_4);
     }
 }
 

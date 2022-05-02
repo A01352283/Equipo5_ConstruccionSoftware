@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
-    public List<QuestionAnswers> QnA;
+    public QuestionsList QnA;
     
     [SerializeField]
     private AudioSource audio_s;
@@ -19,7 +19,7 @@ public class QuizManager : MonoBehaviour
 
     private QuestionAnswers currentQuestion;
     private int index =0;
-    private int mult= 10;
+    private int mult= 1;
     private int score= 0;
 
     public GameObject corr_screen;
@@ -29,18 +29,25 @@ public class QuizManager : MonoBehaviour
 
     public MemoryGameOverScreen TriviaGameOverScreen;
     public void GameOver(){
+        GetComponent<Api_Scores>().UpdateScore(score);
+        Debug.Log("Score Upated");
         TriviaGameOverScreen.Setup(score);
     }
     private void Start(){
-        generateQuestions();
-        showQuestions();
-        
-
+        StartCoroutine(fillQuestion());
     }
 
+    IEnumerator fillQuestion(){
+        yield return new WaitForSeconds(2f);
+        QnA=GetComponent<Api_Questions>().allQuestions;
+        showQuestions();
+    }
     public void showQuestions(){
-        if(index<QnA.Count){
-            currentQuestion=QnA[index];
+        if(index<QnA.questions.Count){
+            currentQuestion=QnA.questions[index];
+            Debug.Log(currentQuestion.question);
+            Debug.Log(currentQuestion.question_id);
+            currentQuestion.AddList();
             Shuffle(currentQuestion.answers);
             QuestionText.text=currentQuestion.question;
             Answer1Text.text=currentQuestion.answers[0];
@@ -78,6 +85,9 @@ public class QuizManager : MonoBehaviour
             StartCoroutine(CheckMatch(match));
             score+=mult;
             mult = mult+(mult*1);
+            if (mult>100){
+                mult=100;
+            }
             showQuestions();
         }
         else{
@@ -87,7 +97,7 @@ public class QuizManager : MonoBehaviour
             audio_s.Play();
             Debug.Log("INCORRECT");
             StartCoroutine(CheckMatch(match));
-            mult=10;
+            mult=1;
             showQuestions();
         }
     }
@@ -106,12 +116,6 @@ public class QuizManager : MonoBehaviour
     }
     */
     //We will latter generate the questions by json files
-    void generateQuestions(){
-        QnA.Add(new QuestionAnswers(0,"How old are you?","22","15","75","30"));
-        QnA.Add(new QuestionAnswers(0,"Best game?","Percussion Island","Pokemon","Cuphead","TroyWars"));
-        QnA.Add(new QuestionAnswers(0,"Day of the week?","Friday","Tuesday","Thursday","Sunday"));
-        QnA.Add(new QuestionAnswers(0,"Best School?","Tec","UNAM","ANAHUAC","POLI"));
-    }
 
     //Function that allows to shuffle the order of the answers
     void Shuffle(List<string> s_list){

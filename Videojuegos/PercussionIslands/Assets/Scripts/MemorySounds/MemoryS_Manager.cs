@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//[RequireComponent(typeof(AudioSource))]
 
 public class MemoryS_Manager : MonoBehaviour
 {
+    private AudioSource musicBackground;
     public Image PreviewImage; // Display in the top of board (instrument color previw) 
     public GameObject DontTouch; // gameobject that defines when an instrument square should be touched or not (touch lock)
     public List<Color> InstrumentColor; //List of colors that individually represent each instrument
@@ -18,13 +20,21 @@ public class MemoryS_Manager : MonoBehaviour
     public int HighScore; // Stores the highest score in the game
     public Text HighScore_text; // Show the highest score
     public Text LastScore_text; //The same of ScoreText
+    //public List<AudioClip> gameSounds= new List<AudioClip>();
+    //public AudioClip[] sounds;
+   // public AudioSource sound; // change to instrumentsound   sound.Play();    sound = GetComponent<AudioSource>();
+
+   //public SoundPreview[] SoundInstrumentPreview;
+   //public int counter; 
     
 
     //When you start a game, the color list is reset and the color count begins
     void Start()
     {
        ColorOrdenInPreview = new List<int>();
+       //sounds=Resources.LoadAll<AudioClip>("Sounds/MemorySounds");
        StartCoroutine(Starten()); 
+       Debug.Log(PlayerPrefs.GetString("user_name"));
     }
 
 
@@ -38,7 +48,11 @@ public class MemoryS_Manager : MonoBehaviour
 
         ShowValues();
     }
-
+/*
+    public void PlayColorOrden()
+    {
+    }
+*/
     public void ShowValues() 
     {
         if(ColorOrdenInPreview.Count <= ColorMix) //
@@ -57,6 +71,7 @@ public class MemoryS_Manager : MonoBehaviour
     }
 
 
+
     public void FarbenButton(int ID)
     {
         if(ID == ColorOrdenInPreview[ColorMix]) 
@@ -67,6 +82,7 @@ public class MemoryS_Manager : MonoBehaviour
 
             if(ColorMix == ColorOrdenInPreview.Count) //As long as the game is not lost, the counters will increase
             {
+                
                 DontTouch.SetActive(true);
                 InstrumentCount_Text.text = " ";
                 InstrumentCount = 0;
@@ -79,6 +95,8 @@ public class MemoryS_Manager : MonoBehaviour
             Game_over.SetActive(true);
             DontTouch.SetActive(true); // Screen lock 
             HighScore = PlayerPrefs.GetInt("High Score");  //shows the stored score
+            GetComponent<Api_Scores>().UpdateScore(HighScore); 
+            Debug.Log("Score Upated"); 
 
             if(AllColors > HighScore)
             {
@@ -105,6 +123,7 @@ public class MemoryS_Manager : MonoBehaviour
     IEnumerator Starten()
     {
         yield return new WaitForSeconds(0.5f); // Time before starting the game
+        musicBackground=GetComponent<AudioSource>(); // start the music background
         Generator(); // Call the generator to start the game 
     }
 

@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class MemoryGameController : MonoBehaviour
 {
     [SerializeField]
-
     //This Sprite works as the back of the cards
     private Sprite bgImage;
     //AudioSource that reproduces a correct or incorrect clip depending on the pair of card selected
@@ -40,7 +39,7 @@ public class MemoryGameController : MonoBehaviour
     //Mult is the score multiplyer that will grow if the user keeps guessing correct continuously
     int mult= 10;
     //This value will keep store the score of the player during the game, being affected by mult
-    int score= 0;
+    private int m_score= 0;
     //Value that will keep count of the number of correct guesses
     private int countCorrectGuesses;
     private int gameGuesses;
@@ -54,7 +53,9 @@ public class MemoryGameController : MonoBehaviour
     public GameObject corr_screen;
     public GameObject incorr_screen;
     public void GameOver(){
-        MemoryGameOverScreen.Setup(score);
+        GetComponent<Api_Scores>().UpdateScore(m_score);
+        Debug.Log("Score Upated");
+        MemoryGameOverScreen.Setup(m_score);
     }
 
     //Load Sprites and Sound for the memory cards
@@ -65,6 +66,7 @@ public class MemoryGameController : MonoBehaviour
 
     //Begin script
     void Start(){
+        Debug.Log(PlayerPrefs.GetString("user_name"));
         GetButtons();
         AddListeners();
         AddGamePuzzles();
@@ -151,9 +153,12 @@ public class MemoryGameController : MonoBehaviour
             btns[secondGuessIndex].image.color = new Color(0,0,0,0);
 
             //SUM Score
-            score+=mult;
+            m_score+=mult;
             mult = mult+(mult*1);
-            count_guess.text=(score).ToString();
+            if(mult>100){
+                mult=100;
+            }
+            count_guess.text=(m_score).ToString();
             inst_name.text="Select Card";
             CheckIfTheGameIsFinished();
         }else{
