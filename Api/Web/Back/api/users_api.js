@@ -31,7 +31,7 @@ function connectToDB()
 
 app.get('/', (request,response)=>{
     //aqui iba la direcciona gameUsers.html
-    fs.readFile('./html/webpage.html', 'utf8', (err, html)=>{
+    fs.readFile('./html/rankings.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err);
         console.log('Loading page...');
         response.send(html);
