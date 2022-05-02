@@ -1,4 +1,4 @@
-import {Chart, registerables} from 'chart.js/auto'
+import {Chart, registerables} from '/scripts/charts/chart.esm.js'
 Chart.register(...registerables);
 
 /**
@@ -37,7 +37,7 @@ try
         // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
         const user_names = values.map(e => e['user_name'])
         const level_colors = values.map(e => random_color(0.8))
-        const best_score = values.map(e => e['best_memory_score'])
+        const best_score = values.map(e => e['memory_best_score'])
 
         const ctx_top_memory_score = document.getElementById('memory_top_Chart').getContext('2d');
         const top_memory_chart = new Chart(ctx_top_memory_score, 
