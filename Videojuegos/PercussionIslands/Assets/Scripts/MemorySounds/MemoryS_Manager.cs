@@ -20,13 +20,19 @@ public class MemoryS_Manager : MonoBehaviour
     public int HighScore; // Stores the highest score in the game
     public Text HighScore_text; // Show the highest score
     public Text LastScore_text; //The same of ScoreText
+    //public List<AudioClip> gameSounds= new List<AudioClip>();
+    //public AudioClip[] sounds;
    // public AudioSource sound; // change to instrumentsound   sound.Play();    sound = GetComponent<AudioSource>();
+
+   //public SoundPreview[] SoundInstrumentPreview;
+   //public int counter; 
     
 
     //When you start a game, the color list is reset and the color count begins
     void Start()
     {
        ColorOrdenInPreview = new List<int>();
+       //sounds=Resources.LoadAll<AudioClip>("Sounds/MemorySounds");
        StartCoroutine(Starten()); 
        Debug.Log(PlayerPrefs.GetString("user_name"));
     }
@@ -42,7 +48,11 @@ public class MemoryS_Manager : MonoBehaviour
 
         ShowValues();
     }
-
+/*
+    public void PlayColorOrden()
+    {
+    }
+*/
     public void ShowValues() 
     {
         if(ColorOrdenInPreview.Count <= ColorMix) //
@@ -113,7 +123,7 @@ public class MemoryS_Manager : MonoBehaviour
     IEnumerator Starten()
     {
         yield return new WaitForSeconds(0.5f); // Time before starting the game
-        musicBackground=GetComponent<AudioSource>();
+        musicBackground=GetComponent<AudioSource>(); // start the music background
         Generator(); // Call the generator to start the game 
     }
 
