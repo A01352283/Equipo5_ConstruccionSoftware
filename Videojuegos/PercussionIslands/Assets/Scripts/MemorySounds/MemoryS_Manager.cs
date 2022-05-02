@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MemoryS_Manager : MonoBehaviour
 {
+    private AudioSource musicBackground;
     public Image PreviewImage; // Display in the top of board (instrument color previw) 
     public GameObject DontTouch; // gameobject that defines when an instrument square should be touched or not (touch lock)
     public List<Color> InstrumentColor; //List of colors that individually represent each instrument
@@ -112,6 +113,7 @@ public class MemoryS_Manager : MonoBehaviour
     IEnumerator Starten()
     {
         yield return new WaitForSeconds(0.5f); // Time before starting the game
+        musicBackground=GetComponent<AudioSource>();
         Generator(); // Call the generator to start the game 
     }
 
