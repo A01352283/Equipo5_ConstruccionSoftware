@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LoginMenu.unity
+    guid: 64f11f84bc192cf41b1a304101952bec
+  - enabled: 1
+    path: Assets/Scenes/HubIsland/Gameplay.unity
+    guid: f2cb9960bcd1123439a8fd91093fd4ab
+  - enabled: 1
+    path: Assets/Scenes/Memory.unity
+    guid: 5e8456c1417d93845ad69855dfba0e49
+  - enabled: 1
+    path: Assets/Scenes/TriviaGame.unity
+    guid: 7e77db92a7e234c48a8c89995db00556
+  - enabled: 1
+    path: Assets/Scenes/RhythmGameScene.unity
+    guid: 1e0e97592f5b7634487ca7270d2798ef
+  - enabled: 1
+    path: Assets/Scenes/MemorySounds_Game.unity
+    guid: 1fab745d673e0ab4292494810bb27b0f
+  - enabled: 1
     path: Assets/Scenes/HubIsland/HubIsland.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -17,9 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FirstIsland/FirstIsland.unity
     guid: ae671e464122c024d8bf8a3ff96517d2
-  - enabled: 1
-    path: Assets/Scenes/Memory.unity
-    guid: 5e8456c1417d93845ad69855dfba0e49
   - enabled: 1
     path: Assets/Scenes/FirstIsland/InteriorMusicStore.unity
     guid: 154689a063e905e42a5093bf270d2c80

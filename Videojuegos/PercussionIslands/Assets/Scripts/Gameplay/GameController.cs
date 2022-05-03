@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState {FreeRoam, Dialogue, Paused, Menu, KeyInventory, NonKeyInventory}
+public enum GameState {FreeRoam, Dialogue, Paused, Menu, KeyInventory, NonKeyInventory, Minigame}
 
 public class GameController : MonoBehaviour
 {
@@ -29,8 +29,8 @@ public class GameController : MonoBehaviour
         QuestDB.Init();
     
         //Locks and hides the mouse cursor
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        /* Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false; */
     }
 
     private void Start() {

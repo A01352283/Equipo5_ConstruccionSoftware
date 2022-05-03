@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class MemoryGameOverScreen : MonoBehaviour
 {
     public Text pointsText;
+
     public void Setup(int score){
         gameObject.SetActive(true);
         pointsText.text="SCORE: "+score.ToString();
@@ -18,9 +19,12 @@ public class MemoryGameOverScreen : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
-    /*
     public void ExitButton(){
-        SceneManager.LoadScene("")
+        StartCoroutine(UnloadThisScene());
     }
-    */
+
+    IEnumerator UnloadThisScene(){
+        yield return SceneManager.UnloadSceneAsync("TriviaGame");
+    }
+   
 }

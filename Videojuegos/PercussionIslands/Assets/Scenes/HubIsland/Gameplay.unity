@@ -651,6 +651,10 @@ PrefabInstance:
       propertyPath: connectedScenes.Array.data[0]
       value: 
       objectReference: {fileID: 4987438234929300780}
+    - target: {fileID: 4987438233757647035, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
+      propertyPath: connectedScenes.Array.data[1]
+      value: 
+      objectReference: {fileID: 4987438234929300780}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1b2f9628104d14d85e4666988b47dc, type: 3}
 --- !u!1001 &954336846
@@ -868,7 +872,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -140.84479
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1826278126566877889, guid: 08dad74a2b955d94ab9b5f480772262e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 08dad74a2b955d94ab9b5f480772262e, type: 3}
 --- !u!1001 &1467706481
 PrefabInstance:

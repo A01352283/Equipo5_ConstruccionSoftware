@@ -17,6 +17,7 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
 
     Character character;
     ItemGiver itemGiver;
+    MinigameStarter minigameStarter;
     
     NPCState state;
     float IdleTimer = 0f; //Time where NPC will stay idle between pattern movements
@@ -26,6 +27,7 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
     private void Awake() {
         character = GetComponent<Character>();
         itemGiver = GetComponent<ItemGiver>();
+        minigameStarter = GetComponent<MinigameStarter>();
     }
 
     public IEnumerator Interact(Transform initiator){ //Initiator is the transform of the player that started the interaction
@@ -43,6 +45,7 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
                 Debug.Log($"{quest.Base.Name} completed");
             }
 
+            //Checks the item giving and the quest starting
             if (itemGiver != null && itemGiver.CanBeGiven()){
                 yield return itemGiver.GiveItem(initiator.GetComponent<PlayerController>());
             }
@@ -66,7 +69,10 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
                     yield return DialogueManager.Instance.ShowDialogue(activeQuest.Base.InProgressDialogue);
                 }
             }
-            else{
+            else if (minigameStarter != null){ //If there is a minigame to load, load it
+                yield return minigameStarter.LoadMinigame();
+            }
+            else{ //Show the normal dialogue
                 yield return DialogueManager.Instance.ShowDialogue(dialogue);
             }
             
@@ -103,8 +109,6 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
         if (transform.position != oldPos){
             currentMovementPattern = (currentMovementPattern + 1) % movementPattern.Count; //So it goes back to the first on the last step
         } 
-
-
 
         state = NPCState.Idle;
     }
