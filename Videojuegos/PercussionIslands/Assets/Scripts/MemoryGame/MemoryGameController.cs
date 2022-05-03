@@ -67,6 +67,11 @@ public class MemoryGameController : MonoBehaviour
     //Begin script
     void Start(){
         Debug.Log(PlayerPrefs.GetString("user_name"));
+        
+    }
+
+    //Runs all the necesary functions to load everything in the game
+    void GenerateGame(){
         GetButtons();
         AddListeners();
         AddGamePuzzles();
