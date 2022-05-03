@@ -1868,7 +1868,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1780905703}
         m_TargetAssemblyTypeName: MemoryGameOverScreen, Assembly-CSharp
-        m_MethodName: ExitButton
+        m_MethodName: ExitTriviaButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

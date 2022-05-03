@@ -18,11 +18,16 @@ MonoBehaviour:
     lines:
     - Hello trainee, how you doin'
     - Go to that book to start the test.
+    - You'll get your first instrument when you complete the challenge.
+    - When you get it, come back to me.
   inProgressDialogue:
     lines:
     - Go to that book to start the test.
   completeDialogue:
     lines:
-    - Congratulations on your fist instrument!
+    - Congratulations on your first instrument!
+    - In fact, I will give you this Gong to scare the bird on the bridge so he'll
+      let you get to the first island.
+    - Don't forget to talk to every person you see and read every book you can.
   requiredItem: {fileID: 11400000, guid: e171c996e5e85eb49b49aa9ff70cc275, type: 2}
   rewardItem: {fileID: 11400000, guid: e54bb6af3e9045a42b6a659b3d3e68aa, type: 2}

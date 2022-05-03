@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 //[RequireComponent(typeof(AudioSource))]
 
@@ -134,5 +135,15 @@ public class MemoryS_Manager : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         ColorMix++;
         ShowValues();
+    }
+
+    //This is called from the exit game button
+    public void ExitButton(){
+        StartCoroutine(UnloadThisScene());
+    }
+
+    //Coroutine to unload the scene asyncronously. This is done like this because the RPG game uses additive scene loading
+    IEnumerator UnloadThisScene(){
+        yield return SceneManager.UnloadSceneAsync("MemorySounds_Game");
     }
 }

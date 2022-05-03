@@ -19,12 +19,19 @@ public class MemoryGameOverScreen : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
-    public void ExitButton(){
-        StartCoroutine(UnloadThisScene());
+    public void ExitTriviaButton(){
+        StartCoroutine(UnloadThisSceneTrivia());
     }
 
-    IEnumerator UnloadThisScene(){
+    IEnumerator UnloadThisSceneTrivia(){
         yield return SceneManager.UnloadSceneAsync("TriviaGame");
+    }
+    public void ExitMemoryButton(){
+        StartCoroutine(UnloadThisSceneTrivia());
+    }
+
+    IEnumerator UnloadThisSceneMemory(){
+        yield return SceneManager.UnloadSceneAsync("Memory");
     }
    
 }

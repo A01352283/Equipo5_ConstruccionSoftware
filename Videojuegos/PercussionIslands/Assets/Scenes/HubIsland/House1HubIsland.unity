@@ -4267,12 +4267,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
       propertyPath: dialogue.lines.Array.data[0]
-      value: It seems you want to become a percussion master
+      value: Don't forget to talk to every person you see and read every book you
+        can.
       objectReference: {fileID: 0}
     - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
       propertyPath: dialogue.lines.Array.data[1]
-      value: Let's test your skills. Go to that book over there and complete the
-        challenge.
+      value: You'll need it, trust me.
       objectReference: {fileID: 0}
     - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
       propertyPath: dialogue.lines.Array.data[2]
@@ -4423,6 +4423,10 @@ PrefabInstance:
     - target: {fileID: 3423745050001024686, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
       propertyPath: m_Name
       value: SceneChangerBook
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924223474171654988, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: minigameToLoad
+      value: MemorySounds_Game
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}

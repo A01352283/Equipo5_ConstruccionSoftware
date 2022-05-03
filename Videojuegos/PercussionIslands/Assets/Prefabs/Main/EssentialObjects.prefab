@@ -1722,6 +1722,10 @@ PrefabInstance:
       propertyPath: keySlots.Array.data[1].count
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7251393503836493353, guid: 3217087aead409440b3af58523a302f4, type: 3}
+      propertyPath: m_Name
+      value: RPG Main Camera
+      objectReference: {fileID: 0}
     - target: {fileID: 7251393504022005626, guid: 3217087aead409440b3af58523a302f4, type: 3}
       propertyPath: m_RootOrder
       value: 0

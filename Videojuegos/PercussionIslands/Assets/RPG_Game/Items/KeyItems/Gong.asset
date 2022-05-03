@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Gong
   m_EditorClassIdentifier: 
   itemName: Gong
-  description: Very loud.
+  description: The Gong is a slightly convex, round metal disk which is hit with
+    a mallet. It originated in South East Asia, in particular China. It is a percussion
+    sonorous or musical instrument of Chinese origin and manufacture, made in the
+    form of a broad thin disk with a deep rim that has spread to Southeast Asia -
+    a type of flat bell. It gradually found its way to Western Europe not only as
+    an ornament to decorate the walls of well-to-do citizens, but also as an instrument
+    in Western music. The Western gong may alternatively be called a tamtam.
   icon: {fileID: 21300000, guid: 0e24a62085ab2f14aabd8ce5da96072b, type: 3}
-  audioSource: {fileID: 0}

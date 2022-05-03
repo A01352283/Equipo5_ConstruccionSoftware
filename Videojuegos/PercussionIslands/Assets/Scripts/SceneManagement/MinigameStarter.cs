@@ -10,6 +10,7 @@ public class MinigameStarter : MonoBehaviour
     private GameObject audioManager;
     private GameObject eventSystem;
     private GameObject player;
+    private GameObject rpgCamera;
 
     //Loads the minigame async
     public IEnumerator LoadMinigame(){
@@ -25,11 +26,13 @@ public class MinigameStarter : MonoBehaviour
             audioManager = GameObject.Find("AudioManager");
             eventSystem = GameObject.Find("EventSystemEssential");
             player = GameObject.Find("Player");
+            rpgCamera = GameObject.Find("RPG Main Camera");
             
             //Disables the objects so the other game is playable
             canvasUI.SetActive(false);
             audioManager.SetActive(false);
             eventSystem.SetActive(false);
+            rpgCamera.SetActive(false);
             player.GetComponent<Character>().moveSpeed = 0f; //Disables player movement during the minigame
         }
     }
@@ -44,6 +47,7 @@ public class MinigameStarter : MonoBehaviour
             canvasUI.SetActive(true);
             audioManager.SetActive(true);
             eventSystem.SetActive(true);
+            rpgCamera.SetActive(true);
             player.GetComponent<Character>().moveSpeed = 5f; //Reenables player movement
         }
     }

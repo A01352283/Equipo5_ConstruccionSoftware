@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc2aaf511f3a504ab88fabebad2573e, type: 3}
   m_Name: FirstMinigame
   m_EditorClassIdentifier: 
-  name: Firstminigame
+  name: FirstMinigame
   description: 
   startDialogue:
     lines: []
