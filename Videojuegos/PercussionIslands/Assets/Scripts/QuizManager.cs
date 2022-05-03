@@ -26,17 +26,29 @@ public class QuizManager : MonoBehaviour
     public GameObject incorr_screen;
 
     public bool match;
+    private float start_time;
 
     public MemoryGameOverScreen TriviaGameOverScreen;
     public void GameOver(){
-        GetComponent<Api_Scores>().UpdateScore(score);
+        string mg_time= Game_Time();
+        GetComponent<Api_Scores>().UpdateScore(score,mg_time);
         Debug.Log("Score Upated");
         TriviaGameOverScreen.Setup(score);
     }
     private void Start(){
+        start_time= Time.time;
         StartCoroutine(fillQuestion());
     }
 
+    private string Game_Time(){
+        float t= Time.time - start_time;
+        string hours = ((int)t / 3600).ToString ("00");
+        float m = t % 3600;
+        string minutes = ((int)m / 60).ToString("00");
+        string seconds = (m % 60).ToString("00");
+        string mg_time=hours + ":" + minutes + ":" + seconds;
+        return mg_time;
+    }
     IEnumerator fillQuestion(){
         yield return new WaitForSeconds(2f);
         QnA=GetComponent<Api_Questions>().allQuestions;

@@ -308,6 +308,30 @@ app.get('/api/top-scores/memorysounds', (request, response)=>{
 
 });
 
+app.get('/api/total_play_time', (request, response)=>{
+    let connection = connectToDB();
+
+    try{
+
+        connection.connect();
+
+        connection.query('select * from total_play_time', (error, results, fields)=>{
+            if(error) console.log(error);
+            console.log(JSON.stringify(results));
+            response.json(results);
+        });
+
+        connection.end();
+    }
+    catch(error)
+    {
+        response.json(error);
+        console.log(error);
+    }
+
+});
+
+
 
 
 
@@ -442,27 +466,6 @@ app.post('/api/game_user/id', (request, response)=>{
             else
                 console.log(JSON.stringify(results[0][0]));
                 response.json(results[0][0]["user_id"]);
-        });
-
-        connection.end();
-    }
-    catch(error)
-    {
-        response.json(error);
-        console.log(error);
-    }
-});
-
-app.post('/api/game_user/reset', (request, response)=>{
-    try{
-        let connection = connectToDB();
-        connection.connect();
-        const query = connection.query('SELECT @id',(error, results, fields)=>{
-            if(error) 
-                console.log(error);
-            else
-                console.log(JSON.stringify(results));
-                response.json(results);
         });
 
         connection.end();

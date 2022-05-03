@@ -48,12 +48,15 @@ public class MemoryGameController : MonoBehaviour
     public Text count_guess;
     public Text inst_name;
 
+    private float start_time;
+
     public MemoryGameOverScreen MemoryGameOverScreen;
 
     public GameObject corr_screen;
     public GameObject incorr_screen;
     public void GameOver(){
-        GetComponent<Api_Scores>().UpdateScore(m_score);
+        string mg_time= Game_Time();
+        GetComponent<Api_Scores>().UpdateScore(m_score,mg_time);
         Debug.Log("Score Upated");
         MemoryGameOverScreen.Setup(m_score);
     }
@@ -64,9 +67,19 @@ public class MemoryGameController : MonoBehaviour
         sounds=Resources.LoadAll<AudioClip>("Sounds/Game1");
     }
 
+    private string Game_Time(){
+        float t= Time.time - start_time;
+        string hours = ((int)t / 3600).ToString ("00");
+        float m = t % 3600;
+        string minutes = ((int)m / 60).ToString("00");
+        string seconds = (m % 60).ToString("00");
+        string mg_time=hours + ":" + minutes + ":" + seconds;
+        return mg_time;
+    }
+
     //Begin script
     void Start(){
-        Debug.Log(PlayerPrefs.GetString("user_name"));
+        start_time= Time.time;
         GetButtons();
         AddListeners();
         AddGamePuzzles();

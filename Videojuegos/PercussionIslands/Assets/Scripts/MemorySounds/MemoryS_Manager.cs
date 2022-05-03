@@ -20,6 +20,8 @@ public class MemoryS_Manager : MonoBehaviour
     public int HighScore; // Stores the highest score in the game
     public Text HighScore_text; // Show the highest score
     public Text LastScore_text; //The same of ScoreText
+
+    private float start_time;
     //public List<AudioClip> gameSounds= new List<AudioClip>();
     //public AudioClip[] sounds;
    // public AudioSource sound; // change to instrumentsound   sound.Play();    sound = GetComponent<AudioSource>();
@@ -31,12 +33,22 @@ public class MemoryS_Manager : MonoBehaviour
     //When you start a game, the color list is reset and the color count begins
     void Start()
     {
+        start_time= Time.time;
        ColorOrdenInPreview = new List<int>();
        //sounds=Resources.LoadAll<AudioClip>("Sounds/MemorySounds");
        StartCoroutine(Starten()); 
        Debug.Log(PlayerPrefs.GetString("user_name"));
     }
 
+    private string Game_Time(){
+        float t= Time.time - start_time;
+        string hours = ((int)t / 3600).ToString ("00");
+        float m = t % 3600;
+        string minutes = ((int)m / 60).ToString("00");
+        string seconds = (m % 60).ToString("00");
+        string mg_time=hours + ":" + minutes + ":" + seconds;
+        return mg_time;
+    }
 
     // Generate the colors and save the score list
     public void Generator()
@@ -95,7 +107,8 @@ public class MemoryS_Manager : MonoBehaviour
             Game_over.SetActive(true);
             DontTouch.SetActive(true); // Screen lock 
             HighScore = PlayerPrefs.GetInt("High Score");  //shows the stored score
-            GetComponent<Api_Scores>().UpdateScore(HighScore); 
+            string mg_time= Game_Time();
+            GetComponent<Api_Scores>().UpdateScore(HighScore,mg_time); 
             Debug.Log("Score Upated"); 
 
             if(AllColors > HighScore)

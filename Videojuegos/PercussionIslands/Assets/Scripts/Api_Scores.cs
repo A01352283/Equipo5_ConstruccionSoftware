@@ -6,6 +6,7 @@ Gilberto Echeverria
 */
 
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -23,6 +24,7 @@ public class Trivia_Score
     public string user_name;
     public int user_id;
     public int trivia_last_score;
+    public string trivia_play_time;
 }
 
 [System.Serializable]
@@ -31,6 +33,7 @@ public class Memory_Score
     public string user_name;
     public int user_id;
     public int memory_last_score;
+    public string memory_play_time;
 }
 
 [System.Serializable]
@@ -39,6 +42,7 @@ public class MemorySounds_Score
     public string user_name;
     public int user_id;
     public int memorysounds_last_score;
+    public string memorysounds_play_time;
 }
 
 [System.Serializable]
@@ -47,6 +51,7 @@ public class Rhythm_Score
     public string user_name;
     public int user_id;
     public int rhythm_last_score;
+    public string rhythm_play_time;
 }
 
 
@@ -66,40 +71,44 @@ public class Api_Scores : MonoBehaviour
     public MemorySounds_Score memorysounds_score;
     public Rhythm_Score rhythm_score;
     // Update is called once per frame
-    public void UpdateScore(int _score)
+    public void UpdateScore(int _score,string time)
     {
     //when cliked button login loop hasta que haga match
-       StartCoroutine(UpScore(mg_type, _score));
+       StartCoroutine(UpScore(mg_type, _score, time));
     }
 
     public void RegsiterPage(){
         SceneManager.LoadScene(5);
     }
 
-    IEnumerator UpScore(string m_game,int _score)
+    IEnumerator UpScore(string m_game,int _score, string _time)
     {   
         if(m_game=="trivia"){
             trivia_score= new Trivia_Score();
             trivia_score.user_name=PlayerPrefs.GetString("user_name");
             trivia_score.trivia_last_score=_score;
+            trivia_score.trivia_play_time=_time;
             data=JsonUtility.ToJson(trivia_score);
         }
         else if(m_game=="memory"){
             memory_score= new Memory_Score();
             memory_score.user_name=PlayerPrefs.GetString("user_name");
             memory_score.memory_last_score=_score;
+            memory_score.memory_play_time=_time;
             data=JsonUtility.ToJson(memory_score);
         }
         else if(m_game=="memorysounds"){
             memorysounds_score= new MemorySounds_Score();
             memorysounds_score.user_name=PlayerPrefs.GetString("user_name");
             memorysounds_score.memorysounds_last_score=_score;
+            memorysounds_score.memorysounds_play_time=_time;
             data=JsonUtility.ToJson(memorysounds_score);
         }
         else if(m_game=="rhythm"){
             rhythm_score= new Rhythm_Score();
             rhythm_score.user_name=PlayerPrefs.GetString("user_name");
             rhythm_score.rhythm_last_score=_score;
+            rhythm_score.rhythm_play_time=_time;
             data=JsonUtility.ToJson(rhythm_score);
         }
         using(UnityWebRequest www= UnityWebRequest.Put(url + "/api/game_user/id",data)){

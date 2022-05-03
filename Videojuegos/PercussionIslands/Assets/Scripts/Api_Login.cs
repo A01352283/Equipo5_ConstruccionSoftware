@@ -44,7 +44,7 @@ public class Api_Login : MonoBehaviour
     }
 
     public void RegsiterPage(){
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
     }
 
     IEnumerator Verify_User()
