@@ -22,7 +22,6 @@ create table questions (
     primary key (question_id)
 )   ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
 create table game_user_scores(
 	user_id smallint unsigned not null,
 	rhythm_best_score smallint unsigned not null default 0,
@@ -146,4 +145,25 @@ FROM game_user where user_name = user_n;
 END//
 DELIMITER ;
 
+DELIMITER $$
+CREATE TRIGGER sum_mg_time
+BEFORE UPDATE ON game_user_scores
+FOR EACH ROW
+BEGIN
+	SET NEW.trivia_play_time= OLD.trivia_play_time + NEW.trivia_play_time;
+    SET NEW.memory_play_time= OLD.memory_play_time + NEW.memory_play_time;
+    SET NEW.memorysounds_play_time= OLD.memorysounds_play_time + NEW.memorysounds_play_time;
+    SET NEW.rhythm_play_time= OLD.rhythm_play_time + NEW.rhythm_play_time;
+END$$
+DELIMITER ;
+
+create view total_play_time as
+select sec_to_time(SUM(memory_play_time)) as 
+total_memory_play_time, 
+sec_to_time(SUM(trivia_play_time)) as 
+total_trivia_play_time, 
+sec_to_time(SUM(memorysounds_play_time)) as 
+total_memorysounds_play_time, 
+sec_to_time(SUM(rhythm_play_time)) as 
+total_rhythm_play_time from game_user_scores;
 

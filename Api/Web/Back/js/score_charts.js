@@ -1,6 +1,7 @@
 import {Chart, registerables} from '/scripts/charts/chart.esm.js'
 Chart.register(...registerables);
 
+
 /**
  * @param {number} alpha Indicated the transparency of the color
  * @returns {string} A string of the form 'rgba(240, 50, 123, 1.0)' that represents a color
@@ -136,17 +137,28 @@ try
         const trivia_time = values.map(e => e['total_trivia_play_time'])
         const memorysounds_time = values.map(e => e['total_memorysounds_play_time'])
         const rhythm_time = values.map(e => e['total_rhythm_play_time'])
+        
+        let names = ['total_memory_play_time','total_trivia_play_time','total_memorysounds_play_time','total_rhythm_play_time']
+        
+        let times = [memory_time[0], trivia_time[0], memorysounds_time[0], rhythm_time[0]]
+
+        for (let i=0; i<times.length; i++){
+            times[i]= times[i]/60;
+        }
+
+        
+
         const ctx_top_play_chart = document.getElementById('top_play_Chart').getContext('2d');
         const top_play_chart = new Chart(ctx_top_play_chart, 
             {
                 type: 'bar',
                 data: {
-                    labels: ['total_memory_play_time','total_trivia_play_time','total_memorysounds_play_time','total_rhythm_play_time'],
+                    labels: names,
                     datasets: [
                         {
-                            label: 'Time Played',
+                            label: 'Total Time (Minutes)',
                             backgroundColor: level_colors,
-                            data: [memory_time[0], trivia_time[0], memorysounds_time[0], rhythm_time[0]]
+                            data: times,
                         }
                     ]
                 }

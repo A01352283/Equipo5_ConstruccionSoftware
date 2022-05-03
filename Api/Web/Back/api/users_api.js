@@ -1,5 +1,4 @@
 "use strict"
-
 import express, { response } from 'express'
 import mysql from 'mysql'
 import fs from 'fs'
@@ -10,14 +9,17 @@ const port = 5000;
 
 app.use(express.json());
 
+//Format read
 app.use('/scripts/charts', express.static('./node_modules/chart.js/dist/'))
 app.use('/js', express.static('./js'))
 app.use('/css', express.static('./css'))
 app.use('/fonts', express.static('./fonts'))
 
+//This function allows access to the Scheme in MySql
 function connectToDB()
 {
     try{
+        //Obtain this info by create a user in MySql with the privileges to modify percussion_island3
         return mysql.createConnection({host:'localhost', 
         user:'final_admin', 
         password:'Destiny2', 
@@ -29,6 +31,7 @@ function connectToDB()
     }   
 }
 
+//This api call obtains the main web-page site
 app.get('/', (request,response)=>{
     //aqui iba la direcciona gameUsers.html
     fs.readFile('./html/rankings.html', 'utf8', (err, html)=>{
@@ -38,8 +41,8 @@ app.get('/', (request,response)=>{
     })
 });
 
+//This api call obtains the web-page of all the users
 app.get('/game_user', (request,response)=>{
-    //aqui iba la direcciona gameUsers.html
     fs.readFile('./html/gameUsers.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err);
         console.log('Loading page...');
@@ -47,15 +50,7 @@ app.get('/game_user', (request,response)=>{
     })
 });
 
-app.get('/questions', (request,response)=>{
-    //aqui iba la direcciona gameUsers.html
-    fs.readFile('./html/questions.html', 'utf8', (err, html)=>{
-        if(err) response.status(500).send('There was an error: ' + err);
-        console.log('Loading page...');
-        response.send(html);
-    })
-});
-
+//This api call obtains the web-page of the scores from the users
 app.get('/game_user/scores', (request,response)=>{
     fs.readFile('./html/userScores.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err);
@@ -64,23 +59,7 @@ app.get('/game_user/scores', (request,response)=>{
     })
 });
 
-app.get('/game_user/key_inventory', (request,response)=>{
-    fs.readFile('./html/gameUsersKI.html', 'utf8', (err, html)=>{
-        if(err) response.status(500).send('There was an error: ' + err);
-        console.log("Loading page...");
-        response.send(html)
-    })
-});
-
-app.get('/game_user/sf', (request,response)=>{
-    fs.readFile('./html/gameUserSF.html', 'utf8', (err, html)=>{
-        if(err) response.status(500).send('There was an error: ' + err);
-        console.log("Loading page...");
-        response.send(html)
-    })
-});
-
-
+//This api call verifies if a specific user_name and password exists in the database (if true return 1)
 app.post('/api/game_user/verify', (request,response)=>{
     let connection = connectToDB();
 
@@ -104,6 +83,7 @@ app.post('/api/game_user/verify', (request,response)=>{
     }
 });
 
+//This api call obtains all the users from game_user table
 app.get('/api/game_user', (request, response)=>{
     let connection = connectToDB();
 
@@ -126,7 +106,7 @@ app.get('/api/game_user', (request, response)=>{
     }
 });
 
-
+//This api call obtains all the game_user_scores
 app.get('/api/game_user/scores', (request, response)=>{
     let connection = connectToDB();
 
@@ -150,7 +130,7 @@ app.get('/api/game_user/scores', (request, response)=>{
 });
 
 
-
+//This api call obtains all the values from game_user_key_inventory
 app.get('/api/game_user/key_inventory', (request,response)=>{
     let connection = connectToDB();
     try{
@@ -172,6 +152,7 @@ app.get('/api/game_user/key_inventory', (request,response)=>{
     }
 });
 
+//This api call obtains all the values from the game_user_save_file
 app.get('/api/game_user/sf', (request,response)=>{
     let connection = connectToDB();
     try{
@@ -193,6 +174,7 @@ app.get('/api/game_user/sf', (request,response)=>{
     }
 });
 
+//This api call obtains all the quesions (including the correct and incorrect answers)
 app.get('/api/questions', (request, response)=>{
     let connection = connectToDB();
 
@@ -578,7 +560,7 @@ app.delete('/api/game_user', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from game_user where user_id= @id', request.body ,(error, results, fields)=>{
+        const query = connection.query('delete from game_user where user_id= ?', request.body['user_id'] ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -600,7 +582,7 @@ app.delete('/api/game_user/scores', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from game_user_scores where user_id= @id', request.body ,(error, results, fields)=>{
+        const query = connection.query('delete from game_user_scores where user_id= ?', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -622,7 +604,7 @@ app.delete('/api/game_user/key_inventory', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from game_user_key_inventory where user_id=@id', request.body ,(error, results, fields)=>{
+        const query = connection.query('delete from game_user_key_inventory where user_id= ?', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
@@ -644,7 +626,7 @@ app.delete('/api/game_user/sf', (request, response)=>{
         let connection = connectToDB();
         connection.connect();
 
-        const query = connection.query('delete from game_user_save_file where user_id= @id', request.body ,(error, results, fields)=>{
+        const query = connection.query('delete from game_user_save_file where user_id= ?', request.body ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
