@@ -20,4 +20,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Memory.unity
     guid: 5e8456c1417d93845ad69855dfba0e49
+  - enabled: 1
+    path: Assets/Scenes/FirstIsland/InteriorMusicStore.unity
+    guid: 154689a063e905e42a5093bf270d2c80
+  - enabled: 1
+    path: Assets/Scenes/FirstIsland/InteriorNPC1.unity
+    guid: 5a4a7c755a6d15e49ac55c02b1cbe29d
+  - enabled: 1
+    path: Assets/Scenes/FirstIsland/InteriorNPC2.unity
+    guid: 56805affbae9f424b8ad5f5f7385851b
+  - enabled: 1
+    path: Assets/Scenes/FirstIsland/InteriorNPC3.unity
+    guid: cff89e85a02f62747a33d450fa3b58a0
+  - enabled: 1
+    path: Assets/Scenes/FirstIsland/InteriorNPC4.unity
+    guid: eace49230cfa33043b9e2e5d29698532
+  - enabled: 1
+    path: Assets/Scenes/FirstIsland/InteriorNPC5.unity
+    guid: 6b4a49cf5744a3c4080e8190d1969ffd
+  - enabled: 1
+    path: Assets/Scenes/FirstIsland/InteriorNPC6.unity
+    guid: fe6eace2494be164f8f94ff4aae63e47
   m_configObjects: {}
