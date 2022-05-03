@@ -1620,7 +1620,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2323366721279407470, guid: 3217087aead409440b3af58523a302f4, type: 3}
       propertyPath: slots.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2323366721279407470, guid: 3217087aead409440b3af58523a302f4, type: 3}
       propertyPath: keySlots.Array.size

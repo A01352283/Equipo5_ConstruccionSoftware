@@ -36,6 +36,9 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
             state = NPCState.Dialogue;
             character.LookToward(initiator.position);
 
+            if (minigameStarter != null){ //If there is a minigame to load, load it
+                yield return minigameStarter.LoadMinigame();
+
             if (questToComplete != null){
                 var quest = new Quest(questToComplete);
 
@@ -48,6 +51,7 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
             //Checks the item giving and the quest starting
             if (itemGiver != null && itemGiver.CanBeGiven()){
                 yield return itemGiver.GiveItem(initiator.GetComponent<PlayerController>());
+            }
             }
             else if (questToStart != null){
                 activeQuest = new Quest(questToStart);
@@ -68,9 +72,6 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
                 else{   //If the quest can't be completed yet
                     yield return DialogueManager.Instance.ShowDialogue(activeQuest.Base.InProgressDialogue);
                 }
-            }
-            else if (minigameStarter != null){ //If there is a minigame to load, load it
-                yield return minigameStarter.LoadMinigame();
             }
             else{ //Show the normal dialogue
                 yield return DialogueManager.Instance.ShowDialogue(dialogue);
