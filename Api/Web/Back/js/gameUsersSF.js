@@ -1,5 +1,7 @@
+//This script is used to access, insert, update or delete information from the table game_user_save_file
 function main()
 {
+    //obtain all the records in game_user_save_file and shows them in a table
     formSelect.onsubmit = async (e) =>{
         e.preventDefault()
 
@@ -44,7 +46,7 @@ function main()
             getResults.innerHTML = response.status
         }
     }
-
+    //obtains the new game_user_save_file info from the html input and calls the api to insert the new record
     formInsert.onsubmit = async(e)=>
     {
         e.preventDefault()
@@ -78,7 +80,7 @@ function main()
             postResults.innerHTML = response.status
         }
     }
-
+    //obtains the game_user key inventory info from the html input and calls the api to update the record
     formUpdate.onsubmit = async(e)=>
     {
         e.preventDefault()
@@ -104,6 +106,7 @@ function main()
         }
     }
 
+    //obtains the user_id from the html input and calls the api to delete the save file record with that key identification
     formDelete.onsubmit = async(e)=>
     {
         e.preventDefault()

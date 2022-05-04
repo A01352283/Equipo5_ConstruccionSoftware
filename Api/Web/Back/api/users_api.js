@@ -22,6 +22,7 @@ app.use('/scripts/charts', express.static('./node_modules/chart.js/dist/'))
 app.use('/js', express.static('./js'))
 app.use('/css', express.static('./css'))
 app.use('/fonts', express.static('./fonts'))
+app.use('/files',express.static('./files'))
 
 //This function allows access to the Scheme in MySql
 function connectToDB()

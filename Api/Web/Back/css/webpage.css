@@ -64,6 +64,7 @@ nav{
 canvas{
     padding: 1%;
     border: 1px solid black;
+    background-color: white;
 }
 
 .container {
@@ -71,4 +72,8 @@ canvas{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+body{
+    background-image: url('../files/tilesetOpenGameBackground.png');
 }

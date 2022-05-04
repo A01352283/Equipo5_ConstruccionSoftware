@@ -1,5 +1,6 @@
+//This script is used to access, insert, update or delete information from the table game_user_key_inventory
 function main()
-{
+{   //obtain all the records in game_user_key_inventory and shows them in a table
     formSelect.onsubmit = async (e) =>{
         e.preventDefault()
 
@@ -44,7 +45,7 @@ function main()
             getResults.innerHTML = response.status
         }
     }
-
+    //obtains the new game_user_key_inventory info from the html input and calls the api to insert the new record
     formInsert.onsubmit = async(e)=>
     {
         e.preventDefault()
@@ -78,7 +79,7 @@ function main()
             postResults.innerHTML = response.status
         }
     }
-
+    //obtains the game user key inventory info from the html input and calls the api to update the record
     formUpdate.onsubmit = async(e)=>
     {
         e.preventDefault()
@@ -103,7 +104,7 @@ function main()
             putResults.innerHTML = response.status
         }
     }
-
+    //obtains the user_id from the html input and calls the api to delete the key_inventory record with that key identification
     formDelete.onsubmit = async(e)=>
     {
         e.preventDefault()
