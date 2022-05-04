@@ -96,13 +96,6 @@ public class MemoryGameController : MonoBehaviour
         audio_s=GetComponent<AudioSource>();
         inst_name.text="Select Card";
     }
-
-    //Displays the game over screen with the final score
-    public void GameOver(){
-        GetComponent<Api_Scores>().UpdateScore(m_score);
-        Debug.Log("Score Upated");
-        MemoryGameOverScreen.Setup(m_score);
-    }
     
     //Restarts the game again by regenerating everything and resetting the parameters
     public void RestartButton(){
