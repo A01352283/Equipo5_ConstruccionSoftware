@@ -1,3 +1,9 @@
+/*
+Percussion Islands 
+May 2022
+Salvador Salgado Normandia
+*/
+
 import {Chart, registerables} from '/scripts/charts/chart.esm.js'
 Chart.register(...registerables);
 

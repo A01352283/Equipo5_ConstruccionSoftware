@@ -1,3 +1,9 @@
+/*
+Percussion Islands 
+May 2022
+Salvador Salgado Normandia
+*/
+
 //This script is used to access, insert, update or delete information from the table game_user_save_file
 function main()
 {

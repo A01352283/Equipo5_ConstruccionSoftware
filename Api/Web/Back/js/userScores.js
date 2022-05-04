@@ -1,3 +1,9 @@
+/*
+Percussion Islands 
+May 2022
+Salvador Salgado Normandia
+*/
+
 function main()
 {
     formSelect.onsubmit = async (e) =>{
