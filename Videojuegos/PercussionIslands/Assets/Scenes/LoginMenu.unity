@@ -794,7 +794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53ab1760657f804db8b04a1d063922e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: localhost:5000
+  url: http://localhost:5000
   getEP: /api/game_user/verify
   user_text: {fileID: 2040452077}
   pwd_text: {fileID: 1550601937}

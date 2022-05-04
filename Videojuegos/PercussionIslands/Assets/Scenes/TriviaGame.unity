@@ -1014,25 +1014,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bf37843329e9e4d8a1556a9af5141a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: localhost:5000
+  url: http://localhost:5000
   getEP: /api/game_user/scores
   mg_type: trivia
   trivia_score:
     user_name: 
     user_id: 0
     trivia_last_score: 0
+    trivia_play_time: 
   memory_score:
     user_name: 
     user_id: 0
     memory_last_score: 0
+    memory_play_time: 
   memorysounds_score:
     user_name: 
     user_id: 0
     memorysounds_last_score: 0
+    memorysounds_play_time: 
   rhythm_score:
     user_name: 
     user_id: 0
     rhythm_last_score: 0
+    rhythm_play_time: 
 --- !u!1 &896683580
 GameObject:
   m_ObjectHideFlags: 0
