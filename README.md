@@ -20,4 +20,12 @@ Repositorio para el proyecto del equipo 5 de Construcción de Software y Toma de
 
 # Asset credits
 - Menu SFX: https://souptonic.itch.io/souptonic-sfx-pack-1-ui-sounds
+- Character sprite sheets:
+- World tileset sprite sheets:
+- Interior tileset sprite sheets:  
+
+# Script sources
 - RPG part of the game is heavily based on this tutorial series by Game Dev Experiments: https://www.youtube.com/playlist?list=PLLf84Zj7U26kfPQ00JVI2nIoozuPkykDX
+
+# Information sources
+- Gong information: https://www.indianetzone.com/44/gong.htm
