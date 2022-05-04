@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 304490578340225569}
   - component: {fileID: 304490578340225568}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: EventSystemEssential
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1620,7 +1620,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2323366721279407470, guid: 3217087aead409440b3af58523a302f4, type: 3}
       propertyPath: slots.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2323366721279407470, guid: 3217087aead409440b3af58523a302f4, type: 3}
       propertyPath: keySlots.Array.size
@@ -1721,6 +1721,10 @@ PrefabInstance:
     - target: {fileID: 2323366721279407470, guid: 3217087aead409440b3af58523a302f4, type: 3}
       propertyPath: keySlots.Array.data[1].count
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251393503836493353, guid: 3217087aead409440b3af58523a302f4, type: 3}
+      propertyPath: m_Name
+      value: RPG Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 7251393504022005626, guid: 3217087aead409440b3af58523a302f4, type: 3}
       propertyPath: m_RootOrder

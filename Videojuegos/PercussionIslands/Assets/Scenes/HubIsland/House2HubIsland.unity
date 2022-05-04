@@ -387,6 +387,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &393023124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3418268032935725342, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+  m_PrefabInstance: {fileID: 1924903039}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &393023125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393023124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb7ea21731393e47a0182cf86f8bee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigameToLoad: 
 --- !u!1 &465247677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1954,194 +1972,104 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 688382868}
     m_ColliderPaths:
-    - - X: 76875034
-        Y: 1249905
-      - X: 79375070
-        Y: 2499923
-      - X: 79375100
-        Y: 2499972
-      - X: 79375100
-        Y: 7500016
-      - X: 79375090
-        Y: 7500047
-      - X: 77500200
-        Y: 9999900
-      - X: 80000041
-        Y: 9999900
-      - X: 80000100
-        Y: 9999959
-      - X: 80000100
-        Y: 19999959
-      - X: 80000041
-        Y: 19999900
-      - X: 71249576
-        Y: 19999900
-      - X: 69999930
-        Y: 19375077
-      - X: 69999900
-        Y: 19375028
-      - X: 69999900
-        Y: 12499994
-      - X: 69999901
-        Y: 12499982
-      - X: 70624911
-        Y: 9999942
-      - X: 70624966
-        Y: 9999900
-      - X: 72499758
-        Y: 9999900
-      - X: 70624915
-        Y: 8125057
-      - X: 70624900
-        Y: 8125020
-      - X: 70624900
-        Y: 3124985
-      - X: 70624909
-        Y: 3124957
-      - X: 71874931
-        Y: 1249924
-      - X: 71874975
-        Y: 1249900
-      - X: 76875012
-        Y: 1249900
-    - - X: 100
-        Y: -41
-      - X: 100
-        Y: 1249576
-      - X: 624923
-        Y: -70
-      - X: 624972
-        Y: -100
-      - X: 50000041
-        Y: -100
-      - X: 50000100
-        Y: -41
-      - X: 50000100
-        Y: 18125020
-      - X: 50000085
-        Y: 18125057
-      - X: 49375057
-        Y: 18750085
-      - X: 49375020
-        Y: 18750100
-      - X: 40624980
-        Y: 18750100
-      - X: 40624943
-        Y: 18750085
-      - X: 39999915
-        Y: 18125057
-      - X: 39999900
-        Y: 18125020
-      - X: 39999900
-        Y: 14375242
-      - X: 39375057
-        Y: 15000085
-      - X: 39375020
-        Y: 15000100
-      - X: 30624980
-        Y: 15000100
-      - X: 30624943
-        Y: 15000085
+    - - X: 79375000
+        Y: 2500000
+      - X: 79375000
+        Y: 7500000
+      - X: 77500000
+        Y: 10000000
+      - X: 80000000
+        Y: 10000000
+      - X: 80000000
+        Y: 20000000
+      - X: 71250000
+        Y: 20000000
+      - X: 70000000
+        Y: 19375000
+      - X: 70000000
+        Y: 12500000
+      - X: 70625000
+        Y: 10000000
+      - X: 72500000
+        Y: 10000000
+      - X: 70625000
+        Y: 8125000
+      - X: 70625000
+        Y: 3125000
+      - X: 71875000
+        Y: 1250000
+      - X: 76875000
+        Y: 1250000
+    - - X: 0
+        Y: 1250000
+      - X: 625000
+        Y: 0
+      - X: 50000000
+        Y: 0
+      - X: 50000000
+        Y: 18125000
+      - X: 49375000
+        Y: 18750000
+      - X: 40625000
+        Y: 18750000
+      - X: 40000000
+        Y: 18125000
+      - X: 40000000
+        Y: 14375000
+      - X: 39375000
+        Y: 15000000
+      - X: 30625000
+        Y: 15000000
       - X: 30000000
-        Y: 14375142
-      - X: 29375057
-        Y: 15000085
-      - X: 29375020
-        Y: 15000100
-      - X: 20624980
-        Y: 15000100
-      - X: 20624943
-        Y: 15000085
+        Y: 14375000
+      - X: 29375000
+        Y: 15000000
+      - X: 20625000
+        Y: 15000000
       - X: 20000000
-        Y: 14375142
-      - X: 19375057
-        Y: 15000085
-      - X: 19375020
-        Y: 15000100
-      - X: 10624980
-        Y: 15000100
-      - X: 10624943
-        Y: 15000085
-      - X: 9999915
-        Y: 14375057
-      - X: 9999900
-        Y: 14375020
-      - X: 9999900
-        Y: 10000100
-      - X: 100
-        Y: 10000100
-      - X: 100
-        Y: 14375020
-      - X: 85
-        Y: 14375057
-      - X: -624943
-        Y: 15000085
-      - X: -624980
-        Y: 15000100
-      - X: -9375020
-        Y: 15000100
-      - X: -9375057
-        Y: 15000085
-      - X: -10000085
-        Y: 14375057
-      - X: -10000100
-        Y: 14375020
-      - X: -10000100
-        Y: -41
-      - X: -10000041
-        Y: -100
-      - X: 41
-        Y: -100
-    - - X: -71874943
-        Y: -85
-      - X: -69999915
-        Y: 1874943
-      - X: -69999900
-        Y: 1874980
-      - X: -69999900
-        Y: -41
-      - X: -69999959
-        Y: -100
-      - X: -59999959
-        Y: -100
-      - X: -59999900
-        Y: -41
-      - X: -59999900
+        Y: 14375000
+      - X: 19375000
+        Y: 15000000
+      - X: 10625000
+        Y: 15000000
+      - X: 10000000
+        Y: 14375000
+      - X: 10000000
+        Y: 10000000
+      - X: 0
+        Y: 10000000
+      - X: 0
+        Y: 14375000
+      - X: -625000
+        Y: 15000000
+      - X: -9375000
+        Y: 15000000
+      - X: -10000000
+        Y: 14375000
+      - X: -10000000
         Y: 0
-      - X: -40000100
+      - X: 0
         Y: 0
-      - X: -40000100
-        Y: -41
-      - X: -40000041
-        Y: -100
-      - X: -19999959
-        Y: -100
-      - X: -19999900
-        Y: -41
-      - X: -19999900
-        Y: 11875020
-      - X: -19999915
-        Y: 11875057
-      - X: -20624943
-        Y: 12500085
-      - X: -20624980
-        Y: 12500100
-      - X: -29375020
-        Y: 12500100
-      - X: -29375057
-        Y: 12500085
+    - - X: -70000000
+        Y: 1875000
+      - X: -70000000
+        Y: 0
+      - X: -20000000
+        Y: 0
+      - X: -20000000
+        Y: 11875000
+      - X: -20625000
+        Y: 12500000
+      - X: -29375000
+        Y: 12500000
       - X: -30000000
-        Y: 11875142
-      - X: -30624943
-        Y: 12500085
-      - X: -30624980
-        Y: 12500100
-      - X: -39375020
-        Y: 12500100
-      - X: -39375057
-        Y: 12500085
+        Y: 11875000
+      - X: -30625000
+        Y: 12500000
+      - X: -39375000
+        Y: 12500000
       - X: -40000000
-        Y: 11875142
+        Y: 11875000
       - X: -40000000
         Y: 13750000
       - X: -40625000
@@ -2152,70 +2080,36 @@ CompositeCollider2D:
         Y: 13750000
       - X: -50000000
         Y: 10000000
-      - X: -59999900
+      - X: -70000000
         Y: 10000000
-      - X: -59999900
-        Y: 10000041
-      - X: -59999959
-        Y: 10000100
-      - X: -69999959
-        Y: 10000100
-      - X: -69999900
-        Y: 10000041
-      - X: -69999900
-        Y: 8125020
-      - X: -69999915
-        Y: 8125057
-      - X: -71874943
-        Y: 10000085
-      - X: -71874980
-        Y: 10000100
-      - X: -78125020
-        Y: 10000100
-      - X: -78125057
-        Y: 10000085
-      - X: -80000085
-        Y: 8125057
-      - X: -80000100
-        Y: 8125020
-      - X: -80000100
-        Y: 1874980
-      - X: -80000085
-        Y: 1874943
-      - X: -78125057
-        Y: -85
-      - X: -78125020
-        Y: -100
-      - X: -71874980
-        Y: -100
-    - - X: 10000100
-        Y: -10000041
-      - X: 10000100
-        Y: -2499992
-      - X: 10000097
-        Y: -2499976
-      - X: 9375085
-        Y: -624938
-      - X: 9375032
-        Y: -624900
-      - X: 1874985
-        Y: -624900
-      - X: 1874957
-        Y: -624909
-      - X: -76
-        Y: -1874931
-      - X: -100
-        Y: -1874975
-      - X: -100
-        Y: -9375020
-      - X: -85
-        Y: -9375057
-      - X: 624943
-        Y: -10000085
-      - X: 624980
-        Y: -10000100
-      - X: 10000041
-        Y: -10000100
+      - X: -70000000
+        Y: 8125000
+      - X: -71875000
+        Y: 10000000
+      - X: -78125000
+        Y: 10000000
+      - X: -80000000
+        Y: 8125000
+      - X: -80000000
+        Y: 1875000
+      - X: -78125000
+        Y: 0
+      - X: -71875000
+        Y: 0
+    - - X: 10000000
+        Y: -2500000
+      - X: 9375000
+        Y: -625000
+      - X: 1875000
+        Y: -625000
+      - X: 0
+        Y: -1875000
+      - X: 0
+        Y: -9375000
+      - X: 625000
+        Y: -10000000
+      - X: 10000000
+        Y: -10000000
     - - X: -50000000
         Y: -18750000
       - X: -49375000
@@ -2260,101 +2154,89 @@ CompositeCollider2D:
         Y: -20000000
       - X: -50000000
         Y: -20000000
-    - - X: 70000100
-        Y: -40000041
-      - X: 70000100
-        Y: -31249980
-      - X: 70000085
-        Y: -31249943
-      - X: 68750057
-        Y: -29999915
-      - X: 68750020
-        Y: -29999900
-      - X: 51249980
-        Y: -29999900
-      - X: 51249943
-        Y: -29999915
-      - X: 49999915
-        Y: -31249943
-      - X: 49999900
-        Y: -31249980
-      - X: 49999900
-        Y: -40000041
-      - X: 49999959
-        Y: -40000100
-      - X: 70000041
-        Y: -40000100
+    - - X: 70000000
+        Y: -31250000
+      - X: 68750000
+        Y: -30000000
+      - X: 51250000
+        Y: -30000000
+      - X: 50000000
+        Y: -31250000
+      - X: 50000000
+        Y: -40000000
+      - X: 70000000
+        Y: -40000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 7.687495, y: 0.12499}
-      - {x: 7.9375105, y: 0.2500138}
-      - {x: 7.9375043, y: 0.7500116}
-      - {x: 7.7500887, y: 0.99999}
-      - {x: 8.00001, y: 1.0000252}
-      - {x: 7.9999747, y: 1.99999}
-      - {x: 7.1249523, y: 1.9999872}
-      - {x: 6.9999905, y: 1.9374862}
-      - {x: 6.9999905, y: 1.2499949}
-      - {x: 7.0625186, y: 0.99999}
-      - {x: 7.2499137, y: 0.9999283}
-      - {x: 7.0624895, y: 0.81249124}
-      - {x: 7.062495, y: 0.3124893}
-      - {x: 7.187512, y: 0.12499}
-    - - {x: -0.0000252, y: -0.00001}
-      - {x: 0.000087, y: 0.1248035}
-      - {x: 0.0625138, y: -0.00001}
-      - {x: 5.00001, y: 0.0000252}
-      - {x: 5.000001, y: 1.8125132}
-      - {x: 4.9374914, y: 1.87501}
-      - {x: 4.0624866, y: 1.8750008}
-      - {x: 3.99999, y: 1.8124912}
-      - {x: 3.9999285, y: 1.4375861}
-      - {x: 3.9374912, y: 1.50001}
-      - {x: 3.062487, y: 1.500001}
-      - {x: 2.9999795, y: 1.437535}
-      - {x: 2.9374912, y: 1.50001}
-      - {x: 2.062487, y: 1.500001}
-      - {x: 1.9999794, y: 1.437535}
-      - {x: 1.9374912, y: 1.50001}
-      - {x: 1.0624868, y: 1.500001}
-      - {x: 0.99999, y: 1.4374912}
-      - {x: 0.9999606, y: 1.00001}
-      - {x: 0.00001, y: 1.0000395}
-      - {x: 0.00000090000003, y: 1.4375134}
-      - {x: -0.0625088, y: 1.50001}
-      - {x: -0.9375133, y: 1.500001}
-      - {x: -1.00001, y: 1.4374912}
-      - {x: -0.9999748, y: -0.00001}
-    - - {x: -7.187509, y: -0.00001}
-      - {x: -6.9999905, y: 0.18741061}
-      - {x: -6.9999666, y: -0.00001}
-      - {x: -1.99999, y: 0.0000252}
-      - {x: -1.9999992, y: 1.1875134}
-      - {x: -2.0625088, y: 1.25001}
-      - {x: -2.9375134, y: 1.250001}
-      - {x: -3.0000207, y: 1.187535}
-      - {x: -3.0625088, y: 1.25001}
-      - {x: -3.9375134, y: 1.250001}
-      - {x: -4, y: 1.1876016}
+    - - {x: 7.6874943, y: 0.125}
+      - {x: 7.9375, y: 0.2500166}
+      - {x: 7.937495, y: 0.7500069}
+      - {x: 7.7500687, y: 1}
+      - {x: 8, y: 1.0000293}
+      - {x: 7.9999704, y: 2}
+      - {x: 7.1249943, y: 1.9999973}
+      - {x: 7, y: 1.9374834}
+      - {x: 7.000001, y: 1.2499967}
+      - {x: 7.0625215, y: 1}
+      - {x: 7.2499385, y: 0.9999383}
+      - {x: 7.0625, y: 0.8124892}
+      - {x: 7.0625043, y: 0.3124936}
+      - {x: 7.1875143, y: 0.125}
+    - - {x: -0.000029300001, y: 0}
+      - {x: 0.000077000004, y: 0.1248459}
+      - {x: 0.0625166, y: 0}
+      - {x: 5, y: 0.000029300001}
+      - {x: 4.9999924, y: 1.8125076}
+      - {x: 4.937489, y: 1.875}
+      - {x: 4.0624924, y: 1.8749924}
+      - {x: 4, y: 1.8124893}
+      - {x: 3.9999385, y: 1.4375619}
+      - {x: 3.9374893, y: 1.5}
+      - {x: 3.0624924, y: 1.4999924}
+      - {x: 2.9999795, y: 1.4375209}
+      - {x: 2.9374893, y: 1.5}
+      - {x: 2.0624924, y: 1.4999924}
+      - {x: 1.9999794, y: 1.4375209}
+      - {x: 1.9374893, y: 1.5}
+      - {x: 1.0624924, y: 1.4999924}
+      - {x: 1, y: 1.4374893}
+      - {x: 0.9999706, y: 1}
+      - {x: 0, y: 1.0000294}
+      - {x: -0.0000076, y: 1.4375076}
+      - {x: -0.0625108, y: 1.5}
+      - {x: -0.9375076, y: 1.4999924}
+      - {x: -1, y: 1.4374893}
+      - {x: -0.99997073, y: 0}
+    - - {x: -7.1875105, y: 0}
+      - {x: -7, y: 0.1874126}
+      - {x: -6.9999704, y: 0}
+      - {x: -2, y: 0.000029300001}
+      - {x: -2.0000076, y: 1.1875076}
+      - {x: -2.0625107, y: 1.25}
+      - {x: -2.9375076, y: 1.2499924}
+      - {x: -3.0000207, y: 1.1875209}
+      - {x: -3.0625107, y: 1.25}
+      - {x: -3.9375076, y: 1.2499924}
+      - {x: -4, y: 1.1875874}
       - {x: -4.0000076, y: 1.3750076}
       - {x: -4.062511, y: 1.4375}
       - {x: -4.9375076, y: 1.4374924}
       - {x: -5, y: 1.3749893}
       - {x: -5.0000296, y: 1}
-      - {x: -6.9999905, y: 0.9999748}
-      - {x: -7.000053, y: 0.81256753}
-      - {x: -7.187509, y: 1.00001}
-      - {x: -7.812514, y: 1.000001}
-      - {x: -8.00001, y: 0.81249124}
-      - {x: -8.000001, y: 0.18748671}
-      - {x: -7.8124914, y: -0.00001}
-    - - {x: 0.9999748, y: -1.00001}
-      - {x: 1.0000085, y: -0.2499938}
-      - {x: 0.9374832, y: -0.06249}
-      - {x: 0.1874893, y: -0.0624952}
-      - {x: -0.00001, y: -0.1875118}
-      - {x: -0.00000090000003, y: -0.9375133}
-      - {x: 0.0625088, y: -1.00001}
+      - {x: -7, y: 0.99997073}
+      - {x: -7.0000615, y: 0.8125618}
+      - {x: -7.1875105, y: 1}
+      - {x: -7.812507, y: 0.99999243}
+      - {x: -8, y: 0.8124892}
+      - {x: -7.999992, y: 0.1874924}
+      - {x: -7.8124895, y: 0}
+    - - {x: 0.99997073, y: -1}
+      - {x: 0.9999987, y: -0.2499962}
+      - {x: 0.93748003, y: -0.0625}
+      - {x: 0.1874936, y: -0.0625043}
+      - {x: 0, y: -0.1875143}
+      - {x: 0.0000076, y: -0.9375076}
+      - {x: 0.0625108, y: -1}
     - - {x: -5.000029, y: -2}
       - {x: -4.999923, y: -1.875154}
       - {x: -4.9374833, y: -2}
@@ -2377,12 +2259,12 @@ CompositeCollider2D:
       - {x: -6, y: -1.1875143}
       - {x: -5.9999924, y: -1.9375076}
       - {x: -5.937489, y: -2}
-    - - {x: 6.9999743, y: -4.00001}
-      - {x: 7.000001, y: -3.124987}
-      - {x: 6.8749914, y: -2.99999}
-      - {x: 5.1249866, y: -2.9999993}
-      - {x: 4.99999, y: -3.1250088}
-      - {x: 5.0000253, y: -4.00001}
+    - - {x: 6.9999704, y: -4}
+      - {x: 6.999992, y: -3.1249924}
+      - {x: 6.874989, y: -3}
+      - {x: 5.1249924, y: -3.0000076}
+      - {x: 5, y: -3.1250107}
+      - {x: 5.000029, y: -4}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &688382870
@@ -2696,6 +2578,84 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &866369522
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -39.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[0]
+      value: SNARE DRUMS
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[1]
+      value: A good maintenance practice is to constantly change the state of your
+        snare and change the heads regularly.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725342, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_Name
+      value: InfoBookSnare2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369074630571377934, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: uniqueId
+      value: becb19d3-6591-4907-9a4c-329e0aaf68c4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
 --- !u!1 &872489767
 GameObject:
   m_ObjectHideFlags: 0
@@ -3838,6 +3798,24 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &934901803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3418268032935725342, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+  m_PrefabInstance: {fileID: 866369522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &934901804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934901803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb7ea21731393e47a0182cf86f8bee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigameToLoad: 
 --- !u!1 &1131020341
 GameObject:
   m_ObjectHideFlags: 0
@@ -4252,8 +4230,10 @@ GameObject:
   - component: {fileID: 1292208236}
   - component: {fileID: 1292208238}
   - component: {fileID: 1292208237}
+  - component: {fileID: 1292208239}
+  - component: {fileID: 1292208240}
   m_Layer: 7
-  m_Name: NPC
+  m_Name: MasterTwin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4385,7 +4365,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     lines:
-    - Have you met my twin? He lives in the house to the left of this one
+    - Have you met my twin? He lives in the house to the left of this one.
+    - Well, now that you are here, I'll tell you a little secret.
+    - There's a lot of cool information about percussion instruments in the books
+      and bookshelves on this island.
+    - Aaaaand, you'll need that for your final test. But don't tell anyone I said
+      this.
+  questToStart: {fileID: 0}
+  questToComplete: {fileID: 0}
   movementPattern:
   - {x: -1, y: 0}
   - {x: 1, y: 0}
@@ -4435,6 +4422,112 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+--- !u!114 &1292208239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292208231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1facbbfc383e848a54d330bbb1d645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  dialogue:
+    lines: []
+--- !u!114 &1292208240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292208231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb7ea21731393e47a0182cf86f8bee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigameToLoad: 
+--- !u!1001 &1452378952
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 19.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -39.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[0]
+      value: It's a collection of literature and history books
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[1]
+      value: The recommended beating area of a snare is just off the center of the
+        drum.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725342, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_Name
+      value: InfoBookMisc
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369074630571377934, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: uniqueId
+      value: 10fa043a-0488-4140-a2cc-33371257b135
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
 --- !u!1 &1588715288
 GameObject:
   m_ObjectHideFlags: 0
@@ -4779,6 +4872,105 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1924903039
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 104302592976764806, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: a7d22be7741d1d942b5bb2f6a3c79ec9, type: 2}
+    - target: {fileID: 104302592976764806, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 104302592976764806, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[0]
+      value: SNARE DRUMS
+      objectReference: {fileID: 0}
+    - target: {fileID: 104302592976764806, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[1]
+      value: The recommended beating area of a snare is just off the center of the
+        drum.
+      objectReference: {fileID: 0}
+    - target: {fileID: 104302592976764806, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[2]
+      value: Now you know about concert snare drums!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -39.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[0]
+      value: SNARE DRUMS
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[1]
+      value: The recommended beating area of a snare is just off the center of the
+        drum.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725342, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_Name
+      value: InfoBookSnare3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369074630571377934, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: uniqueId
+      value: f01062fb-f75c-4ee7-b14e-6b68d0c49c8d
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
 --- !u!1001 &900876096983753659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4836,3 +5028,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 359d5e0e7d5ab154e8d214b59061005c, type: 3}
+--- !u!1001 &2597737845030491197
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -39.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725328, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[0]
+      value: SNARE DRUMS
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[1]
+      value: The typical depth of a concert snare drum is 5-6 inches in depth.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725333, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: dialogue.lines.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418268032935725342, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}
+      propertyPath: m_Name
+      value: InfoBookSnare1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94a7991a734ea1a4282d04e2d78c3e15, type: 3}

@@ -1468,7 +1468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 511130397317016366, guid: 56c0b7742a4276844b2d334372bd927f, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 511130397317016366, guid: 56c0b7742a4276844b2d334372bd927f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4186,7 +4186,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900876097140572571, guid: 359d5e0e7d5ab154e8d214b59061005c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 900876097140572571, guid: 359d5e0e7d5ab154e8d214b59061005c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4241,13 +4241,67 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8138446876494931472, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+      propertyPath: uniqueId
+      value: b408b71e-96b2-451f-8fdd-36f2985605a2
+      objectReference: {fileID: 0}
     - target: {fileID: 6078346621175993824, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+      propertyPath: questToStart
+      value: 
+      objectReference: {fileID: 11400000, guid: b332034ee945de4478e316841d4d7250, type: 2}
+    - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+      propertyPath: questToComplete
+      value: 
+      objectReference: {fileID: 11400000, guid: b332034ee945de4478e316841d4d7250, type: 2}
+    - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+      propertyPath: dialogue.lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+      propertyPath: movementPattern.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+      propertyPath: dialogue.lines.Array.data[0]
+      value: Don't forget to talk to every person you see and read every book you
+        can.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+      propertyPath: dialogue.lines.Array.data[1]
+      value: You'll need it, trust me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+      propertyPath: dialogue.lines.Array.data[2]
+      value: Let's test your skills. Go to that book over there and complete the
+        challenge.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+      propertyPath: movementPattern.Array.data[0].x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+      propertyPath: movementPattern.Array.data[0].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+      propertyPath: movementPattern.Array.data[1].x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+      propertyPath: movementPattern.Array.data[2].x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+      propertyPath: movementPattern.Array.data[2].y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6078346621175993838, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6078346621175993838, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4292,10 +4346,10 @@ PrefabInstance:
     - target: {fileID: 8815811671145128824, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
       propertyPath: item
       value: 
-      objectReference: {fileID: 11400000, guid: d8259692d7374f74f9da1eae7df16b3f, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8815811671145128824, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
       propertyPath: dialogue.lines.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8815811671145128824, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
       propertyPath: dialogue.lines.Array.data[0]
@@ -4303,3 +4357,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
+--- !u!1001 &8924223474881099194
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 108433794375946294, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423745050001024672, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423745050001024672, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423745050001024672, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -39.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423745050001024672, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423745050001024672, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423745050001024672, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423745050001024672, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423745050001024672, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423745050001024672, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423745050001024672, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423745050001024672, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423745050001024677, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: questToStart
+      value: 
+      objectReference: {fileID: 11400000, guid: fdd5cbe4be069b847a00a48ee191f8e7, type: 2}
+    - target: {fileID: 3423745050001024677, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: questToComplete
+      value: 
+      objectReference: {fileID: 11400000, guid: fdd5cbe4be069b847a00a48ee191f8e7, type: 2}
+    - target: {fileID: 3423745050001024686, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: m_Name
+      value: SceneChangerBook
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924223474171654988, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
+      propertyPath: minigameToLoad
+      value: MemorySounds_Game
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d14164e6bc83dca42aed355090b20ccb, type: 3}
