@@ -51,4 +51,13 @@ public class MinigameStarter : MonoBehaviour
             player.GetComponent<Character>().moveSpeed = 5f; //Reenables player movement
         }
     }
+
+    //Used to check if a minigame can be started from this object
+    public bool HasMinigameToStart(){
+        if (minigameToLoad == ""){
+            return false;
+        }
+
+        return true;
+    }
 }

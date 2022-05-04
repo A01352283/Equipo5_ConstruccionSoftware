@@ -1,4 +1,4 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,9 +36,6 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
             state = NPCState.Dialogue;
             character.LookToward(initiator.position);
 
-            if (minigameStarter != null){ //If there is a minigame to load, load it
-                yield return minigameStarter.LoadMinigame();
-
             if (questToComplete != null){
                 var quest = new Quest(questToComplete);
 
@@ -48,10 +45,14 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
                 Debug.Log($"{quest.Base.Name} completed");
             }
 
+            if (minigameStarter.HasMinigameToStart()){ //If there is a minigame to load, load it
+                yield return minigameStarter.LoadMinigame();
+            }
+            
+
             //Checks the item giving and the quest starting
             if (itemGiver != null && itemGiver.CanBeGiven()){
                 yield return itemGiver.GiveItem(initiator.GetComponent<PlayerController>());
-            }
             }
             else if (questToStart != null){
                 activeQuest = new Quest(questToStart);

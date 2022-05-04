@@ -82,8 +82,7 @@ public class MemoryS_Manager : MonoBehaviour
             InstrumentCount_Text.text = InstrumentCount.ToString();
 
             if(ColorMix == ColorOrdenInPreview.Count) //As long as the game is not lost, the counters will increase
-            {
-                
+            {                
                 DontTouch.SetActive(true);
                 InstrumentCount_Text.text = " ";
                 InstrumentCount = 0;

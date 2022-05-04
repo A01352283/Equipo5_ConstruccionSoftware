@@ -12,11 +12,13 @@ public class MemoryGameOverScreen : MonoBehaviour
 
     public void Setup(int score){
         gameObject.SetActive(true);
-        pointsText.text="SCORE: "+score.ToString();
+        pointsText.enabled = true;
+        pointsText.text="SCORE: "+ score.ToString();
     }
 
-    public void RestartButton(string scene){
-        SceneManager.LoadScene(scene);
+    public void HideGameOverScreen(){
+        gameObject.SetActive(false);
+        pointsText.enabled = false;
     }
 
     public void ExitTriviaButton(){

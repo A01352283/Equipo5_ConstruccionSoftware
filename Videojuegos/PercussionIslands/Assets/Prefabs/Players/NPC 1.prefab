@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5410095630650598702}
   - component: {fileID: 5410095630650598700}
   - component: {fileID: 5410095630650598703}
+  - component: {fileID: -1040880074476749434}
   m_Layer: 7
   m_Name: NPC 1
   m_TagString: Untagged
@@ -203,3 +204,16 @@ MonoBehaviour:
   - {fileID: 1894914791087176958, guid: c96e5f1783990d54bb7b35bf05b4c4c8, type: 3}
   - {fileID: 3572931796024580631, guid: c96e5f1783990d54bb7b35bf05b4c4c8, type: 3}
   - {fileID: 9171534078367165172, guid: c96e5f1783990d54bb7b35bf05b4c4c8, type: 3}
+--- !u!114 &-1040880074476749434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5410095630650598693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb7ea21731393e47a0182cf86f8bee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigameToLoad: 

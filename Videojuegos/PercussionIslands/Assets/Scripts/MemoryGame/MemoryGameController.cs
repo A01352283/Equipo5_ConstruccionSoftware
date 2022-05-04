@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MemoryGameController : MonoBehaviour
@@ -52,11 +53,6 @@ public class MemoryGameController : MonoBehaviour
 
     public GameObject corr_screen;
     public GameObject incorr_screen;
-    public void GameOver(){
-        GetComponent<Api_Scores>().UpdateScore(m_score);
-        Debug.Log("Score Upated");
-        MemoryGameOverScreen.Setup(m_score);
-    }
 
     //Load Sprites and Sound for the memory cards
     void Awake(){
@@ -67,7 +63,7 @@ public class MemoryGameController : MonoBehaviour
     //Begin script
     void Start(){
         Debug.Log(PlayerPrefs.GetString("user_name"));
-        
+        GenerateGame();
     }
 
     //Runs all the necesary functions to load everything in the game
@@ -76,9 +72,24 @@ public class MemoryGameController : MonoBehaviour
         AddListeners();
         AddGamePuzzles();
         Shuffle(cards);
+
+        m_score = 0;
         gameGuesses= cards.Count/2;
         audio_s=GetComponent<AudioSource>();
         inst_name.text="Select Card";
+    }
+
+    //Displays the game over screen with the final score
+    public void GameOver(){
+        GetComponent<Api_Scores>().UpdateScore(m_score);
+        Debug.Log("Score Upated");
+        MemoryGameOverScreen.Setup(m_score);
+    }
+    
+    //Restarts the game again by regenerating everything and resetting the parameters
+    public void RestartButton(){
+        MemoryGameOverScreen.HideGameOverScreen();
+        GenerateGame();
     }
     //Activate buttons for memory cards
     void GetButtons(){
@@ -86,7 +97,7 @@ public class MemoryGameController : MonoBehaviour
 
         for(int i=0; i< objects.Length;i++){
             btns.Add(objects[i].GetComponent<Button>());
-            btns[i].image.sprite =bgImage;
+            btns[i].image.sprite = bgImage;
         }
     }
     // Generate Cards with the sprites and sounds
