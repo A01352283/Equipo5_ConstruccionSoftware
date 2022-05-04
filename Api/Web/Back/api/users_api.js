@@ -39,8 +39,16 @@ function connectToDB()
     }   
 }
 
-//This api call obtains the main web-page site
+//This api call obtains the main web-page site.
 app.get('/', (request,response)=>{
+    fs.readFile('./html/webpage.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err);
+        console.log('Loading page...');
+        response.send(html);
+    })
+});
+
+app.get('/rankings', (request,response)=>{
     fs.readFile('./html/rankings.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err);
         console.log('Loading page...');
@@ -48,6 +56,7 @@ app.get('/', (request,response)=>{
     })
 });
 
+/*
 //This api call obtains the web-page of all the users
 app.get('/game_user', (request,response)=>{
     fs.readFile('./html/gameUsers.html', 'utf8', (err, html)=>{
@@ -56,7 +65,9 @@ app.get('/game_user', (request,response)=>{
         response.send(html);
     })
 });
+*/
 
+/*
 //This api call obtains the web-page of the scores from the users
 app.get('/game_user/scores', (request,response)=>{
     fs.readFile('./html/userScores.html', 'utf8', (err, html)=>{
@@ -65,6 +76,18 @@ app.get('/game_user/scores', (request,response)=>{
         response.send(html)
     })
 });
+*/
+
+/*
+//This api call obtains the web-page of the questions
+app.get('/questions', (request,response)=>{
+    fs.readFile('./html/questions.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err);
+        console.log("Loading page...");
+        response.send(html)
+    })
+});
+*/
 
 //This api call verifies if a specific user_name and password exists in the database (if true return 1)
 app.post('/api/game_user/verify', (request,response)=>{
