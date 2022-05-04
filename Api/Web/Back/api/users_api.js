@@ -484,7 +484,7 @@ app.put('/api/game_user', (request, response)=>{
         //Create queryData in order to send the data when doing the query
         const queryData = Object.fromEntries(data);
         //When doing the query we must send a list containing the new data as well as the user_id from the original request
-        const query = connection.query('update game_user set ? where user_id=?', [queryData,request.body['user_id'] ,(error, results, fields)=>{
+        const query = connection.query('update game_user set ? where user_id=?', [queryData,request.body['user_id']] ,(error, results, fields)=>{
             if(error) 
                 console.log(error);
             else
