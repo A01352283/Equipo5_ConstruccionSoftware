@@ -65,7 +65,7 @@ public class Api_Login : MonoBehaviour
                 status.text="Correct Credentials!";
                 PlayerPrefs.SetString("user_name",user.user_name);
                 yield return new WaitForSeconds(.8f);
-                SceneManager.LoadScene(4);
+                SceneManager.LoadScene(2);
             }
             else{
                 status.text="Incorrect Credentials...Either the username or password are wrong";
