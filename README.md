@@ -23,6 +23,7 @@ Repositorio para el proyecto del equipo 5 de Construcción de Software y Toma de
 - Character sprite sheets:
 - World tileset sprite sheets:
 - Interior tileset sprite sheets:  
+- Snare drum art: https://opengameart.org/content/snare-drum
 
 # Script sources
 - RPG part of the game is heavily based on this tutorial series by Game Dev Experiments: https://www.youtube.com/playlist?list=PLLf84Zj7U26kfPQ00JVI2nIoozuPkykDX
