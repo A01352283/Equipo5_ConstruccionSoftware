@@ -35,7 +35,7 @@ public class Api_Register : MonoBehaviour
     }
 
     public void BackLogin(){
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(0);
     }
 
     public class Message{
