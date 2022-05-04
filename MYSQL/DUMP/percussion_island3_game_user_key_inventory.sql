@@ -28,7 +28,7 @@ CREATE TABLE `game_user_key_inventory` (
   `user_id` smallint unsigned NOT NULL,
   `key_item_name` varchar(50) NOT NULL,
   KEY `fk_user_inventory` (`user_id`),
-  CONSTRAINT `fk_user_inventory` FOREIGN KEY (`user_id`) REFERENCES `game_user` (`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+  CONSTRAINT `fk_user_inventory` FOREIGN KEY (`user_id`) REFERENCES `game_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-22 22:49:55
+-- Dump completed on 2022-05-03 23:37:13
