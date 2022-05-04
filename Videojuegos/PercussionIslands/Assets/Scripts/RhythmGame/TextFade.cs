@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class TextFade : MonoBehaviour
+// Scripts that make the instructions fade
 {
 public Text canvasText1;
    void Start ()
