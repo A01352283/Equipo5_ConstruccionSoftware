@@ -23,6 +23,9 @@ app.use('/js', express.static('./js'))
 app.use('/css', express.static('./css'))
 app.use('/fonts', express.static('./fonts'))
 app.use('/files',express.static('./files'))
+app.use('/Build',express.static('./Build'))
+app.use('/StreamingAssets',express.static('./StreamingAssets'))
+app.use('/TemplateData',express.static('./TemplateData'))
 
 //This function allows access to the Scheme in MySql
 function connectToDB()
