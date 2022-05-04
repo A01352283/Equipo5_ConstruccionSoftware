@@ -158,11 +158,11 @@ END$$
 DELIMITER ;
 
 create view total_play_time as
-select sec_to_time(SUM(memory_play_time)) as 
+select SUM(time_to_sec(memory_play_time)) as 
 total_memory_play_time, 
-sec_to_time(SUM(trivia_play_time)) as 
+SUM(time_to_sec(trivia_play_time)) as 
 total_trivia_play_time, 
-sec_to_time(SUM(memorysounds_play_time)) as 
+SUM(time_to_sec(memorysounds_play_time)) as 
 total_memorysounds_play_time, 
-sec_to_time(SUM(rhythm_play_time)) as 
+SUM(time_to_sec(rhythm_play_time)) as 
 total_rhythm_play_time from game_user_scores;

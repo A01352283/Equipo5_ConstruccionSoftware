@@ -27,16 +27,9 @@ try
         method: 'GET'
     })
 
-    console.log('Got a response correctly')
-
     if(scores_response.ok)
     {
-        console.log('Response is ok. Converting to JSON.')
-
         let results = await scores_response.json()
-
-        console.log('Data converted correctly. Plotting chart.')
-        
         const values = Object.values(results)
 
         // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
@@ -73,23 +66,15 @@ try
         method: 'GET'
     })
 
-    console.log('Got a response correctly')
-
     if(scores_response.ok)
     {
-        console.log('Response is ok. Converting to JSON.')
-
-        let results = await scores_response.json()
-
-        console.log('Data converted correctly. Plotting chart.')
-        
+        let results = await scores_response.json()        
         const values = Object.values(results)
 
         // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
         const user_names = values.map(e => e['user_name'])
         const level_colors = values.map(e => random_color(0.8))
         const best_score = values.map(e => e['trivia_best_score'])
-        console.log(best_score);
 
         const ctx_top_trivia_score = document.getElementById('trivia_top_Chart').getContext('2d');
         const top_trivia_chart = new Chart(ctx_top_trivia_score, 
@@ -115,20 +100,96 @@ catch(error)
 
 try
 {
+    const scores_response = await fetch('http://localhost:5000/api/top-scores/rhythm',{
+        method: 'GET'
+    })
+
+
+    if(scores_response.ok)
+    {
+        let results = await scores_response.json()
+        const values = Object.values(results)
+
+        // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
+        const user_names = values.map(e => e['user_name'])
+        const level_colors = values.map(e => random_color(0.8))
+        const best_score = values.map(e => e['rhythm_best_score'])
+
+        const ctx_top_rhythm_score = document.getElementById('rhythm_top_Chart').getContext('2d');
+        const top_rhythm_chart = new Chart(ctx_top_rhythm_score, 
+            {
+                type: 'bar',
+                data: {
+                    labels: user_names,
+                    datasets: [
+                        {
+                            label: 'Best User Scores',
+                            backgroundColor: level_colors,
+                            data: best_score
+                        },
+                    ]
+                },
+                options:{
+                    scales: {y: { title: { display: true, text: 'Scores' }}}
+                }
+            })
+    }
+}
+catch(error)
+{
+    console.log(error)
+}
+
+try
+{
+    const scores_response = await fetch('http://localhost:5000/api/top-scores/memorysounds',{
+        method: 'GET'
+    })
+
+    if(scores_response.ok)
+    {
+        let results = await scores_response.json()        
+        const values = Object.values(results)
+
+        // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
+        const user_names = values.map(e => e['user_name'])
+        const level_colors = values.map(e => random_color(0.8))
+        const best_score = values.map(e => e['memorysounds_best_score'])
+
+        const ctx_top_memorysounds_score = document.getElementById('memorysounds_top_Chart').getContext('2d');
+        const top_memorysounds_chart = new Chart(ctx_top_memorysounds_score, 
+            {
+                type: 'bar',
+                data: {
+                    labels: user_names,
+                    datasets: [
+                        {
+                            label: 'Score',
+                            backgroundColor: level_colors,
+                            data: best_score
+                        }
+                    ]
+                },
+                options:{
+                    scales: {y: { title: { display: true, text: 'Scores' }}}
+                }
+            })
+    }
+}
+catch(error)
+{
+    console.log(error)
+}
+
+try
+{
     const scores_response = await fetch('http://localhost:5000/api/total_play_time',{
         method: 'GET'
     })
 
-    console.log('Got a response correctly')
-
     if(scores_response.ok)
     {
-        console.log('Response is ok. Converting to JSON.')
-
         let results = await scores_response.json()
-
-        console.log('Data converted correctly. Plotting chart.')
-        
         const values = Object.values(results)
 
         // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
@@ -145,8 +206,6 @@ try
         for (let i=0; i<times.length; i++){
             times[i]= times[i]/60;
         }
-
-        
 
         const ctx_top_play_chart = document.getElementById('top_play_Chart').getContext('2d');
         const top_play_chart = new Chart(ctx_top_play_chart, 

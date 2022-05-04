@@ -76,7 +76,6 @@ app.post('/api/game_user/verify', (request,response)=>{
 
         connection.query('SELECT COUNT(1) from game_user where user_name=? and pwd=?', [request.body['user_name'], request.body['pwd']], (error, results, fields)=>{
             if(error) console.log(error);
-            console.log(JSON.stringify(results[0]["COUNT(1)"]));
             response.json(results[0]["COUNT(1)"]);
         });
 
@@ -100,7 +99,6 @@ app.get('/api/game_user', (request, response)=>{
 
         connection.query('select * from game_user', (error, results, fields)=>{
             if(error) console.log(error);
-            console.log(JSON.stringify(results));
             response.json(results);
         });
 
@@ -123,7 +121,6 @@ app.get('/api/game_user/scores', (request, response)=>{
 
         connection.query('select * from game_user_scores', (error, results, fields)=>{
             if(error) console.log(error);
-            console.log(JSON.stringify(results));
             response.json(results);
         });
 
@@ -146,7 +143,6 @@ app.get('/api/game_user/key_inventory', (request,response)=>{
 
         connection.query('select * from game_user_key_inventory', (error, results, fields)=>{
             if(error) console.log(error);
-            console.log(JSON.stringify(results));
             response.json(results);
         });
 
@@ -168,7 +164,6 @@ app.get('/api/game_user/sf', (request,response)=>{
 
         connection.query('select * from game_user_save_file', (error, results, fields)=>{
             if(error) console.log(error);
-            console.log(JSON.stringify(results));
             response.json(results);
         });
 
@@ -191,7 +186,6 @@ app.get('/api/questions', (request, response)=>{
 
         connection.query('select * from questions', (error, results, fields)=>{
             if(error) console.log(error);
-            console.log(JSON.stringify(results));
             response.json(results);
         });
 
@@ -214,7 +208,6 @@ app.get('/api/top-scores/rhythm', (request, response)=>{
 
         connection.query('select * from top_rhythm_scores', (error, results, fields)=>{
             if(error) console.log(error);
-            console.log(JSON.stringify(results));
             response.json(results);
         });
 
@@ -238,7 +231,6 @@ app.get('/api/top-scores/trivia', (request, response)=>{
 
         connection.query('select * from top_trivia_scores', (error, results, fields)=>{
             if(error) console.log(error);
-            console.log(JSON.stringify(results));
             response.json(results);
         });
 
@@ -262,7 +254,6 @@ app.get('/api/top-scores/memory', (request, response)=>{
 
         connection.query('select * from top_memory_scores', (error, results, fields)=>{
             if(error) console.log(error);
-            console.log(JSON.stringify(results));
             response.json(results);
         });
 
@@ -284,9 +275,8 @@ app.get('/api/top-scores/memorysounds', (request, response)=>{
 
         connection.connect();
 
-        connection.query('select * from top_memory_scores', (error, results, fields)=>{
+        connection.query('select * from top_memorysounds_scores', (error, results, fields)=>{
             if(error) console.log(error);
-            console.log(JSON.stringify(results));
             response.json(results);
         });
 
@@ -300,7 +290,7 @@ app.get('/api/top-scores/memorysounds', (request, response)=>{
 
 });
 
-//This api call returns the data from the view total_play_time, which contains the sum of the play time from each user in every minigame
+//This api call returns the data from the view total_play_time, which contains the sum of the play time from each user in every minigame in seconds
 app.get('/api/total_play_time', (request, response)=>{
     let connection = connectToDB();
 
@@ -310,7 +300,6 @@ app.get('/api/total_play_time', (request, response)=>{
 
         connection.query('select * from total_play_time', (error, results, fields)=>{
             if(error) console.log(error);
-            console.log(JSON.stringify(results));
             response.json(results);
         });
 
@@ -460,7 +449,6 @@ app.post('/api/game_user/id', (request, response)=>{
                 console.log(error);
             else
                 //Extracts the user_id from the json results
-                console.log(JSON.stringify(results[0][0]));
                 response.json(results[0][0]["user_id"]);
         });
 
@@ -514,7 +502,6 @@ app.put('/api/game_user/scores', (request, response)=>{
             if(error) 
                 console.log(error);
             else
-                console.log(JSON.stringify(results));
                 response.json({'message': "User scores updated correctly."})
         });
         connection.end();
