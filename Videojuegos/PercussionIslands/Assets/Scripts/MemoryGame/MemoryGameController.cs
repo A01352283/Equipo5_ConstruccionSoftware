@@ -100,6 +100,8 @@ public class MemoryGameController : MonoBehaviour
     //Restarts the game again by regenerating everything and resetting the parameters
     public void RestartButton(){
         MemoryGameOverScreen.HideGameOverScreen();
+        btns = new List<Button>();
+        cards = new List<Card>();
         GenerateGame();
     }
     //Activate buttons for memory cards
@@ -114,8 +116,10 @@ public class MemoryGameController : MonoBehaviour
     // Generate Cards with the sprites and sounds
     void AddGamePuzzles(){
         int looper = btns.Count;
-        for(int i=0; i<looper/2; i++){
-            
+        for(int i=0; i<looper/2; i++){            
+            if (i == 9){
+                return; //Enables restarting because it counts the UI buttons
+            }
             cards.Add(new Card(i,puzzles[i]));
             cards.Add(new Card(i,sounds[i]));
         }

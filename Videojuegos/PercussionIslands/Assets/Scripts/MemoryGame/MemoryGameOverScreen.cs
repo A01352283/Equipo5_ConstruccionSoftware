@@ -21,6 +21,16 @@ public class MemoryGameOverScreen : MonoBehaviour
         pointsText.enabled = false;
     }
 
+    public void RestartButtonMemory(){
+        SceneManager.LoadScene("Memory", LoadSceneMode.Additive);
+        StartCoroutine(UnloadThisSceneMemory());
+    }
+
+    public void RestartButtonTrivia(){
+        SceneManager.LoadScene("TriviaGame", LoadSceneMode.Additive);
+        StartCoroutine(UnloadThisSceneTrivia());
+    }
+
     public void ExitTriviaButton(){
         StartCoroutine(UnloadThisSceneTrivia());
     }
@@ -29,7 +39,7 @@ public class MemoryGameOverScreen : MonoBehaviour
         yield return SceneManager.UnloadSceneAsync("TriviaGame");
     }
     public void ExitMemoryButton(){
-        StartCoroutine(UnloadThisSceneTrivia());
+        StartCoroutine(UnloadThisSceneMemory());
     }
 
     IEnumerator UnloadThisSceneMemory(){

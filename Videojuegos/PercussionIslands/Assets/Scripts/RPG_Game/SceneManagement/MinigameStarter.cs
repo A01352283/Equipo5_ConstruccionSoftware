@@ -18,7 +18,7 @@ public class MinigameStarter : MonoBehaviour
         if (minigameToLoad != null){
             SceneManager.sceneUnloaded += OnSceneUnloaded; //Starts checking the scenes that are unloaded
 
-            yield return DialogueManager.Instance.ShowDialogueText($"Starting {minigameToLoad}!");
+            yield return DialogueManager.Instance.ShowDialogueText($"Starting minigame!");
             SceneManager.LoadScene(minigameToLoad, LoadSceneMode.Additive); //Loads the scene additively
             
             //Finds the essential gameObjects from the esentialObjects prefab with the given names
@@ -41,7 +41,7 @@ public class MinigameStarter : MonoBehaviour
         //Debug.Log("OnSceneUnloaded " + current.name);
         
         //If the unloaded scene is the minigame that was loaded
-        if (current.name == minigameToLoad){
+        if (current.name == minigameToLoad && SceneManager.sceneCount <= 4){
             Debug.Log("Essentials Reloaded");
             //Reenables all the disabled objects from the essentialObjects prefab
             canvasUI.SetActive(true);

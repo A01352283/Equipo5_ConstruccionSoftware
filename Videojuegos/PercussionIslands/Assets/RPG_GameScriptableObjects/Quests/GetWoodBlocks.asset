@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc2aaf511f3a504ab88fabebad2573e, type: 3}
+  m_Name: GetWoodBlocks
+  m_EditorClassIdentifier: 
+  name: GetWoodBlocks
+  description: 
+  startDialogue:
+    lines:
+    - So you need to growing the vegetables in the field?
+    - I know what to do, I'll give you my xylophone if you complete the rhythm game.
+    - To start the game go to the book on the right.
+  inProgressDialogue:
+    lines:
+    - To start the game go to the book on the right.
+  completeDialogue:
+    lines:
+    - Excelent! You seem to be really getting the hang of this!
+  requiredItem: {fileID: 11400000, guid: 6207837a109a6d1468a281c057a98a30, type: 2}
+  rewardItem: {fileID: 11400000, guid: 9ca7c97b9237f5149839a4acbd7cfe75, type: 2}

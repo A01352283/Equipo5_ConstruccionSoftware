@@ -150,8 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    lines:
-    - Minigame loading
+    lines: []
   questToStart: {fileID: 0}
   questToComplete: {fileID: 0}
   movementPattern: []
@@ -183,9 +182,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkDownSprites:
   - {fileID: -4892097115947609102, guid: 7e1f79ed4c5d70b4b86cd37f38d33265, type: 3}
-  walkUpSprites: []
-  walkLeftSprites: []
-  walkRightSprites: []
+  walkUpSprites:
+  - {fileID: -4892097115947609102, guid: 7e1f79ed4c5d70b4b86cd37f38d33265, type: 3}
+  walkLeftSprites:
+  - {fileID: -4892097115947609102, guid: 7e1f79ed4c5d70b4b86cd37f38d33265, type: 3}
+  walkRightSprites:
+  - {fileID: -4892097115947609102, guid: 7e1f79ed4c5d70b4b86cd37f38d33265, type: 3}
 --- !u!114 &108433794375946294
 MonoBehaviour:
   m_ObjectHideFlags: 0

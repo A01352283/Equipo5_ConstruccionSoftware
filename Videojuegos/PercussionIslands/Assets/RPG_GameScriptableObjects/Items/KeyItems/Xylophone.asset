@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a507460641a9ce4f86d6a7e7b6747d8, type: 3}
-  m_Name: Gong
+  m_Name: Xylophone
   m_EditorClassIdentifier: 
-  itemName: Gong
-  description: 'The Gong is a slightly convex, round metal disk which is hit with
-    a mallet. Not to be confused with the tamtam, which has a different low, sustained
-    pitch. '
-  icon: {fileID: 21300000, guid: 0e24a62085ab2f14aabd8ce5da96072b, type: 3}
+  itemName: Xylophone
+  description: The best place to hit the bars are on the center or on the edge. The
+    way to hit the notes. To keep this type of instruments in the best shape is to
+    check the strings constantly.
+  icon: {fileID: 21300000, guid: 2bca30943774ef6488c4d155bfe848fd, type: 3}

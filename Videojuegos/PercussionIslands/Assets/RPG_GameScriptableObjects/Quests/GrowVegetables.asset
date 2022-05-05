@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc2aaf511f3a504ab88fabebad2573e, type: 3}
+  m_Name: GrowVegetables
+  m_EditorClassIdentifier: 
+  name: GrowVegetables
+  description: 
+  startDialogue:
+    lines:
+    - Hey! Can you help me with something?
+    - My vegetables are not growing and I'm starting to think my vegetables need
+      something special.
+    - The woman in the house to the left with the blue roof may know how to help.
+  inProgressDialogue:
+    lines:
+    - The woman in the house to the left with the blue roof may know how to help.
+  completeDialogue:
+    lines:
+    - I see you have the xylophone. Well then, go to town!
+    - (You play the xylophone beautifully)
+    - Thanks a lot! I appreciate your help like you have no idea.
+    - And hey you are pretty good with that xylophone.
+  requiredItem: {fileID: 11400000, guid: 9ca7c97b9237f5149839a4acbd7cfe75, type: 2}
+  rewardItem: {fileID: 11400000, guid: 9ca7c97b9237f5149839a4acbd7cfe75, type: 2}

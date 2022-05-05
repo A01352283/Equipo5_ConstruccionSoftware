@@ -715,8 +715,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1780905703}
         m_TargetAssemblyTypeName: MemoryGameOverScreen, Assembly-CSharp
-        m_MethodName: RestartButton
-        m_Mode: 5
+        m_MethodName: RestartButtonTrivia
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

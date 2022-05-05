@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc2aaf511f3a504ab88fabebad2573e, type: 3}
+  m_Name: GetTimpani
+  m_EditorClassIdentifier: 
+  name: GetTimpani
+  description: 
+  startDialogue:
+    lines:
+    - Welcome to my music store!
+    - I'm guessing you are the aspiring musican everyone here is talking about. So
+      if you wanted to learn something new, you came to rhe right place.
+    - As you can probably deduce, having a lot of different instruments is a must
+      here, so let me help you learn a little more about them.
+    - I have a little game that can help you learn how many different instruments
+      sound.
+    - To start it, go to the red book on the right.
+  inProgressDialogue:
+    lines:
+    - To start it, go to the red book on the right.
+  completeDialogue:
+    lines:
+    - Perfect! You're getting good at this. Let me give you an instrument you probably
+      havent seen before.
+    - This is a timpano (timpani in prural), These are usually used in ensembles
+      such as orchestras, marching bands and concert bands.
+    - They make for some very dramatic music hahaha.
+  requiredItem: {fileID: 11400000, guid: 9e207a85a84ac8144abd96cbdb57196d, type: 2}
+  rewardItem: {fileID: 11400000, guid: ed3a448ff03b18c429bdbf6e9a23994e, type: 2}

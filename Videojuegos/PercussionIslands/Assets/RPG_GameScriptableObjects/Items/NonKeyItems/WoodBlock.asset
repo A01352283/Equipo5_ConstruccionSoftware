@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9493dc47d636ad44a56342c8095bbd1, type: 3}
+  m_Name: WoodBlock
+  m_EditorClassIdentifier: 
+  itemName: WoodBlock
+  description: These make a nice clicking sound. They must be made of wood. To play
+    these correctly, it is necesary to hit them in the center and point them towards
+    the audience.
+  icon: {fileID: 21300000, guid: da2c3b3b66949f740992f53fe014c9ce, type: 3}
+  instrumentSound: {fileID: 0}
