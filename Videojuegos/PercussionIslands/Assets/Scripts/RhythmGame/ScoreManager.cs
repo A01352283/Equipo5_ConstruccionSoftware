@@ -31,7 +31,7 @@ public class ScoreManager : MonoBehaviour
     
     private void Update()
     {
-        scoreText.text = comboScore.ToString();
-        totalScoreText.text = TotalScore.ToString();
+        scoreText.text = "Combo: " + comboScore.ToString();
+        totalScoreText.text = "Score: " + TotalScore.ToString();
     }
 }
