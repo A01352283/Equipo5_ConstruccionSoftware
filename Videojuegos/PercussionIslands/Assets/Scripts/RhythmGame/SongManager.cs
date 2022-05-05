@@ -8,6 +8,7 @@ using UnityEngine.Networking;
 
 public class SongManager : MonoBehaviour
 {
+    //Song manager script.
     public static SongManager Instance;
     public AudioSource audioSource;
     public Lane[] lanes;
@@ -35,6 +36,7 @@ public class SongManager : MonoBehaviour
     public static MidiFile midiFile;
 
     // Start is called before the first frame update
+    //Starta coroutine read from website.
     void Start()
     {
         timerIsRunning = true;
@@ -47,7 +49,6 @@ public class SongManager : MonoBehaviour
             ReadFromFile();
         }
     }
-
     private IEnumerator ReadFromWebsite(){
         using (UnityWebRequest www = UnityWebRequest.Get(Application.streamingAssetsPath + "/" + fileLocation)){
             yield return www.SendWebRequest();
@@ -99,7 +100,7 @@ public class SongManager : MonoBehaviour
         
         StartCoroutine(FadeOut(audioSource, 10f));
     }*/
-
+    //Fadeout function
     public static IEnumerator FadeOut (AudioSource audioSource, float FadeTime) {
         float startVolume = audioSource.volume;
  
@@ -113,7 +114,7 @@ public class SongManager : MonoBehaviour
         audioSource.volume = startVolume;
         //GameOver.setActive(true);
     }
-
+    //Timer that displays fadeout
     // Update is called once per frame
     void Update()
     {
