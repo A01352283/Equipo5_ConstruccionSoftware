@@ -5,7 +5,7 @@ using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using System.IO;
 using UnityEngine.Networking;
-
+//Song manager script, gets midi, can add a delay to the song and can add a margin of error.
 public class SongManager : MonoBehaviour
 {
     public static SongManager Instance;
@@ -99,7 +99,7 @@ public class SongManager : MonoBehaviour
         
         StartCoroutine(FadeOut(audioSource, 10f));
     }*/
-
+    //Fadeouts song.
     public static IEnumerator FadeOut (AudioSource audioSource, float FadeTime) {
         float startVolume = audioSource.volume;
  
@@ -113,7 +113,7 @@ public class SongManager : MonoBehaviour
         audioSource.volume = startVolume;
         //GameOver.setActive(true);
     }
-
+    //Timer to fadeOut song.
     // Update is called once per frame
     void Update()
     {
