@@ -10,18 +10,28 @@ public class GameOver : MonoBehaviour
 {
     public GameObject RestartGame; 
     public GameObject GameExit;
+     private float start_time;
     
     // Start is called before the first frame update
     void Start()
     {
+        start_time= Time.time;
         gameObject.SetActive(false);
         Invoke("FinishGame", 70f);
+        Debug.Log(PlayerPrefs.GetString("user_name"));
     }
 
     void FinishGame()
     {
         gameObject.SetActive(true);
         RestartGame.gameObject.SetActive(true);
+        
+        // Data api 
+        TotalScore = PlayerPrefs.GetInt("Total Score");
+        string mg_time= Game_Time();
+        GetComponent<Api_Scores>().UpdateScore(TotalScore, mg_time);
+        Debug.Log("Score Upated");
+        //GameOver.Setup(TotalScore);
     }
 
     public void ExitButton(){
@@ -34,12 +44,23 @@ public class GameOver : MonoBehaviour
 
     public void PlayAgainButton()
     {
-        //SceneManager.LoadScene("RhythmGameScene");
+        SceneManager.LoadScene("RhythmGameScene");
         Start();
         comboScore = 0;
         TotalScore = 0;
         //SongManager.GetComponent<SongManager>();
         //startGame = GameObject.FindGameObjectsWithTag("Start").GetComponent<SongManager>(startGame);
     }
+    private string Game_Time(){
+        float t= Time.time - start_time;
+        string hours = ((int)t / 3600).ToString ("00");
+        float m = t % 3600;
+        string minutes = ((int)m / 60).ToString("00");
+        string seconds = (m % 60).ToString("00");
+        string mg_time=hours + ":" + minutes + ":" + seconds;
+        return mg_time;
+    }
 
+
+    
 }

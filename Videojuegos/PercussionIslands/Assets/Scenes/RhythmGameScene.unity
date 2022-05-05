@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 215991400}
   - component: {fileID: 215991402}
   - component: {fileID: 215991403}
+  - component: {fileID: 215991404}
   m_Layer: 5
   m_Name: GameOverMenu
   m_TagString: Untagged
@@ -317,6 +318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c925caa22787c1c4688bbf01d7e09fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RestartGame: {fileID: 267112756}
+  GameExit: {fileID: 1610863324}
 --- !u!114 &215991403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +336,41 @@ MonoBehaviour:
   missSFX: {fileID: 226846959}
   scoreText: {fileID: 1001904593}
   totalScoreText: {fileID: 2081010206}
+--- !u!114 &215991404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215991398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf37843329e9e4d8a1556a9af5141a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: http://localhost:5000
+  getEP: /api/game_user/scores
+  mg_type: rhythm
+  trivia_score:
+    user_name: 
+    user_id: 0
+    trivia_last_score: 0
+    trivia_play_time: 
+  memory_score:
+    user_name: 
+    user_id: 0
+    memory_last_score: 0
+    memory_play_time: 
+  memorysounds_score:
+    user_name: 
+    user_id: 0
+    memorysounds_last_score: 0
+    memorysounds_play_time: 
+  rhythm_score:
+    user_name: 
+    user_id: 0
+    rhythm_last_score: 0
+    rhythm_play_time: 
 --- !u!1 &224558044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,8 +2066,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 162.3, y: 90.4}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 335.8695, y: -212.4}
+  m_SizeDelta: {x: 212.0018, y: 48.196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1316845874
 MonoBehaviour:
@@ -2067,7 +2105,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2107714576c2eb943aee55c53bf58060, type: 3}
-    m_FontSize: 20
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
