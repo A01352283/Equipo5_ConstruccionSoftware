@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FirstIsland/InteriorNPC6.unity
     guid: fe6eace2494be164f8f94ff4aae63e47
+  - enabled: 1
+    path: Assets/Scenes/Controllers_Scene.unity
+    guid: 73a1ff66f1a403048918888ab62ef535
   m_configObjects: {}

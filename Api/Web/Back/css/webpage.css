@@ -74,6 +74,62 @@ canvas{
     flex-direction: column;
 }
 
+.container_p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.container_img {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.item_img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 body{
-    background-image: url('../files/tilesetOpenGameBackground.png');
+    background-image: url('../files/home.jpeg');
+    height: 100%;
+
+  /* Center and scale the image nicely */
+  background-repeat: repeat;
+  background-size: 100%;
+}
+
+p{
+    background-color: aliceblue; 
+    border-radius: 10px; 
+    font-size: 25px;
+}
+
+h1{
+    font-size: 70px;
+    color: aliceblue;
+    text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
+}
+
+h3{
+    font-size: 30px;
+    color: aliceblue;
+    text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
+}
+
+img{
+    border: 4px solid black;
 }
