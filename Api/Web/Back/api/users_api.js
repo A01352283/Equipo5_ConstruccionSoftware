@@ -68,6 +68,13 @@ app.get('/game', (request,response)=>{
     })
 });
 
+app.get('/about', (request,response)=>{
+    fs.readFile('./html/about.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err);
+        console.log('Loading page...');
+        response.send(html);
+    })
+});
 /*
 //This api call obtains the web-page of all the users
 app.get('/game_user', (request,response)=>{
