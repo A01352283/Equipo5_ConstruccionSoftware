@@ -54,10 +54,11 @@ public class MemoryS_Manager : MonoBehaviour
     // Generate the colors and save the score list
     public void Generator()
     {
-        AllColors++ ; // Round counter 
-        AllColors = AllColors + (20 - 1);
-        ScoreText.text = "Score:  " + AllColors; // Show the score on the screen 
-        LastScore_text.text = "Your Score: " + AllColors; // On the game over screen, it shows the score you had while playing
+
+        AllColors +=0 ; // Round counter 
+        AllColors = AllColors + (20);
+        ScoreText.text = "Score:  " + (AllColors - 20); // Show the score on the screen 
+        LastScore_text.text = "Your Score: " + (AllColors - 20); // On the game over screen, it shows the score you had while playing
         ColorOrdenInPreview.Add(Random.Range(0, 4)); // Generates the order of the colors randomly, in a range of 4 (4 instruments)
 
         ShowValues();
@@ -114,7 +115,7 @@ public class MemoryS_Manager : MonoBehaviour
 
             if(AllColors > HighScore)
             {
-                HighScore = AllColors;
+                HighScore = AllColors - 20;
                 PlayerPrefs.SetInt("High Score", HighScore);
             }
 
@@ -129,7 +130,7 @@ public class MemoryS_Manager : MonoBehaviour
     {
         ColorOrdenInPreview = new List<int>(); // restart color orden in preview 
         AllColors = 0; // start in 0 
-        ScoreText.text ="Score: " + AllColors;
+        ScoreText.text ="Score: " + (AllColors - 20);
         Game_over.SetActive(false);
         StartCoroutine(Starten());
     }
