@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Lane : MonoBehaviour
 {
-
+    //Script that makes the lanes, spawns notes and checks the hits and misses.
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
     public KeyCode input;
     public GameObject notePrefab;
@@ -20,7 +20,7 @@ public class Lane : MonoBehaviour
     {
         
     }
-
+    //Checks if the note is the correct note and if it is, spawns a note.
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array){
         foreach(var note in array){
             if (note.NoteName == noteRestriction)
@@ -32,6 +32,7 @@ public class Lane : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Spawns notes, checks hit and misses. Also provides a margin of error.
     void Update()
     {
         if (spawnIndex < timeStamps.Count){
