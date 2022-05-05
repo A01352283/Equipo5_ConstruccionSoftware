@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
+    //Script that invokes the game over screen.
     // Start is called before the first frame update
     void Start()
     {
