@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bf37843329e9e4d8a1556a9af5141a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: 'http://localhost:5000 '
+  url: http://localhost:5000
   getEP: /api/game_user/scores
   mg_type: memorysounds
   trivia_score:

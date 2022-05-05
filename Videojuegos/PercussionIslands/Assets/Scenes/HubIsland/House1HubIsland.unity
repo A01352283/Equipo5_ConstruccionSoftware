@@ -4256,7 +4256,7 @@ PrefabInstance:
     - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
       propertyPath: questToComplete
       value: 
-      objectReference: {fileID: 11400000, guid: b332034ee945de4478e316841d4d7250, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6078346621175993835, guid: 869c7cfad2eb8ca449e1d7d553057459, type: 3}
       propertyPath: dialogue.lines.Array.size
       value: 2

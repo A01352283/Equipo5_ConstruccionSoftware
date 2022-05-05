@@ -23,6 +23,9 @@ app.use('/js', express.static('./js'))
 app.use('/css', express.static('./css'))
 app.use('/fonts', express.static('./fonts'))
 app.use('/files',express.static('./files'))
+app.use('/Build',express.static('./Build'))
+app.use('/StreamingAssets',express.static('./StreamingAssets'))
+app.use('/TemplateData',express.static('./TemplateData'))
 
 //This function allows access to the Scheme in MySql
 function connectToDB()
@@ -42,7 +45,7 @@ function connectToDB()
 
 //This api call obtains the main web-page site.
 app.get('/', (request,response)=>{
-    fs.readFile('./html/webpage.html', 'utf8', (err, html)=>{
+    fs.readFile('./html/homepage.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err);
         console.log('Loading page...');
         response.send(html);
@@ -51,6 +54,14 @@ app.get('/', (request,response)=>{
 
 app.get('/rankings', (request,response)=>{
     fs.readFile('./html/rankings.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err);
+        console.log('Loading page...');
+        response.send(html);
+    })
+});
+
+app.get('/game', (request,response)=>{
+    fs.readFile('./html/gamePage.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err);
         console.log('Loading page...');
         response.send(html);

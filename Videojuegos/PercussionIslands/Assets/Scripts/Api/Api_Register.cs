@@ -31,7 +31,12 @@ public class Api_Register : MonoBehaviour
     public void Register_User()
     {
     //when cliked button login loop hasta que haga match
-       StartCoroutine(New_User());
+        if(user_text.text=="" || pwd_text.text==""){
+            status.text="You need to fill both inputs.....";
+        }
+        else{
+            StartCoroutine(New_User());
+        }
     }
 
     public void BackLogin(){
