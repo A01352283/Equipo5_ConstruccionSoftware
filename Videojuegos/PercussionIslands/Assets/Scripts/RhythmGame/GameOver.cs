@@ -11,7 +11,8 @@ public class GameOver : MonoBehaviour
     public GameObject RestartGame; 
     public GameObject GameExit;
      private float start_time;
-    
+    //Script that finishes the game.
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class GameOver : MonoBehaviour
         Invoke("FinishGame", 70f);
         Debug.Log(PlayerPrefs.GetString("user_name"));
     }
-
+    //Finishes the game and gets score.
     void FinishGame()
     {
         gameObject.SetActive(true);
@@ -33,7 +34,7 @@ public class GameOver : MonoBehaviour
         Debug.Log("Score Upated");
         //GameOver.Setup(TotalScore);
     }
-
+    //Buttons to restart and exit the game.
     public void ExitButton(){
         StartCoroutine(UnloadThisScene());
     }
@@ -51,6 +52,7 @@ public class GameOver : MonoBehaviour
         //SongManager.GetComponent<SongManager>();
         //startGame = GameObject.FindGameObjectsWithTag("Start").GetComponent<SongManager>(startGame);
     }
+    //Gets the game time
     private string Game_Time(){
         float t= Time.time - start_time;
         string hours = ((int)t / 3600).ToString ("00");
