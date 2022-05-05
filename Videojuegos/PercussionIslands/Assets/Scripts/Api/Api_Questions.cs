@@ -52,7 +52,7 @@ public class Api_Questions : MonoBehaviour
     //API CALL THAT RETRIEVES THE QUESTION IN JSON TO THEN TURN IT TO QUESTIONS CLASS AND STORE THEM IN OUR QUESTIONLIST
     IEnumerator GetQuestions()
     {
-        UnityWebRequest www= UnityWebRequest.Get(url + getEP);
+        using(UnityWebRequest www= UnityWebRequest.Get(url + getEP)){;
         yield return www.SendWebRequest();
 
         if (www.result == UnityWebRequest.Result.Success) {
@@ -64,6 +64,7 @@ public class Api_Questions : MonoBehaviour
 
         } else {
             Debug.Log("Error: " + www.error);
+        }
         }
     }
 }
