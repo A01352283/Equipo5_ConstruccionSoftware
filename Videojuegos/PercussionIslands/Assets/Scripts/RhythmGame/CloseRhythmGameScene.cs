@@ -1,3 +1,4 @@
+//This script wasnt used
 /*
 
 using System.Collections;
