@@ -2,6 +2,14 @@
 
 Video describing the game: https://drive.google.com/file/d/16rGMSU2RxlF3mPcDeFqp5GPhbFm0uyQj/view
 
+---
+
+# Installation and execution instructions
+
+(Haz lo tuyo Chava jaja)
+
+---
+
 Repositorio para el proyecto del equipo 5 de Construcción de Software y Toma de Desiciones
 - Andrés Briseño Celada - A01352283
 - Salvador Salgado Normandia - A01422874
