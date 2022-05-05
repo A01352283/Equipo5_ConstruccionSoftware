@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
+using static SongManager;
+using static ScoreManager;
 public class GameOver : MonoBehaviour
 {
+    public GameObject RestartGame; 
+    public GameObject GameExit;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +21,7 @@ public class GameOver : MonoBehaviour
     void FinishGame()
     {
         gameObject.SetActive(true);
+        RestartGame.gameObject.SetActive(true);
     }
 
     public void ExitButton(){
@@ -26,11 +31,15 @@ public class GameOver : MonoBehaviour
     IEnumerator UnloadThisScene(){
         yield return SceneManager.UnloadSceneAsync("RhythmGameScene");
     }
-/*
-    public static SongManager Instance;
+
     public void PlayAgainButton()
     {
+        //SceneManager.LoadScene("RhythmGameScene");
         Start();
+        comboScore = 0;
+        TotalScore = 0;
+        //SongManager.GetComponent<SongManager>();
+        //startGame = GameObject.FindGameObjectsWithTag("Start").GetComponent<SongManager>(startGame);
     }
-    */
+
 }
