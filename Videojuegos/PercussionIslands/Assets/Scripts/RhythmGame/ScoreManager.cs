@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-
+    //Script that counts the hits and misses for every note and sums it to the score and combo.
     public static ScoreManager Instance;
     public AudioSource hitSFX;
     public AudioSource missSFX;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-
+    //Instantiate the note and also destroys the note.
     double timeInstantiated;
     public float assignedTime;
     // Start is called before the first frame update
