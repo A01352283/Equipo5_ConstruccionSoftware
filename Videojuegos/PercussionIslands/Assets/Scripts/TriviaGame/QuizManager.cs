@@ -52,6 +52,7 @@ public class QuizManager : MonoBehaviour
     IEnumerator fillQuestion(){
         yield return new WaitForSeconds(2f);
         QnA=GetComponent<Api_Questions>().allQuestions;
+        QnA.ShuffleQuestions();
         showQuestions();
     }
     public void showQuestions(){
@@ -114,22 +115,6 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-
-    /*void SetAnswers(){
-        for (int i = 0; i < options.Length; i++)
-        {
-            options[i].GetComponent<AnswerScript>().isCorrect = false;
-            options[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQuestion].answers[i];
-
-            if(QnA[currentQuestion].correctanswer == i+1){
-                options[i].GetComponent<AnswerScript>().isCorrect = true;
-            }
-        }
-    }
-    */
-    //We will latter generate the questions by json files
-
-    //Function that allows to shuffle the order of the answers
     void Shuffle(List<string> s_list){
         for (int i = 0; i < s_list.Count; i++){
             string temp = s_list[i];

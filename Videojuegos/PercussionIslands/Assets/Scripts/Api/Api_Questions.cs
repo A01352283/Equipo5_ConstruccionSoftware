@@ -1,8 +1,6 @@
 /*
-Test for the connection to an API
-Able to use the Get method to read data and "Post" to send data
-NOTE: Using Put instead of Post. See the links around line 86
-Gilberto Echeverria
+This scripts allows the connection of Unity with the API in order to obtain data of the tabe questions
+Salvador Salgado Normnandia
 */
 
 using System.Collections;
@@ -14,13 +12,22 @@ using UnityEngine.Networking;
 // https://stackoverflow.com/questions/40633388/show-members-of-a-class-in-unity3d-inspector
 
 
-// Allow the class to be extracted from Unity
+// Class QuestionsList will store the questions that the Script recieves from the api
 [System.Serializable]
 public class QuestionsList
 {
     public List<QuestionAnswers> questions;
+    public void ShuffleQuestions(){
+        for(int i=0;i<questions.Count;i++){
+            QuestionAnswers temp = questions[i];
+            int randomIndex= Random.Range(i, questions.Count);
+            questions[i]=questions[randomIndex];   
+            questions[randomIndex]= temp;   
+        }
+    }
 }
 
+//In order to update the score of the minigame we need to send the new score as well as the user_id of the user we want to update. This is why we need to create a class  UserScore that stores those values (atributes)
 [System.Serializable]
 public class UserScore
 {
@@ -42,7 +49,7 @@ public class Api_Questions : MonoBehaviour
     {
        StartCoroutine(GetQuestions());
     }
-
+    //API CALL THAT RETRIEVES THE QUESTION IN JSON TO THEN TURN IT TO QUESTIONS CLASS AND STORE THEM IN OUR QUESTIONLIST
     IEnumerator GetQuestions()
     {
         UnityWebRequest www= UnityWebRequest.Get(url + getEP);
@@ -59,15 +66,4 @@ public class Api_Questions : MonoBehaviour
             Debug.Log("Error: " + www.error);
         }
     }
-    /*
-    IEnumerator SetScore() {
-        MemoryGameController mgc = controller.GetComponent<MemoryGameController>();
-        UserScore userScore = new UserScore();
-        userScore.score = mgc.score;
-        userScore.usedID = PlayerPrefs.GetInt("userID");
-
-        PlayerPrefs.SetInt("userID", 6);
-
-    }
-    */
 }
