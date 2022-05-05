@@ -54,7 +54,8 @@ public class MemoryS_Manager : MonoBehaviour
     // Generate the colors and save the score list
     public void Generator()
     {
-        AllColors++; // Round counter  
+        AllColors++ ; // Round counter 
+        AllColors = AllColors + (20 - 1);
         ScoreText.text = "Score:  " + AllColors; // Show the score on the screen 
         LastScore_text.text = "Your Score: " + AllColors; // On the game over screen, it shows the score you had while playing
         ColorOrdenInPreview.Add(Random.Range(0, 4)); // Generates the order of the colors randomly, in a range of 4 (4 instruments)
