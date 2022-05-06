@@ -52,23 +52,23 @@ Particpants
 
 ### **Summary**
 
-The primary concept of the game is to incentivize the players to learn about percussive instruments and their importance in music. Some of the ideas presented in the game are: identifying the different percussion instruments, notes, rhythms, and health practices. 
+The primary concept of the game is to incentivize the players to learn about percussive instruments and their importance in music. Some of the ideas presented in the game are: identifying the different percussion instruments their uses, forms and rhythms. 
 
 By traveling through the islands and completing mini-games, the player will unlock various percussive instruments that open new paths to explore.
 
-The genre of the game is a pokemon-style RPG, divided into islands that represent sections to learn (health, note and sound recognition, instruments...) they will not be demanding in terms of the use of keys and agile movements with the mouse, addition to be friendly, interactive and intuitive for anyone who wants to learn about percussion.
+The genre of the game is a pokemon-style RPG, divided into islands containing many houses that represent sections to learn (rhythm, note and sound recognition, instruments...) they will not be demanding in terms of the use of keys and agile movements with the mouse, addition to be friendly, interactive and intuitive for anyone who wants to learn about percussion.
 
 ### **Gameplay**
 The gameplay is going to be divided into diferent kinds. The main one is going to be a Pokémon-like RPG exploration inside a tiled map, where the player explores diferent islands and interacts with NPC's and instruments. 
 
-Then, each island is going to have different kinds of minigames, such a trivia relating to information regarding percussion. Another one would be a rhythm game where the player has to play the right notes at the right time, and is scored depending on the precision, like Taiko no Tatsujin. 
+Then, each island is going to have different kinds of minigames, such a trivia relating to information regarding percussion. Another one would be a rhythm game where the player has to play the right notes at the right time. 
 
-If time allows it, we would to a sound recognition game, where the player would first learn about the sounds of different instruments, and then is asked to recognize the instruments in different clips.
+On the other hand there are also mini-games that encourage the recognition of the sound of different instruments, these are the 2 mini memory games, where the dynamics are different but the purpose is the same. 
 
 ### **Minigames**
 
 - Trivia (Learn important topics about percussion instruments)
-- Memory Games (Identify sounds and notes)
+- 2 Memory Games (Identify sounds and notes)
 - Rhythm Game (percussion instruments)
 
 ### **Mindset**
@@ -86,12 +86,12 @@ During the minigames, we want to pressure the player a little bit, because that'
 ### **Screens**
 
 1. Title Screen
-    1. Options
+    1. login / register user 
 2. Game
     1. Inventory
     2. Trivia Game
-    3. Rhythm game
-    4. Memory Game 
+    3. Rhythm Game
+    4. Memory Games
     4. Main screen (map navigation)
 3. End Credits
 
@@ -100,11 +100,11 @@ During the minigames, we want to pressure the player a little bit, because that'
 
 Movement is determined by 'W','A','S','D'. You can interact with NPC's by pressing the 'I' key. Also you can enter buildings by running into the doors.
 
-The pause menu is opened with the escape key, it's navigated with 'W','A','S','D', things are selected with 'I' and you go back with 'O'. The trivia and memory games are played with those same controls.
+The pause menu is opened with the escape key, it's navigated with 'W','A','S','D', things are selected with 'I' and you go back with 'O'. 
 
 **Trivia Mini-Game**
 
-The different answer options can be chosen with the arrow-keys. Once the player wants to confirm the answer the key "I" must be clicked.
+When you start the game the question will appear and below it the available options, to select an answer use the mouse and press on the box containing the option 
 
 **Rythm Mini-Game**
 
@@ -112,14 +112,15 @@ The game will count with two keys that have to be clicked depending on the notes
 
 **Memory Mini-Game**
 
-This game has similar mechanics as Trivia, in which the player can select the different cards with the arrow keys. Once the player wants to flip a specific card, he must click the "I" key. Once this occurs it may occur two actions:
-
+- Recognition of the sound each instrument makes
+This game has similar mechanics as Trivia, in which the player can select the different cards with the mouse. Once the player wants to flip a specific card, he must click on. Once this occurs it may occur two actions:
 1. The card is a type "Sound", in that it will produce a specific instrument sound
 2. The card is a type "Visual", in which it will show an image of an instrument
-
 Once the player identifies the card, he needs to choose a new one that is its type equivalent.
 
-
+- Sequence memorization 
+the second memory game shows you a sequence that you must remember so that you can replicate it while listening to the sounds that the instruments make. 
+The mechanic is similar to the previous memory game, you must use the mouse and press on the element according to the sequence shown on the screen. 
 
 ### **Mechanics**
 
@@ -133,17 +134,21 @@ Once the player identifies the card, he needs to choose a new one that is its ty
     - If there are no obstacles on the bridges, the player can move to other islands. 
     - Instruments found on the island can be stored in the inventory.
     - Can be interacted with randomly placed instruments within the island. 
-    - You can select instruments from the inventory to see their information or listen to their sound.
+    - You can select instruments from the inventory to see their information.
     - There are non-interactive objects that block the way (structures, end of the island, trees, rocks...).
 
 Mechanics of mini-games: 
 - In case of losing the game, in all mini-games the player has the option to retry or return to the island map.
-1. Memory notes / sounds 
+1. Memory 
+    1. Recognition of the sound each instrument makes
     - Click on the instruments/notes (as appropiate) to generate the sound corresponding to the element.
     - If the elements are selected in the correct order, generate a melody with the selected sounds.
     - The intensity and speed at which the sounds are displayed increase upon successful completion of a sequence.
+    2.Sequence memorization 
+    - Click on the instruments (as appropiate) to generate the sound corresponding to the sequense.
+    - If the sequence is followed correctly the level increases with a new element added to the sequence. 
+    - Game is lost when the sequence is not followed correctly  
 2. Trivia 
-    - If necessary, the player can scroll the screen to see all the questions.
     - The answers are multiple choice, the player must select one of the answer boxes corresponding to the question.
     - At the end you will find a box to send the answers. 
 3. Rhythm 
@@ -233,9 +238,9 @@ Are there any interesting mechanics? If so, how are you going to accomplish them
 2. Must move upward to encounter the first NPC.
 3. Player talks to the NPC and the NPC tells him to go to the house to the left and enter it.
 4. Player moves upward, then to the left to encounter the house and enter it.
-5. Player talks to the NPC at the house, the NPC explains the percussion instruments and gives the player some drums ("Drums" acquired). Then the NPC tells him to go to the first percussion island located at the right.
+5. Player talks to the NPC at the house, the NPC explains the percussion instruments and gives the player any instrument (for example "Drums" acquired). Then the NPC tells him to go to the first percussion island located at the right.
 6. Player exits the house and walks to the right.
-7. Player encounters the first obstacle (birds at the dock) so the player must play the drums in order to clear the dock and keep moving foward.
+7. Player encounters the first obstacle (birds at the dock) so the player must have the required element to be able to cross (collectable instrument from the inventory).
 8. Player arrives to the first percussion island
 9. Player talks to the NPC that will explain him the basics of the island.
 10. Player moves to the right in order to get to the edge of the island.
