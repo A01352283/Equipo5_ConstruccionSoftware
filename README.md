@@ -109,7 +109,7 @@ Repositorio para el proyecto del equipo 5 de Construcción de Software y Toma de
 - Percussion Library: https://philharmonia.co.uk/resources/sound-samples/
 - Unity Esentianls Tutorials: https://learn.unity.com/pathways
 - Unity Installer Guide: https://learn.unity.com/tutorial/install-the-unity-hub-and-editor#
-
+- Memory Sund game tutorial: https://youtube.com/playlist?list=PL5dhcDELiazZ5Qdhcq2FrrnWSVxkkO7Yk
 
 # Asset credits
 - Menu SFX: https://souptonic.itch.io/souptonic-sfx-pack-1-ui-sounds
