@@ -1,8 +1,6 @@
 /*
-Test for the connection to an API
-Able to use the Get method to read data and "Post" to send data
-NOTE: Using Put instead of Post. See the links around line 86
-Gilberto Echeverria
+Script that allows the connection of Unity with the API in order to register a new User
+Salvador Salgado Normanida
 */
 
 using System.Collections;
@@ -48,13 +46,14 @@ public class Api_Register : MonoBehaviour
     }
 
     Message msg;
-
+    //Once the user writes its user_name and password in the input text this functions is called, creating a new Object UserInfo that will be send to the database
     IEnumerator New_User()
     {   
         user= new UserInfo();
         user.user_name=user_text.text;
         user.pwd=pwd_text.text;
         string data=JsonUtility.ToJson(user);
+        //Make the inssert call
         using(UnityWebRequest www= UnityWebRequest.Put(url + getEP,data))
         //UnityWebRequest www= UnityWebRequest.Post(url + getEP,data);
         //using

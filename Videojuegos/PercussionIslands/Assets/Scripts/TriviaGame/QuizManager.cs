@@ -1,3 +1,8 @@
+/*
+Script that manages the Trivia Minigame
+Salvador Salgado Normanida
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +10,7 @@ using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
+    //Object where all the question from the API will be stored
     public QuestionsList QnA;
     
     [SerializeField]
@@ -29,6 +35,8 @@ public class QuizManager : MonoBehaviour
     private float start_time;
 
     public MemoryGameOverScreen TriviaGameOverScreen;
+
+    //This functions allows to call the API in order to update the score and sum the play time. It also activates our Game Over Screen
     public void GameOver(){
         string mg_time= Game_Time();
         GetComponent<Api_Scores>().UpdateScore(score,mg_time);
@@ -39,7 +47,7 @@ public class QuizManager : MonoBehaviour
         start_time= Time.time;
         StartCoroutine(fillQuestion());
     }
-
+    //This functions allows to obtain the time that the user spent playing the minigame from start to finish
     private string Game_Time(){
         float t= Time.time - start_time;
         string hours = ((int)t / 3600).ToString ("00");
@@ -49,9 +57,11 @@ public class QuizManager : MonoBehaviour
         string mg_time=hours + ":" + minutes + ":" + seconds;
         return mg_time;
     }
+    //This function makes the API call that retrieves all the questions from the database
     IEnumerator fillQuestion(){
         yield return new WaitForSeconds(2f);
         QnA=GetComponent<Api_Questions>().allQuestions;
+        //We shuffle the questions so they are always in different order
         QnA.ShuffleQuestions();
         showQuestions();
     }
@@ -114,7 +124,7 @@ public class QuizManager : MonoBehaviour
             showQuestions();
         }
     }
-
+    //Once we have the specific Question Object we use this function to shuffle the answers order but always remembering which one is correct
     void Shuffle(List<string> s_list){
         for (int i = 0; i < s_list.Count; i++){
             string temp = s_list[i];
