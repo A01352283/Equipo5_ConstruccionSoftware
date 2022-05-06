@@ -61,6 +61,33 @@ Now that we have successfully created our database locally we must create a user
 3) Type the name of the user as well as its password. Write this information somewhere place so we can access it easily during the API configuration. Once finished click on the Apply tab.
 ![image info](./README_SCREENSHOTS/apply_user.jpg)
 
+4) Once the user has been created we need to establish its privileges on the database. For this click on the tab Scheme Prvileges, and click on Add Entry.
+![image info](./README_SCREENSHOTS/add_privileges.jpg)
+
+5) Once clicked you a new window to select the specific schema you want to grant privilages. Once selected our database click Ok.
+![image info](./README_SCREENSHOTS/select_schema.jpg)
+
+6) The next step consists on selecting which actions does the user have inside the data base. Be sure to mark SELECT, INSERT, UPDATE, DELETE AND EXECUTE and click the tab Apply.
+![image info](./README_SCREENSHOTS/select_rights.jpg)
+
+### **API user configuration**
+
+Now that the user has been created successfully it is time to set our API in with the user information. In the root of the project /api select users_api.js. In line 31 there is a function that allows the connection of the API and database. Be sure to have the host value in ***localhost**, user and data with the database user created in MySQL Workbench and select the name of the Schema in database.
+![image info](./README_SCREENSHOTS/api_user.jpg)
+
+**IMPORTANT** - Be sure that your api is listening on port 5000. If you decide to change the port you must change not only the API calls but also inside the Unity project.
+![image info](./README_SCREENSHOTS/api_conection.jpg)
+
+---
+# Creating a User Admin from MySQL Workbench
+
+Once the database and the user administrator have been configured on the API, it is time to excecute it from the terminal. Be sure to call the node from the Back Folder.
+
+![image info](./README_SCREENSHOTS/run_api.jpg)
+
+If everything is running correctly you can view the webpage from the web browser.
+![image info](./README_SCREENSHOTS/open_web.jpg)
+
 ---
 
 Repositorio para el proyecto del equipo 5 de Construcción de Software y Toma de Desiciones
@@ -80,6 +107,9 @@ Repositorio para el proyecto del equipo 5 de Construcción de Software y Toma de
 - Top down tileset: https://jamiebrownhill.itch.io/solaria-rural-village
 - MIDI editor (LMMS): https://lmms.io/download#windows
 - Percussion Library: https://philharmonia.co.uk/resources/sound-samples/
+- Unity Esentianls Tutorials: https://learn.unity.com/pathways
+- Unity Installer Guide: https://learn.unity.com/tutorial/install-the-unity-hub-and-editor#
+
 
 # Asset credits
 - Menu SFX: https://souptonic.itch.io/souptonic-sfx-pack-1-ui-sounds

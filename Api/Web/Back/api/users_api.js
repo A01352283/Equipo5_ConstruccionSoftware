@@ -33,8 +33,8 @@ function connectToDB()
     try{
         //Obtain this info by create a user in MySql within the privileges section to modify percussion_island3
         return mysql.createConnection({host:'localhost', 
-        user:'final_admin', 
-        password:'Destiny2', 
+        user:'', 
+        password:'', 
         database: 'percussion_island3'});
     }
     catch(error)
