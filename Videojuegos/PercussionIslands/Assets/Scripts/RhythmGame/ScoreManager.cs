@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-
+    //Score manager scripts, sums to score and combo, also resets combo when missed.
     public static ScoreManager Instance;
     public AudioSource hitSFX;
     public AudioSource missSFX;

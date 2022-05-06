@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Lane script
 public class Lane : MonoBehaviour
 {
 
@@ -30,7 +30,7 @@ public class Lane : MonoBehaviour
             }
         }
     }
-
+    //Spawns notes
     // Update is called once per frame
     void Update()
     {
@@ -43,7 +43,7 @@ public class Lane : MonoBehaviour
                 spawnIndex++;
             }
         }
-
+    //Hits and misses, gets time of hit and misses
         if (inputIndex < timeStamps.Count){
             double timeStamp = timeStamps[inputIndex];
             double marginOfError = SongManager.Instance.marginOfError;
